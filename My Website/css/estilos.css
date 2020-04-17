@@ -1,0 +1,450 @@
+/* ---------------------- Variables Globales ---------------------- */
+:root
+ {  /* --color-main: #685B6E; */
+    --color-main: #3678B4;
+    --color-black: black;
+    --color-white: white;
+    --color-grey: #6a727d;
+    /* --color-stars: #C6AED1; */
+    --color-borderImage: black;
+
+    
+    --font-title: 'Permanent Marker';
+    --font-text: 'Caveat';
+    
+    --fontsize-link: 15px;
+    --fontsize-title: 35px;
+    --fontsize-titleDescription: 25px;
+    --fontsize-textabout: 25px;
+    --fontsize-textjobs: 23px;
+    --fontsize-texteducation: 25px;
+
+    
+}
+
+/* ---------------------- Estilos Generales ---------------------- */
+header
+{   position: fixed;
+    top: 0px;
+    left: 0px;
+
+}
+
+body
+{   display: block;
+    /* overflow-y:hidden */
+}
+
+html
+{   scroll-behavior: smooth;
+    height: auto;
+
+}
+
+/* ---------------------- Backgrounds ---------------------- */
+#about, #education
+{   background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    
+}
+#experience, #skills
+{   background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+    background-blend-mode: normal,color-burn;
+    
+}
+#contact
+{   background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+    background-blend-mode: multiply;
+
+}
+
+/* ---------------------- Sobre Mi ---------------------- */
+#about
+{   width: 100%;
+    padding-top: 40px;
+    height: 700px;
+    
+}
+
+
+.title
+{   padding: 0px;
+    margin: 50px;
+    color: var(--color-main);
+    font-size: var(--fontsize-title);
+    font-family: var(--font-title);
+    text-align: center;
+}
+
+.hero-main
+{   margin: 0px;
+    text-align: center;
+    font-family: var(--font-text);
+    color: var(--color-black);
+    font-size: var(--fontsize-titleDescription);
+
+}
+
+.hero-about
+{   margin: 0px;
+    height: auto;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hero-imageContainer
+{   margin: 0px;
+    
+}
+
+.hero-image
+{   margin: 40px;
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    
+}
+
+.hero-text
+{   margin: 10px;
+    width: 500px;
+    height: auto;
+    font-family: var(--font-text);
+    font-size: var(--fontsize-textabout);
+
+}
+
+/* ---------------------- Experiencia ---------------------- */
+#experience
+{   margin: 0px;
+    padding: 10px;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Permite centrar dentro de su propio elemento */
+    
+}
+
+.jobs
+{   margin: auto;   
+    width: 900px;
+    height: 700px;
+    align-items: center;
+    text-align: center;
+    
+}   
+
+.jobs-imageContainer
+{   margin: 10px;
+    width: 200px;
+    height: 200px;
+    /* Declaraciones para centrar todo lo contenido en imageContainer (Imagen y Texto) */
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.jobs-image
+{   width: 200px;
+    height: 200px;
+    border: solid 1px;
+    border-color: var(--color-borderImage);
+    border-radius: 25px;
+    /* Declaraciones para la animación de la Imagen */
+    transition: ease 0.25s;
+    transform: scale(1);
+    opacity: 100%;
+
+}
+
+.Jobs-text
+  { margin: 0px;
+    width: 300px;
+    height: 150px; /* Para acortar el alto del cuadro de texto y se visualice como globito */
+    padding: 0px; 
+    border: solid 1px;
+    border-radius: 25px;
+    font-family: var(--font-text);
+    font-size: var(--fontsize-textjobs);
+    color: var(--color-black);
+    
+    /* Declaraciones para la animación del Texto */
+    background-color: #dfe9f3;
+    transition: opacity 0.125s ;
+    opacity: 0;
+    /* Declaraciones para centrar el Texto dentro del ImageContainer */    
+    position: relative;
+    top: -250px;
+    bottom: 0px;
+    left: -50px;
+    right: 0px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    
+    
+}
+
+/* Efectos para cuando se coloca el mouse encima de la imagenes de Jobs*/
+/* Para la imagen (Utilizo la Clase) */
+.jobs-imageContainer:hover .jobs-image
+{ opacity: 0.2;
+  transform: scale(0.8);
+
+} 
+
+/* Para el Texto (Utilizo el ID)*/
+.jobs-imageContainer:hover #figcaption-jobs
+{  opacity: 1;
+   transform: scale(0.8);
+
+} 
+
+.jobs-company, .jobs-position, .jobs-date, .jobs-area
+{   margin: 0px; 
+
+}
+
+
+/* ---------------------- Educación ---------------------- */
+#education
+{   margin: 0px;
+    padding-top: 40px;
+    width: 100%;
+    height: 700px;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Permite centrar dentro de su propio elemento */
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+
+#education .studies
+{   /* Declaraciones para centrar todas las imágenes en la sección */
+    display: inline-table;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.studies
+{   margin: auto;
+
+}   
+
+.studies-imageContainer
+{   margin: 20px;
+    width: 400px;
+    height: 400px;
+    /* Declaraciones para centrar todo lo contenido en imageContainer (Imagen y Texto) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.studies-image
+{   width: 400px;
+    height: 400px;
+    border: solid 1px;
+    border-color: var(--color-borderImage);
+    border-radius: 25px;
+    /* Declaraciones para la animación de la Imagen */
+    transition: ease 0.25s;
+    transform: scale(1);
+    opacity: 100%;
+   /* Declaraciones para centrar la Imagen dentro del ImageContainer */
+    position: relative;
+    display: block;
+
+}
+
+.studies-text
+{   width: 400px;
+    height: 400px;
+    border: solid 1px;
+    border-radius: 25px;
+    font-family: var(--font-text);
+    font-size: var(--fontsize-texteducation);
+    color: var(--color-black);
+    padding: 0px;
+    /* Declaraciones para la animación del Texto */
+    background-color: #dfe9f3;
+    transition: opacity 0.125s ;
+    opacity: 0;
+    /* Declaraciones para centrar el Texto dentro del ImageContainer */    
+    position: absolute;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Efectos para cuando se coloca el mouse encima de la imagenes de Education*/
+/* Para la imagen (Utilizo la Clase) */
+.studies-imageContainer:hover .studies-image
+{ opacity: 10%;
+  transform: scale(0.8);
+
+} 
+
+/* Para el Texto (Utilizo el ID)*/
+.studies-imageContainer:hover #figcaption-studies
+{  opacity: 1;
+   transform: scale(0.8);
+
+} 
+
+.studies-institution, .studies-career, .studies-date
+{   margin: 0px;
+
+}
+
+/* ---------------------- Habilidades ---------------------- */ 
+#skills
+{   margin: 0px;
+    width: 100%;
+    height: 700px;
+    padding-top: 10px;  
+
+}
+
+.abilities
+{   margin: auto;
+    padding: 30px;
+    width: 600px;
+    height: auto;
+    text-align: center;
+    align-items: center;
+
+}
+
+
+.abilites-ul
+{   width: 600px;
+    height: auto;
+    padding: 0;
+    /* border: solid 1px;
+    border-radius: 25px;
+    border-color: var(--color-main); */
+    text-transform: uppercase; 
+    font-family: var(--font-text);
+    list-style: none; 
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+.abilities-li
+{   margin: 2px;
+    width: 600px;
+    height: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease 0.20s;
+    transform: scale(1);
+    border: solid 0px;
+   
+
+}
+
+.abilites-text
+{   width: 300px;   
+    height: 20px;
+    text-align: left;
+    
+}   
+
+.abilities-star
+{   width: 250px;
+    height: 20px;
+    text-align: right;
+
+}
+
+.glyphicon-star
+{   border: none;
+    color: var(--color-main);
+    
+
+}
+.glyphicon-star-empty
+{   border: none;
+    color: var(--color-grey);
+    
+}
+
+.abilities-li:hover
+{   transform: scale(1.05);
+    /* border: solid 1px; */
+    border-radius: 25px;
+    border-color: var(--color-main);
+    color: var(--color-main);
+    
+}
+
+/* ---------------------- Contacto ---------------------- */
+#contact
+{   width: auto;
+    height: 700px;
+    padding-top: 40px;  
+    
+}
+
+
+.getintouch-imageContainer
+{   margin: 0px;
+    padding: 30px;
+    width: 100%;
+    height: auto;
+    
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-align: center;
+    
+}
+
+.getintouch-social
+{   margin: 20px;
+    position: relative;
+    top: 70px;
+    bottom: 0px;
+    left: -100px;
+    right: 0px;
+    font-family: var(--font-text);
+    font-size: 20px;
+    color: var(--color-white);
+    
+}
+
+.getintouch-social-img
+{   width: 100px;
+    height: 100px;
+    transition: 0.3s all;
+
+   
+}
+
+.getintouch-social-img:hover
+{   transform: rotate(360deg);
+    color: var(--color-black);
+   
+      
+
+} 
+
