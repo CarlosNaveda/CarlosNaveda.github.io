@@ -1,0 +1,101 @@
+/* Mobile CSS */
+@media (max-width: 900px)
+{
+    /* ---------------------- Sobre Mi ---------------------- */
+    #about
+    {   margin: 0px;
+        height: auto;
+        padding: 0px;
+
+    }
+
+    .hero-main
+    {   padding-bottom: 20px;
+
+    }
+
+    .hero-about
+    {   display: inherit;
+        align-items: center;
+    }
+
+    .hero-imageContainer
+    {   width: auto;
+        text-align: center;
+
+    }
+
+    .hero-image
+    {   margin: 0px;
+
+    }
+
+    .hero-text
+    {   margin: auto;
+        padding: 20px 0px;
+        width: 75%;
+        padding: ;
+        justify-content: center;
+        /* text-align: center; */
+
+
+    }
+
+    /* ---------------------- Experiencia ---------------------- */
+    #experience
+    {   margin: 0px;
+        height: auto;
+    }
+
+    .jobs
+    {   display: inherit;
+        height: inherit;
+        width: auto;
+    }
+
+    /* ---------------------- Educación ---------------------- */
+    #education
+    {   height: auto;
+
+    }
+
+    /* ---------------------- Habilidades ---------------------- */
+    #skills
+    {   width: auto;
+
+    }
+
+
+    .abilites-ul
+    {   margin: auto;
+        width: auto;
+        display: inherit;
+
+    }
+
+   
+
+    .abilites-ul li
+    {   margin: auto;
+        width: auto;
+        padding: 0px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+
+    }
+  
+     .abilites-text
+    {   width: auto;
+
+    }
+
+    .abilities-star
+    {   width: auto; 
+
+
+    }
+    /* ---------------------- Contacto ---------------------- */
+
+}
