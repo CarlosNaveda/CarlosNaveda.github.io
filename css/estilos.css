@@ -1,25 +1,20 @@
 /* ---------------------- Variables Globales ---------------------- */
 :root
- {  /* --color-main: #685B6E; */
-    --color-main: #3678B4;
+ {  --color-main: #3678B4;
     --color-black: black;
     --color-white: white;
     --color-grey: #6a727d;
-    /* --color-stars: #C6AED1; */
     --color-borderImage: black;
 
-    
     --font-title: 'Permanent Marker';
     --font-text: 'Caveat';
-    
-    --fontsize-link: 15px;
+
     --fontsize-title: 35px;
     --fontsize-titleDescription: 25px;
-    --fontsize-textabout: 25px;
-    --fontsize-textjobs: 23px;
-    --fontsize-texteducation: 25px;
-
-    
+    --fontsize-textAbout: 25px;
+    --fontsize-textJobs: 23px;
+    --fontsize-textEducation: 25px;
+    --fontsize-textAbilities: 14px;
 }
 
 /* ---------------------- Estilos Generales ---------------------- */
@@ -112,7 +107,7 @@ html
     width: 500px;
     height: auto;
     font-family: var(--font-text);
-    font-size: var(--fontsize-textabout);
+    font-size: var(--fontsize-textAbout);
 
 }
 
@@ -170,7 +165,7 @@ html
     border: solid 1px;
     border-radius: 25px;
     font-family: var(--font-text);
-    font-size: var(--fontsize-textjobs);
+    font-size: var(--fontsize-textJobs);
     color: var(--color-black);
     
     /* Declaraciones para la animación del Texto */
@@ -272,7 +267,7 @@ html
     border: solid 1px;
     border-radius: 25px;
     font-family: var(--font-text);
-    font-size: var(--fontsize-texteducation);
+    font-size: var(--fontsize-textEducation);
     color: var(--color-black);
     padding: 0px;
     /* Declaraciones para la animación del Texto */
@@ -332,9 +327,6 @@ html
 {   width: 600px;
     height: auto;
     padding: 0;
-    /* border: solid 1px;
-    border-radius: 25px;
-    border-color: var(--color-main); */
     text-transform: uppercase; 
     font-family: var(--font-text);
     list-style: none; 
@@ -364,6 +356,7 @@ html
 .abilites-text
 {   width: 300px;   
     height: 20px;
+    font-size: var(--fontsize-textAbilities);
     text-align: left;
     
 }   
@@ -389,7 +382,6 @@ html
 
 .abilities-li:hover
 {   transform: scale(1.05);
-    /* border: solid 1px; */
     border-radius: 25px;
     border-color: var(--color-main);
     color: var(--color-main);

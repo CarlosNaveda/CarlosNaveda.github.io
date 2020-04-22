@@ -1,4 +1,15 @@
 /* Mobile CSS */
+:root
+ {  --fontsize-titleMobile: 25px;
+    --fontsize-titleDescriptionMobile: 20px;
+    --fontsize-textaboutMobile: 20px;
+    --fontsize-textjobsMobile: 20px;
+    --fontsize-texteducationMobile: 20px;
+    --fontsize-texteducationMobileSmall: 15px;
+    --fontsize-texteducationMobileXSmall: 12px;
+    
+}
+
 @media (max-width: 900px)
 {
     /* ---------------------- Sobre Mi ---------------------- */
@@ -9,9 +20,17 @@
 
     }
 
+    .title
+    {   margin: 20px auto;
+        width: auto;
+        height: auto;
+        font-size: var(--fontsize-titleMobile);
+
+    }
+
     .hero-main
     {   padding-bottom: 20px;
-
+        font-size: var(--fontsize-titleDescriptionMobile);
     }
 
     .hero-about
@@ -27,6 +46,8 @@
 
     .hero-image
     {   margin: 0px;
+        width: 250px;
+        height: 250px;
 
     }
 
@@ -36,8 +57,7 @@
         width: 75%;
         padding: ;
         justify-content: center;
-        /* text-align: center; */
-
+        font-size: var(--fontsize-textaboutMobile);
 
     }
 
@@ -47,16 +67,34 @@
         height: auto;
     }
 
+    #experience h1
+    {   margin-bottom: 30px;
+
+
+    }
+
+
     .jobs
     {   display: inherit;
         height: inherit;
         width: auto;
     }
 
+
+    .Jobs-text
+    {   font-size: var(--fontsize-textjobsMobile);
+
+
+    }
+
     /* ---------------------- Educación ---------------------- */
     #education
     {   height: auto;
 
+    }
+
+    .studies-text
+    {   font-size: var(--fontsize-texteducation);
     }
 
     /* ---------------------- Habilidades ---------------------- */
@@ -73,29 +111,165 @@
 
     }
 
-   
-
     .abilites-ul li
-    {   margin: auto;
-        width: auto;
+    {   width: auto;
         padding: 0px 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        
 
     }
-  
+
      .abilites-text
     {   width: auto;
 
     }
 
     .abilities-star
-    {   width: auto; 
+    {   width: auto;
 
 
     }
-    /* ---------------------- Contacto ---------------------- */
+
+    
+}
+
+@media (max-width: 450px)
+{
+     /* ---------------------- Sobre Mi ---------------------- */
+     .title
+     {   margin: 20px 0px;
+         width: auto;
+         height: auto;
+         font-size: var(--fontsize-titleMobile);
+
+     }
+
+     .hero-image
+     {
+         width: 200px;
+         height: 200px;
+
+     }
+
+    /* ---------------------- Educación ---------------------- */
+    #education
+    {   margin: 0px;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .studies
+    {   margin: 0px;
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    .studies-imageContainer
+    {   margin: inherit;
+        width: 100%;
+        height: 100%;
+
+    }
+
+
+    .studies-image
+    {   margin: 0px;
+        width: 100%;
+        height: 100%;
+        border: solid 1px;
+        border-color: var(--color-borderImage);
+        border-radius: 20px;
+    }
+
+    .studies-text
+    {   width: 95%;
+        height: 50%;
+        border: solid 1px;
+        border-radius: 20px;
+        font-size: var(--fontsize-texteducationMobileSmall);
+
+    }
 
 }
+
+
+@media (max-width: 400px)
+{
+     /* ---------------------- Sobre Mi ---------------------- */
+     .title
+     {   margin: 10px 0px;
+        
+     }
+
+     .hero-image
+     {
+         width: 150px;
+         height: 150px;
+
+     }
+
+      /* ---------------------- Educación ---------------------- */
+   
+    .studies-text
+    {   height: 40%;
+        
+    }
+
+    /* ---------------------- Habilidades ---------------------- */
+    #skills
+    {   width: 100%;
+        height: 100%;
+
+    }
+
+    .abilities
+    {   padding: 15px;
+        width: 90%;
+        height: 100%;
+        
+    }
+
+
+    .abilites-ul
+    {   width: 90%;
+        height: 100%;
+                   
+    
+    }
+
+    .abilities-li
+    {   margin-bottom: 20px;
+        padding: 0px;
+        width: 90%;
+        height: 20px;
+        display: flex;
+        flex-wrap: wrap;
+          
+
+    }
+
+    .abilites-text, .abilities-star
+    {  width: 90%;   
+       height: 20px;
+       font-size: 100%;
+       text-align: center;
+      
+        
+    }   
+
+
+
+}
+
+
+
+}
+
+
+
+
+
