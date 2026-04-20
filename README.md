@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# carlosnaveda.github.io
 
-## Getting Started
+Mi sitio web personal — Ingeniero de sistemas, creador de contenido y fundador de [ToNextAxis](https://www.youtube.com/@ToNextAxis).
 
-First, run the development server:
+> *Aprendo, construyo... y voy descubriendo el camino mientras avanzo.*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Website
+
+[carlosnaveda.github.io](https://carlosnaveda.github.io)
+
+---
+
+## Stack
+
+| Tecnología | Uso |
+|---|---|
+| [Next.js 16](https://nextjs.org/) | Framework principal |
+| [React 19](https://react.dev/) | UI |
+| [TypeScript](https://www.typescriptlang.org/) | Tipado estático |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Estilos |
+| [MDX](https://mdxjs.com/) | Contenido del blog |
+| [Lucide React](https://lucide.dev/) | Iconos |
+| [GitHub Pages](https://pages.github.com/) | Hosting (static export) |
+
+---
+
+## Estructura
+
+```
+carlosnaveda.github.io/
+├── app/
+│   ├── layout.tsx        # Layout global (fuentes, metadata)
+│   ├── page.tsx          # Página principal (Hero, Sobre mí, etc.)
+│   └── globals.css       # Estilos globales y variables de color
+├── public/               # Assets estáticos (imágenes, favicon)
+├── next.config.ts        # Configuración de Next.js (static export)
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Roadmap
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [x] Setup Next.js + Tailwind + GitHub Pages
+- [x] Sección Hero
+- [ ] Sección Sobre mí
+- [ ] Sección Experiencia
+- [ ] Sección ToNextAxis
+- [ ] Sección Contacto
+- [ ] Blog con MDX
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Cómo correrlo localmente
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Prerrequisitos:** Node.js 18+ y npm
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Clonar el repositorio
+git clone https://github.com/CarlosNaveda/CarlosNaveda.github.io.git
+cd CarlosNaveda.github.io
 
-## Deploy on Vercel
+# Instalar dependencias
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Correr en modo desarrollo
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+### Build para producción
+
+```bash
+npm run build
+```
+
+Genera la carpeta `/out` con los archivos estáticos listos para GitHub Pages.
+
+---
+
+## Contacto
+
+- YouTube: [@ToNextAxis](https://www.youtube.com/@ToNextAxis)
+- GitHub: [@carlosnaveda](https://github.com/CarlosNaveda)
+- Linkedin: [@carlosnavedam](https://www.linkedin.com/in/carlosnavedam/)
+- Correo: navedacarlosm@gmail.com 
