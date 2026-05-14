@@ -1,6 +1,7 @@
 # carlosnaveda.github.io
 
-Mi sitio web personal — Ingeniero de sistemas, creador de contenido y fundador de [ToNextAxis](https://www.youtube.com/@ToNextAxis).
+Mi sitio web personal — Ingeniero de sistemas y creador de contenido en [ToNextAxis](https://www.youtube.com/@ToNextAxis).
+Mi objetivo es aprender éstas tecnologías y de paso renovar mi página web.
 
 > *Aprendo, construyo... y voy descubriendo el camino mientras avanzo.*
 
@@ -41,36 +42,6 @@ carlosnaveda.github.io/
 
 ---
 
-## Roadmap
-
-- [x] Setup Next.js + Tailwind + GitHub Pages
-- [x] Sección Hero
-- [ ] Sección Sobre mí
-- [ ] Sección Experiencia
-- [ ] Sección ToNextAxis
-- [ ] Sección Contacto
-- [ ] Blog con MDX
-
----
-
-## Cómo correrlo localmente
-
-**Prerrequisitos:** Node.js 18+ y npm
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/CarlosNaveda/CarlosNaveda.github.io.git
-cd CarlosNaveda.github.io
-
-# Instalar dependencias
-npm install
-
-# Correr en modo desarrollo
-npm run dev
-```
-
-Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
-
 ### Build para producción
 
 ```bash
@@ -82,8 +53,7 @@ Genera la carpeta `/out` con los archivos estáticos listos para GitHub Pages.
 ---
 
 ## Contacto
-
 - YouTube: [@ToNextAxis](https://www.youtube.com/@ToNextAxis)
 - GitHub: [@carlosnaveda](https://github.com/CarlosNaveda)
-- Linkedin: [@carlosnavedam](https://www.linkedin.com/in/carlosnavedam/)
+- LinkedIn: [@carlosnavedam](https://www.linkedin.com/in/carlosnavedam/)
 - Correo: navedacarlosm@gmail.com 
