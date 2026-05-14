@@ -1,10 +1,30 @@
-@import "tailwindcss";
+@import "Tailwindcss";
 
 :root {
-  --background: #0A0A04;
-  --green: #9DFF9A;
-  --white: #E5E7EB;
-  --gray: #9CA3AF;
+  --titles: #7E7ADE;
+  --background: #12112B;  
+  --paragraph: #E5E7EB;
+  --sub-paragraph: #9CA3AF;
+  --cards: #181544;
+  --tag-background: #0E0E1B;
+  --tag_position-background: #A8A6F5;
+  --position: #000000;
+  --nodes_active: #6B68E8;
+  --timeline: #2E2C7A;
+  --nodes_inactive: #606071;
+  --selection: #434089;
+  --no-selection: #969696;
+  --icon: #A0A0B0;
+  --navbar-Background: #000000;
+  --comments: #565F89; 
+  --black: #000000;
+  --white: #FFFFFF;
+  --bg-gradient-color-one:#1F1060;
+  --bg-gradient-color-two:#1A1850;
+  --bg-gradient-color-three:#181544;
+  --bg-gradient-color-four:#0D1F2D;
+  --bg-gradient-color-five:#0F2A1A;
+  --bg-gradient-color-six:#2A0E4A;
 }
 
 * {
@@ -13,7 +33,15 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: var(--background);
+html, body {
+  background: 
+  radial-gradient(circle 600px at top right, var(--bg-gradient-color-one) 0%, transparent 100%), 
+  radial-gradient(circle 600px at top left, var(--bg-gradient-color-two) 0%, transparent 100%), 
+  radial-gradient(circle 800px at center, var(--bg-gradient-color-three) 0%, transparent 100%), 
+  radial-gradient(circle 900px at bottom left, var(--bg-gradient-color-four) 0%, transparent 100%), 
+  radial-gradient(circle 1500px at bottom right, var(--bg-gradient-color-five) 0%, transparent 100%), 
+  radial-gradient(circle 500px at bottom, var(--bg-gradient-color-six) 0%, transparent 100%),
+  var(--background); 
   color: var(--white);
 }
+

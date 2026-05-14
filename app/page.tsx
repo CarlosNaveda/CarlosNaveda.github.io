@@ -5,28 +5,30 @@ import { ChevronDown } from 'lucide-react';
 export default function Home() {
   return (    
     <main>
+      {/* Hero */}
       <section id="hero" className="min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">
-        <h1 className="text-4xl md:text-6xl font-bold" style={{color: 'var(--green)'}}>
+        <h1 className="text-4xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
           Hola, soy Carlos Naveda
         </h1>
-        <p className="text-lg md:text-2xl leading-relaxed" style={{color: 'var(--white)'}}>
+        <p className="text-lg md:text-3xl leading-relaxed" style={{color: 'var(--paragraph)'}}>
           Aprendo, construyo...<br />
-          <span className="text-[var(--gray)]">          
+          <span className="text-[var(--sub-paragraph)]">          
           y voy descubriendo el camino<br />
           mientras avanzo.
           </span>
         </p>
-        <button className="mt-8 animate-bounce" style={{color: 'var(--gray)'}}
+        <button className="mt-8 animate-bounce" style={{color: 'var(--sub-paragraph)'}}
           onClick={() => {
             const aboutSection = document.getElementById("about-me");
             if (aboutSection) {
               aboutSection.scrollIntoView({ behavior: "smooth" });
             }
         }}>
-          <ChevronDown size={32} />
+          <ChevronDown size={40} />
         </button>        
       </section> 
 
+      {/* About Me */}
       <section id="about-me" className="min-h-screen flex items-center justify-center gap-4 px-8">
         <h2 className="text-6xl max-w-xl w-full text-center " style={{color: 'var(--green)'}}>
           SOBRE MI <br />          
