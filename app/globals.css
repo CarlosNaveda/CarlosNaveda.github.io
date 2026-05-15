@@ -25,6 +25,7 @@
   --bg-gradient-color-four:#0D1F2D;
   --bg-gradient-color-five:#0F2A1A;
   --bg-gradient-color-six:#2A0E4A;
+  
 }
 
 * {
@@ -43,5 +44,7 @@ html, body {
   radial-gradient(circle 500px at bottom, var(--bg-gradient-color-six) 0%, transparent 100%),
   var(--background); 
   color: var(--white);
+  
+
 }
 

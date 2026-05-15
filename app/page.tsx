@@ -29,21 +29,28 @@ export default function Home() {
       </section> 
 
       {/* About Me */}
-      <section id="about-me" className="min-h-screen flex items-center justify-center gap-4 px-8">
-        <h2 className="text-6xl max-w-xl w-full text-center " style={{color: 'var(--green)'}}>
-          SOBRE MI <br />          
-        </h2>
-        <p className="text-lg max-w-2xl w-full text-left" style={{color: 'var(--white)'}}>
+      <section id="sobre-mi" className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+        <div className="max-w-2xl w-full flex flex-col gap-1">
+          <h2 className="text-6xl" style={{color: 'var(--titles)'}}>
+          Sobre mí
+          </h2>        
+          <h3 className="text-xl italic" style={{color: 'var(--titles)'}}>
+          y sobre lo que viene.
+          </h3>    
+        </div>        
+
+        <p className="text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>
           
-          Soy alguien que suele mirar más hacia adentro, pero con una necesidad constante de compartir lo que voy aprendiendo. <br />
-          Me interesa la tecnología, no solo por lo que es, sino por lo que permite construir. <br /><br />
+          Soy alguien que suele mirar más hacia adentro, pero con una necesidad constante de compartir hacia afuera lo que voy aprendiendo.<br />
+          Me apasiona la tecnología, siento que no me imagino haciendo nada que no esté relacionado con ello, no solo por lo que es, sino por lo que permite construir.<br /><br />
 
-          Actualmente estoy desarrollando ToNextAxis, un espacio donde documento lo que voy aprendiendo y exploro la creación de contenido audiovisual. <br />
-          Ha sido una de las decisiones más importantes que he tomado. <br /> <br />
+          Actualmente estoy desarrollando ToNextAxis, un espacio donde documento lo que voy aprendiendo y exploro la creación de contenido audiovisual.<br />
+          Ha sido una de las decisiones más importantes que he tomado porque me permite aprender haciendo temas como guión, narrativa, edición usando la creatividad.<br /><br />
 
-          En paralelo, sigo fortaleciendo mis habilidades en QA Automation e Ingeniería, construyendo una base más sólida para lo que venga. <br />
-          No sé exactamente a dónde lleva todo esto… y está bien.<br /> <br />
-          Pero sé que estoy avanzando en la dirección correcta. <br />
+          En paralelo, sigo fortaleciendo mis habilidades en QA Automation e ingeniería, construyendo una base más sólida para lo que se viene más adelante.<br /><br />
+
+          Sé que todos estos skills confluirán en algo muy gratificante en un mediano plazo, que las cosas no sean inmediatas no quiere decir que no sucederán y eso está bien, voy en mi dirección.
+          
         </p>
       </section>
 
