@@ -17,12 +17,12 @@ const JobCard = ({job, lastJobIndex}: {job: jobType, lastJobIndex: number}) =>{
                 </hr>
             </div>
             <div className="job-card flex flex-col gap-4 mt-8 row-start-1" style={{gridColumnStart: moduleIndex === 'even' ? 3 : 1, justifySelf: moduleIndex === 'even' ? 'start' : 'end'}} onMouseLeave={() => setState(false)}>
-                <div className="job-card-base" onMouseEnter={() => setState(true)}>
+                <div className="job-card-base flex flex-col gap-2" onMouseEnter={() => setState(true)}>
                     <time className="dateRange text-base flex flex-row gap-2" style={{color: 'var(--paragraph)',fontWeight: 'bold'}}>
                         <Calendar />              
                         {job.start} - {job.end}
                     </time>   
-                    <div className="logoCompany-role flex flex-row items-center justify-content gap-4"> 
+                    <div className="logoCompany-role flex flex-row items-center justify-content gap-4 gap-y-4">   
                         <h4 className="logoCompany text-lg flex flex-row items-center gap-2" style={{color: 'var(--paragraph)', fontWeight: 'bold'}}>              
                             <Image 
                                 className="jobs-logo"

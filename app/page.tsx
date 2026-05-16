@@ -190,18 +190,18 @@ export default function Home() {
         </section>
       </div>
 
-
-
-
-
-
-
-
         {/* ToNextAxis */}
         <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
           <Title title={mapTitles[2]} />
             {buttonBounceGoTo(mapSections['Blog'])}  
         </section>
+
+
+
+
+
+
+
 
         {/* Blog */}
         <section id={mapSections['Blog']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
