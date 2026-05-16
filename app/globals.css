@@ -63,8 +63,7 @@ html, body {
 }
 
 .jobs-card-expanded {      
-  transition: opacity 0.2s ease-in-out;
-  
+  transition: opacity 0.2s ease-in-out;  
 }
 
 
