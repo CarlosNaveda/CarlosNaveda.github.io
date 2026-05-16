@@ -1,9 +1,9 @@
-interface Title {
+interface titleType {
     index: number;
     title: string;
     annotation: string;    
 }
 
-export default Title;
+export default titleType;
 
 

@@ -1,4 +1,4 @@
-interface JobType {
+interface jobType {
     index: number;
     start: string;
     end: string;
@@ -9,6 +9,6 @@ interface JobType {
     tags: string[];
 }
 
-export default JobType;
+export default jobType;
 
 

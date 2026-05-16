@@ -5,7 +5,7 @@
   --background: #12112B;  
   --paragraph: #E5E7EB;
   --sub-paragraph: #9CA3AF;
-  --cards: #181544;
+  --cards: #100e22;
   --tag-background: #0E0E1B;
   --tag_position-background: #A8A6F5;
   --position: #000000;
@@ -48,42 +48,76 @@ html, body {
 
 }
 
+.job-page{
+    width: 100%; 
+    height: auto;
+}
+
+.node-job-card{  
+    width: 1000px;  
+    height: auto;    
+} 
+
+
+.node{  
+  width: 20px;       
+  height: 20px;          
+  border-radius: 50%; 
+  display: flex;        
+  font-weight: bold;
+  position: relative;  
+} 
+
+.timeline {     
+  width: 4px; 
+  height: 210px;  
+  border: none; 
+  background-color: var(--timeline); 
+  position: absolute; 
+  left: 8px; 
+  top: 20px;
+  position: absolute;
+}
+
 .jobs-logo {  
   border-radius: 50%; 
   object-fit: cover; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
 
-.jobs-card {
-  width: 30%;
+.job-card {
+  width: 450px; 
   background-color: var(--cards);
   border-radius: 12px;
   padding: 16px;
   box-shadow: 20px 4px 8px rgba(0,0,0,0.1);
 }
 
-.jobs-card-expanded {      
+.job-card-expanded {      
   transition: opacity 0.2s ease-in-out;  
 }
 
-
-
 .role {  
   background-color: var(--tag_position-background); 
-  color: var(--position);   
+  color: var(--position);    
   border-radius: 8px;
   padding: 4px 8px;       
   margin-right: auto;
   text-align: center;  
 }
 
-.jobs-tags {
+.job-tags {
   background-color: var(--tag-background);   
   border-radius: 8px;
   padding: 4px 8px; 
   text-align: center;  
   margin-bottom: auto;   
   
+}
+
+.empty-space{
+  width: 0;
+  height: 0;  
 }
 
 

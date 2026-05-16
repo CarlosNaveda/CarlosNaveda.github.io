@@ -63,7 +63,7 @@ const mapJobs = [
     start: "Feb 2019",
     end: "Nov 2024",
     logo: "/images/jobs/tata.jpg",
-    company: "Tata Consultancy Services",
+    company: "TCS Perú",
     role: "IT Analyst",
     description: "Analista de calidad en Digital Factory de Scotiabank Perú, asegurando la calidad de la plataforma de Banca por Internet Web y App.",
     tags: ["Quality Assurance", "AS400", "SQL Server", "DB2", "Jira", "Confluence", "Jenkins", "JFrog", "Bitbucket", "WebSphere", "Metodologías Ágiles"]
@@ -73,7 +73,7 @@ const mapJobs = [
     start: "Nov 2017",
     end: "Feb 2019",
     logo: "/images/jobs/ses.jpg",
-    company: "Software Enterprise Services",
+    company: "SES",
     role: "Quality Analyst",
     description: "Analista de calidad en proyectos Digital Factory y Latam CREO de Scotiabank Perú, trabajando con metodologías ágiles y clásicas.",
     tags: ["Quality Assurance", "AS400", "SQL Server", "DB2", "Jira", "Confluence", "Metodologías Ágiles"]
@@ -119,6 +119,9 @@ const mapJobs = [
     tags: ["Quality Assurance", "PL/SQL", "Unix", "COBOL", "JCL", "OS/390"]
   }
 ];
+
+const lastJobIndex = mapJobs[mapJobs.length - 1].index;
+
 
 //FUNCIONES
 
@@ -179,22 +182,33 @@ export default function Home() {
       </section>
 
       {/* Experiencia */}
-      <section id={mapSections['Experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
-        <Title title={mapTitles[1]} />
-        {mapJobs.map((job) => (<JobCard key={job.index} job={job} />))}    
-        {buttonBounceGoTo(mapSections['ToNextAxis'])}  
-      </section>
+      <div className="job-page flex flex-col">  
+         <section id={mapSections['Experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+          <Title title={mapTitles[1]} />
+          {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} />))}    
+          {buttonBounceGoTo(mapSections['ToNextAxis'])}  
+        </section>
+      </div>
 
-      {/* ToNextAxis */}
-      <section id={mapSections['Experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
-        <Title title={mapTitles[2]} />
-         {buttonBounceGoTo(mapSections['Blog'])}  
-      </section>
 
-      {/* Blog */}
-      <section id={mapSections['Blog']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
-        <Title title={mapTitles[3]} />           
-      </section>
+
+
+
+
+
+
+        {/* ToNextAxis */}
+        <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+          <Title title={mapTitles[2]} />
+            {buttonBounceGoTo(mapSections['Blog'])}  
+        </section>
+
+        {/* Blog */}
+        <section id={mapSections['Blog']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+          <Title title={mapTitles[3]} />           
+        </section>
+      
+       
 
 
     </main>    

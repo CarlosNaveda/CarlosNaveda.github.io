@@ -1,7 +1,7 @@
-import TitleType from './TitleType';
+import titleType from './titleType';
 
 
-const Title = ({title}: {title: TitleType}) =>{
+const Title = ({title}: {title: titleType}) =>{
    return (
         <div className="max-w-2xl w-full flex flex-col gap-1">
           <h2 className="text-6xl" style={{color: 'var(--titles)'}}>
