@@ -3,9 +3,13 @@
 import { ChevronDown} from 'lucide-react';
 import Title from '../src/components/Title/Title';
 import JobCard from '../src/components/Job/JobCard';
+import ToNextAxisButton from '../src/components/Button/ToNextAxisButton';
+import ToNextAxisIframeVideos from '../src/components/IFrame/ToNextAxisIframeVideos';
+import Image from 'next/image';
 
 
 //VARIABLES
+
 const mapSections = {
   'Inicio': 'hero',
   'Sobre mí': 'sobre-mi',
@@ -122,6 +126,54 @@ const mapJobs = [
 
 const lastJobIndex = mapJobs[mapJobs.length - 1].index;
 
+const mapVideos = [
+  {
+    index: 0,
+    source: "https://www.youtube.com/embed/XM-ZSlUM8tY",
+    title: "Proyecto Fansubpy | Tributo FC Barcelona"    
+  },
+  {
+    index: 1,
+    source: "https://www.youtube.com/embed/9PxTNr6rF9Y",
+    title: "La IA recuerda solo lo que cabe en su contexto — Serie IA #4"    
+  },
+  {
+    index: 2,
+    source: "https://www.youtube.com/embed/reugFL2iy2E",
+    title: "Cuando le escribes a la IA estás gastando tokens — Serie IA #3"    
+  },
+  {
+    index: 3,
+    source: "https://www.youtube.com/embed/4mJSiV53vfQ",
+    title: "Filtración de Claude Code"    
+  },
+  {
+    index: 4,
+    source: "https://www.youtube.com/embed/qRhye8g8HPc",
+    title: "Es importante saber cómo pedirle las cosas a la IA — Serie IA #2"    
+  },
+  {
+    index: 5,
+    source: "https://www.youtube.com/embed/8kjxS0aFqCQ",
+    title: "Analicé 2694 candidatos con IA… esto fue lo que encontré | Perú 2026"    
+  },
+  {
+    index: 6,
+    source: "https://www.youtube.com/embed/9dDvshOVR3o",
+    title: "Cómo jugar Wolfenstein 3D y Spear of Destiny en PC moderna (ECWolf)"    
+  },
+  {
+    index: 7,
+    source: "https://www.youtube.com/embed/KvSNziCcDDk",
+    title: "¿Cómo elegir un monitor según tu uso (Productividad, Edición, Gaming o Competitivo)?"    
+  },
+  {
+    index: 8,
+    source: "https://www.youtube.com/embed/ECg2o7k36TU",
+    title: "¿Vale la pena el Stream Deck Neo? Casos de uso reales paso a paso"    
+  }
+];
+
 
 //FUNCIONES
 
@@ -139,8 +191,6 @@ export function buttonBounceGoTo(section: string) {
       </button>        
   );
 }
-
-
 
 
 //COMPONENTE PRINCIPAL
@@ -191,10 +241,31 @@ export default function Home() {
       </div>
 
         {/* ToNextAxis */}
-        <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
-          <Title title={mapTitles[2]} />
-            {buttonBounceGoTo(mapSections['Blog'])}  
-        </section>
+        <div className="toNextAxis-page flex flex-col">
+          <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced" style={{position: 'relative'}}>
+            <Title title={mapTitles[2]} /> 
+            <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={1200} height={1200}/>
+            <div className="toNextAxis-text-button-videos flex flex-row items-center justify-center gap-12">
+              <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 max-w-3xl">            
+                  <p className="text-xl max-w-md w-full text-justify" style={{color: 'var(--paragraph)'}}>          
+                    ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
+
+                    Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
+
+                    Dale un vistazo, de seguro algo te va a servir. Últimos videos 👉🏻<br />            
+                  </p>
+                  <ToNextAxisButton />             
+              </div>
+              <div className="toNextAxis-videos grid grid-cols-3 items-center justify-center gap-6 max-w-5xl">
+                {mapVideos.map((video) => (
+                  <ToNextAxisIframeVideos key={video.index} video={video} />
+                ))}                
+              </div>
+            </div>    
+              {buttonBounceGoTo(mapSections['Blog'])}  
+          </section>
+        </div>
+          
 
 
 
