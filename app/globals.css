@@ -48,3 +48,43 @@ html, body {
 
 }
 
+.jobs-logo {  
+  border-radius: 50%; 
+  object-fit: cover; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.jobs-card {
+  width: 30%;
+  background-color: var(--cards);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 20px 4px 8px rgba(0,0,0,0.1);
+}
+
+.jobs-card-expanded {      
+  transition: opacity 0.2s ease-in-out;
+  
+}
+
+
+
+.role {  
+  background-color: var(--tag_position-background); 
+  color: var(--position);   
+  border-radius: 8px;
+  padding: 4px 8px;       
+  margin-right: auto;
+  text-align: center;  
+}
+
+.jobs-tags {
+  background-color: var(--tag-background);   
+  border-radius: 8px;
+  padding: 4px 8px; 
+  text-align: center;  
+  margin-bottom: auto;   
+  
+}
+
+
