@@ -8,7 +8,7 @@ import ToNextAxisIframeVideos from '../src/components/IFrame/ToNextAxisIframeVid
 import Image from 'next/image';
 import Carousel from '../src/components/Carousel/Carousel';
 import Link from 'next/link'
-
+import mapPosts from '../src/data/posts';
 
 //VARIABLES
 
@@ -176,40 +176,6 @@ const mapVideos = [
   }
 ];
 
-const mapPosts = [
-  {
-    index: 0,
-    imageSource: "/images/blog/Autolayout.jpg",
-    publishDate: new Date("2026-05-09"),
-    tag: "UI",
-    title: "Domina Auto Layout",
-    shortDescription: "Aprende cómo usar Auto Layout para crear interfaces más ordenadas, adaptables y fáciles de mantener en Figma. Un enfoque práctico para mejorar tu flujo de diseño y prototipado." 
-  },
-  {
-    index: 1,
-    imageSource: "/images/blog/Selenium.avif",
-    publishDate: new Date("2026-03-11"),
-    tag: "QA",
-    title: "Mis primeros pasos con Selenium",
-    shortDescription: "Cómo configuré mi primer proyecto de automatización desde cero, los errores que cometí y lo que aprendí en el proceso." 
-  },
-  {
-    index: 2,
-    imageSource: "/images/blog/LLM.jpg",
-    publishDate: new Date("2026-02-22"),
-    tag: "IA",
-    title: "¿Qué es un LLM y por qué debería importarte?",
-    shortDescription: "Explicación sin tecnicismos de cómo funcionan los modelos de lenguaje y por qué están cambiando la forma en que trabajamos." 
-  },
-  {
-    index: 3,
-    imageSource: "/images/blog/Git.avif",
-    publishDate: new Date("2026-01-02"),
-    tag: "DEV",
-    title: "Git para los que siempre olvidan los comandos",
-    shortDescription: "Los comandos que uso el 90% del tiempo, explicados como me hubiera gustado que me los explicaran cuando empecé." 
-  },
-];
 
 
 //FUNCIONES
@@ -283,7 +249,7 @@ export default function Home() {
         <div className="toNextAxis-page flex flex-col">
           <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>
             <Title title={mapTitles[2]} /> 
-            <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={600} height={600}/>
+            <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400}/>
             <div className="toNextAxis-text-button-videos flex flex-row items-center justify-center gap-12">
               <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 max-w-3xl">            
                   <p className="text-xl max-w-md w-full text-justify" style={{color: 'var(--paragraph)'}}>          
@@ -311,8 +277,6 @@ export default function Home() {
           {<Carousel posts={mapPosts} />}
           <Link className="blog-link text-xl" href="/blog">Ir al blog 🗒️</Link> 
         </section>
-      
-       
 
 
     </main>    

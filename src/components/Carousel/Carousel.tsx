@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import PostType from "./PostType";
+import PostType from "../Post/PostType";
 import Image from 'next/image';
 import formatDateToString from '@/src/utils/formatDate';
 import {ChevronLeft, ChevronRight } from 'lucide-react';
