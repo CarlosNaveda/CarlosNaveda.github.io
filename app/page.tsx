@@ -1,12 +1,13 @@
 'use client';
 
-import { ChevronDown} from 'lucide-react';
+import {ChevronDown} from 'lucide-react';
 import Title from '../src/components/Title/Title';
 import JobCard from '../src/components/Job/JobCard';
 import ToNextAxisButton from '../src/components/Button/ToNextAxisButton';
 import ToNextAxisIframeVideos from '../src/components/IFrame/ToNextAxisIframeVideos';
 import Image from 'next/image';
 import Carousel from '../src/components/Carousel/Carousel';
+import Link from 'next/link'
 
 
 //VARIABLES
@@ -213,21 +214,23 @@ const mapPosts = [
 
 //FUNCIONES
 
-//Este componente es un botón con animación de rebote que, al hacer clic, desplaza suavemente la vista hacia la sección especificada por el ID.
-export function buttonBounceGoTo(section: string) { 
+/**
+ * Botón con ícono ChevronDown animación de rebote, al hacer clic, desplaza suavemente la vista hacia la sección especificada por el ID.
+ * @param {sectionID} sectionID - ID de la sección a desplazar. 
+*/
+export function buttonChevronDown(sectionID: string) { 
   return (
-    <button className="mt-8 animate-bounce" style={{color: 'var(--paragraph)'}}
+      <button className="mt-8 animate-bounce" style={{color: 'var(--paragraph)'}}
           onClick={() => {
-            const aboutSection = document.getElementById(section);
+            const aboutSection = document.getElementById(sectionID);
             if (aboutSection) {
               aboutSection.scrollIntoView({ behavior: "smooth" });
             }
-        }}>
+          }}>
           <ChevronDown size={40} />
       </button>        
   );
 }
-
 
 //COMPONENTE PRINCIPAL
 export default function Home() {
@@ -245,7 +248,7 @@ export default function Home() {
           mientras avanzo.
           </span>
         </p>
-        {buttonBounceGoTo(mapSections['Sobre mí'])}           
+        {buttonChevronDown(mapSections['Sobre mí'])}           
       </section> 
 
       {/* Sobre mí */}
@@ -264,7 +267,7 @@ export default function Home() {
           Sé que todos estos skills confluirán en algo muy gratificante en un mediano plazo, y que los resultados no son inmediatos, hay un proceso y eso está bien, voy en mi dirección.
           
         </p>
-        {buttonBounceGoTo(mapSections['Experiencia'])}  
+        {buttonChevronDown(mapSections['Experiencia'])}  
       </section>
 
       {/* Experiencia */} 
@@ -272,7 +275,7 @@ export default function Home() {
          <section id={mapSections['Experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
           <Title title={mapTitles[1]} />
           {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} />))}    
-          {buttonBounceGoTo(mapSections['ToNextAxis'])}  
+          {buttonChevronDown(mapSections['ToNextAxis'])}  
         </section>
       </div>
 
@@ -298,7 +301,7 @@ export default function Home() {
                 ))}                
               </div>
             </div>    
-              {buttonBounceGoTo(mapSections['Blog'])}  
+              {buttonChevronDown(mapSections['Blog'])}  
           </section>
         </div>
           
@@ -306,7 +309,7 @@ export default function Home() {
         <section id={mapSections['Blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
           <Title title={mapTitles[3]} />
           {<Carousel posts={mapPosts} />}
-          {buttonBounceGoTo(mapSections['Inicio'])}           
+          <Link className="blog-link text-xl" href="/blog">Ir al blog 🗒️</Link> 
         </section>
       
        
