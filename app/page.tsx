@@ -216,7 +216,7 @@ const mapPosts = [
 //Este componente es un botón con animación de rebote que, al hacer clic, desplaza suavemente la vista hacia la sección especificada por el ID.
 export function buttonBounceGoTo(section: string) { 
   return (
-    <button className="mt-8 animate-bounce" style={{color: 'var(--sub-paragraph)'}}
+    <button className="mt-8 animate-bounce" style={{color: 'var(--paragraph)'}}
           onClick={() => {
             const aboutSection = document.getElementById(section);
             if (aboutSection) {
@@ -240,7 +240,7 @@ export default function Home() {
         </h1>
         <p className="text-lg md:text-3xl leading-relaxed" style={{color: 'var(--paragraph)'}}>
           Aprendo, construyo...<br />
-          <span className="text-[var(--sub-paragraph)]">          
+          <span className="text-[var(--paragraph)]">          
           y voy descubriendo el camino<br />
           mientras avanzo.
           </span>
