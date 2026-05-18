@@ -1,7 +1,7 @@
-interface iframeVideos {
+interface IframeVideos {
     index: number;
     source: string;
     title: string;
 }
 
-export default iframeVideos;
+export default IframeVideos;

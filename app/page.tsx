@@ -6,6 +6,7 @@ import JobCard from '../src/components/Job/JobCard';
 import ToNextAxisButton from '../src/components/Button/ToNextAxisButton';
 import ToNextAxisIframeVideos from '../src/components/IFrame/ToNextAxisIframeVideos';
 import Image from 'next/image';
+import Carousel from '../src/components/Carousel/Carousel';
 
 
 //VARIABLES
@@ -174,6 +175,41 @@ const mapVideos = [
   }
 ];
 
+const mapPosts = [
+  {
+    index: 0,
+    imageSource: "/images/blog/Autolayout.jpg",
+    publishDate: new Date("2026-05-09"),
+    tag: "UI",
+    title: "Domina Auto Layout",
+    shortDescription: "Aprende cómo usar Auto Layout para crear interfaces más ordenadas, adaptables y fáciles de mantener en Figma. Un enfoque práctico para mejorar tu flujo de diseño y prototipado." 
+  },
+  {
+    index: 1,
+    imageSource: "/images/blog/Selenium.avif",
+    publishDate: new Date("2026-03-11"),
+    tag: "QA",
+    title: "Mis primeros pasos con Selenium",
+    shortDescription: "Cómo configuré mi primer proyecto de automatización desde cero, los errores que cometí y lo que aprendí en el proceso." 
+  },
+  {
+    index: 2,
+    imageSource: "/images/blog/LLM.jpg",
+    publishDate: new Date("2026-02-22"),
+    tag: "IA",
+    title: "¿Qué es un LLM y por qué debería importarte?",
+    shortDescription: "Explicación sin tecnicismos de cómo funcionan los modelos de lenguaje y por qué están cambiando la forma en que trabajamos." 
+  },
+  {
+    index: 3,
+    imageSource: "/images/blog/Git.avif",
+    publishDate: new Date("2026-01-02"),
+    tag: "DEV",
+    title: "Git para los que siempre olvidan los comandos",
+    shortDescription: "Los comandos que uso el 90% del tiempo, explicados como me hubiera gustado que me los explicaran cuando empecé." 
+  },
+];
+
 
 //FUNCIONES
 
@@ -198,7 +234,7 @@ export default function Home() {
   return (    
     <main>
       {/* Hero */}
-      <section id={mapSections['Inicio']} className="min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">
+      <section id={mapSections['Inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">
         <h1 className="text-4xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
           Hola, soy Carlos Naveda
         </h1>
@@ -213,7 +249,7 @@ export default function Home() {
       </section> 
 
       {/* Sobre mí */}
-      <section id={mapSections['Sobre mí']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+      <section id={mapSections['Sobre mí']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
         <Title title={mapTitles[0]} />
         <p className="text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>
           
@@ -231,9 +267,9 @@ export default function Home() {
         {buttonBounceGoTo(mapSections['Experiencia'])}  
       </section>
 
-      {/* Experiencia */}
+      {/* Experiencia */} 
       <div className="job-page flex flex-col">  
-         <section id={mapSections['Experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+         <section id={mapSections['Experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
           <Title title={mapTitles[1]} />
           {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} />))}    
           {buttonBounceGoTo(mapSections['ToNextAxis'])}  
@@ -242,7 +278,7 @@ export default function Home() {
 
         {/* ToNextAxis */}
         <div className="toNextAxis-page flex flex-col">
-          <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced" style={{position: 'relative'}}>
+          <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>
             <Title title={mapTitles[2]} /> 
             <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={1200} height={1200}/>
             <div className="toNextAxis-text-button-videos flex flex-row items-center justify-center gap-12">
@@ -266,17 +302,11 @@ export default function Home() {
           </section>
         </div>
           
-
-
-
-
-
-
-
-
         {/* Blog */}
-        <section id={mapSections['Blog']} className="min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
-          <Title title={mapTitles[3]} />           
+        <section id={mapSections['Blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
+          <Title title={mapTitles[3]} />
+          {<Carousel posts={mapPosts} />}
+          {buttonBounceGoTo(mapSections['Inicio'])}           
         </section>
       
        
