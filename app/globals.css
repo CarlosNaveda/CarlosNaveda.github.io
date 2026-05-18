@@ -147,12 +147,48 @@ html, body {
   border-radius: 50%;
   object-fit: cover;    
   opacity: 10;  
-  bottom: 55%;    
-  left: 60%;    
-  position: absolute;       
+  top: 30%;    
+  left: 15%;     
+  position: absolute;        
   opacity: 0.2;
 
 }
+
+.toNextAxis-last-videos{
+  pointer-events: none;
+}
+
+.toNextAxis-video-modal{
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.toNextAxis-video-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+}
+
+.toNextAxis-video-selected{
+  position: relative;
+  width: 80vw;
+  height: 45vw;
+  max-width: 1200px;
+  max-height: 700px;
+  border: none;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+
+
 
 /* BLOG */
 
