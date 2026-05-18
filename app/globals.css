@@ -62,7 +62,7 @@ html, body {
 
 .node-job-card{  
     width: 1000px;  
-    height: auto;    
+    height: 80px;    
 } 
 
 
@@ -147,8 +147,8 @@ html, body {
   border-radius: 50%;
   object-fit: cover;    
   opacity: 10;  
-  bottom: 40%; 
-  left: 50%;  
+  bottom: 55%;    
+  left: 60%;    
   position: absolute;       
   opacity: 0.2;
 

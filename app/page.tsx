@@ -280,7 +280,7 @@ export default function Home() {
         <div className="toNextAxis-page flex flex-col">
           <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>
             <Title title={mapTitles[2]} /> 
-            <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={1200} height={1200}/>
+            <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={600} height={600}/>
             <div className="toNextAxis-text-button-videos flex flex-row items-center justify-center gap-12">
               <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 max-w-3xl">            
                   <p className="text-xl max-w-md w-full text-justify" style={{color: 'var(--paragraph)'}}>          
