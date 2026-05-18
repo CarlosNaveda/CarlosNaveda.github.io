@@ -12,7 +12,7 @@ const JobCard = ({job, lastJobIndex}: {job: JobType, lastJobIndex: number}) =>{
    
     return (
         <div className="node-job-card grid grid-cols-[1fr_auto_1fr] gap-4 items-center ">              
-            <div className="node row-start-1 col-start-2" style={{backgroundColor: state ? 'var(--nodes_active)' : 'var(--nodes_inactive)'}} onMouseEnter={() => setState(true)} onMouseLeave={() => setState(false)}>
+            <div className="node row-start-1 col-start-2" style={{backgroundColor: state ? 'var(--nodes_active)' : 'var(--nodes_inactive)'}}>
                 <hr className="timeline" style={{opacity: lastJobIndex === job.index ? 0 : 1}}> 
                 </hr>
             </div>
