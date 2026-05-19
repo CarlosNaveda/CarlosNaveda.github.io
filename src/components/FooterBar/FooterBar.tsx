@@ -32,7 +32,7 @@ export default function FooterBar() {
             </nav>
             <div className='footer-text flex flex-col items-center justify-center'>
                 <p style={{color: '#888888'}}>
-                    Diseñado y construido desde cero con Figma, Next.js, Tailwind CSS, MDX y Supabase, y desplegado en Vercel.<br/>
+                    Diseñado y construido desde cero con Figma, Next.js, Tailwind CSS, MDX, Supabase y desplegado en Vercel.<br/>
                     Este espacio crecerá conmigo mientras continúe aprendiendo, documentando y creando nuevas ideas.<br/>
                     © 2026 Carlos Naveda
                 </p>                
