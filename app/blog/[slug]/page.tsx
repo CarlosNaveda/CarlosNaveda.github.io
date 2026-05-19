@@ -22,24 +22,24 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
     return (    
     <main>
         {post && ( //Si el post existe
-             <div className="blog-slug">
-                  <div className='blog-slug-content min-h-screen flex flex col items-center justify-center gap-4'>
-                    <title>{post.title}</title>                    
-                    <h2>{postCreated} {formatDateToString(post.publishDate)}</h2>
-                    <Image src={post.imageSource} alt={post.title} className="post-preview-image object-cover" width={image_width} height={image_height}/>
-                    <p>{post.content}</p>
-                </div>
-                <div className="index-content">
-                    <h2>{indexContent}</h2>
-                    <ul>
-                        {post.tableOfContents.map((tableOfContent) => (
-                            <li key={post.index}>
-                              {tableOfContent.title}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-             </div>             
+               <div className="blog-slug flex flex-row items-center justify-center gap-10"> 
+                   <div className='blog-slug-content min-h-screen flex flex-col items-left justify-center gap-2'> 
+                      <h1 className='blog-slug-title'>{post.title}</h1>
+                      <h2 className='blog-slug-created'>{postCreated} {formatDateToString(post.publishDate)}</h2>
+                      <Image src={post.imageSource} alt={post.title} className="post-image object-cover" width={image_width} height={image_height}/>
+                      <p className='content'>{post.content}</p>
+                   </div>
+                   <div className="index-content self-start">
+                      <h2 className='index-content-title'>{indexContent}</h2>
+                       <ul className="index-content-list">
+                          {post.tableOfContents.map((tableOfContent) => (
+                              <li key={tableOfContent.index} className="marker:text-[#7E7ADE]" style={{listStyle: "square"}}>
+                                {tableOfContent.title}
+                              </li>
+                          ))}
+                       </ul>
+                   </div>
+               </div>             
         )}
     </main>     
   );

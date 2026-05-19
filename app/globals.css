@@ -25,7 +25,7 @@
   --bg-gradient-color-three:#181544;
   --bg-gradient-color-four:#0D1F2D;
   --bg-gradient-color-five:#0F2A1A;
-  --bg-gradient-color-six:#2A0E4A;
+  --bg-gradient-color-six:#2A0E4A;   
   
 }
 
@@ -350,3 +350,47 @@ html, body {
   object-fit: cover; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);    
 }
+
+/* BLOG SLUG */
+.blog-slug-content{
+  width: 600px;  
+  height: 600px; 
+}
+
+.blog-slug-title{
+  font-size: 40px;
+  font-weight: bold;  
+  color: var(--titles);
+}
+
+.blog-slug-created{ 
+  font-style: italic;
+  color: var(--sub-paragraph);
+}
+
+.post-image{ 
+  width: 100%; 
+  height: 300px;    
+  object-fit: cover;   
+}
+
+.content{
+  text-align: justify;
+}
+
+.index-content{
+  padding-top: 400px;  
+  text-wrap: var(--nodes_inactive);
+}
+
+.index-content-title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px; 
+  color: var(--paragraph);
+}
+
+.index-content-list {
+  position: sticky;
+  top: 2rem;
+} 
