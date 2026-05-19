@@ -9,9 +9,14 @@ export default function BlogMain() {
         <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-4 px-8 text-balanced">
             <h2 className='title-filter text-4xl'>Filtrar por tag: </h2>
             <input type="text" id="blog-input-filter" placeholder="Ingresa un tag"/><hr />
-            <div className='blog-tags flex flex-row items-center justify-center center gap-2'>
+            <div className='blog-tags flex flex-col items-center justify-center center gap-2'>
                 {mapPosts.map((post) => (               
-                 <small key={post.index} className='tag-to-filter'>{post.tag}</small>                    
+                 <small key={post.index} className='flex flex-row items-center justify-center center gap-2'> 
+                    {post.tag.map((tag) => (
+                        <span key={tag} className='tag-to-filter'>{tag}</span>
+                    ))
+                    }
+                 </small>                    
                  ))
                 }
             </div><hr /> 
