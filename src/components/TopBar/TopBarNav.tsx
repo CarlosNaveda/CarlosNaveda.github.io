@@ -5,14 +5,8 @@ import { FaYoutube, FaGithub, FaLinkedin} from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 import mapSections from '@/src/data/sections';
+import mapLinks from '@/src/data/socialLinks';
 
-const mapLinks = {
-    'Youtube': 'https://www.youtube.com/@ToNextAxis',
-    'Github': 'https://github.com/CarlosNaveda',
-    'Linkedin': 'https://www.linkedin.com/in/carlosnavedam/',
-    'Instagram': 'https://www.instagram.com/carlosnavedam',
-    'Gmail': 'mailto:navedacarlosm@gmail.com'
-}
 export default function TopBarNav({topBarNavOption}: {topBarNavOption:string}) {
 
     const logo_width = 80;

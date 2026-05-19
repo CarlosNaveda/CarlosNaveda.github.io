@@ -11,6 +11,7 @@ import Link from 'next/link'
 import mapPosts from '../src/data/posts';
 import TopBarNav from '@/src/components/TopBar/TopBarNav';
 import mapSections from '../src/data/sections';
+import FooterBar from '@/src/components/FooterBar/FooterBar';
 
 //VARIABLES
 
@@ -244,9 +245,9 @@ export default function Home() {
       </div>
 
         {/* ToNextAxis */}        
-        <div className="toNextAxis-page flex flex-col">           
-          <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>
-            {<TopBarNav topBarNavOption={"tonextaxis"} />}  
+        <div className="toNextAxis-page flex flex-col">                       
+          <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>            
+            {<TopBarNav topBarNavOption={"tonextaxis"}/>}
             <Title title={mapTitles[2]} /> 
             <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400}/>
             <div className="toNextAxis-text-button-videos flex flex-row items-center justify-center gap-12">
@@ -266,8 +267,9 @@ export default function Home() {
                 ))}                
               </div>
             </div>    
-              {buttonChevronDown(mapSections['blog'])}  
-          </section>
+              {buttonChevronDown(mapSections['blog'])}            
+          <FooterBar />
+          </section>          
         </div>
           
         {/* Blog */}

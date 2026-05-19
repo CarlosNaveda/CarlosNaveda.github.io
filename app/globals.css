@@ -27,6 +27,7 @@
   --bg-gradient-color-four:#0D1F2D;
   --bg-gradient-color-five:#0F2A1A;
   --bg-gradient-color-six:#2A0E4A;   
+  --footer: #2A2A2A;
   
 }
 
@@ -46,6 +47,7 @@ html, body {
   radial-gradient(circle 500px at bottom, var(--bg-gradient-color-six) 0%, transparent 100%),
   var(--background); 
   color: var(--white);
+  margin: 0;
   
 
 }
@@ -97,10 +99,24 @@ html, body {
   /* font-weight: bold;       */
 }
 
-
-
-
 /* FOOTER */
+.footer{
+  width: 100%;      
+  height: auto;     
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  background-color: var(--navbar-Background);  
+}
+
+.footer-text{
+  width: 80%;           
+  height: auto;      
+}
+
+.x{
+  color: var(--titles);  
+  font-weight: bold; 
+}
 
 /* HERO */
 
