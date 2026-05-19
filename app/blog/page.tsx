@@ -1,6 +1,5 @@
 
 'use client';
-import { Italic } from 'lucide-react';
 import mapPosts from '../../src/data/posts';
 import PostPreview from '@/src/components/Post/PostPreview';
 

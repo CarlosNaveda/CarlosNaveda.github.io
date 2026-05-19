@@ -3,12 +3,15 @@ import PostType from "../Post/PostType";
 import Image from 'next/image';
 import formatDateToString from '@/src/utils/formatDate';
 import {ChevronLeft, ChevronRight } from 'lucide-react';
+import formatTitleToKebabCase from '../../../src/utils/formatTitle';
+import { useRouter } from 'next/navigation';
 
 
 
 const Carousel = ({posts}: {posts: PostType[]}) =>{
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const router = useRouter();
 
     /**
      * Devuelve el índice del siguiente slide.
@@ -64,7 +67,7 @@ const Carousel = ({posts}: {posts: PostType[]}) =>{
         <div className="posts flex flex-row gap-4 items-center justify-center" style={{position: "relative"}}> 
             {buttonChevronLeft()}
             {posts.toReversed().map((post) => (               
-                 <div key={post.index} className="carousel flex flex-col transition-all duration-300 ease-in-out" style={{position: "absolute",left: post.index === currentIndex ? "0px": `${(currentIndex-post.index) * 25}px`, zIndex: post.index === currentIndex ? 10:10 - Math.abs(post.index - currentIndex), transform: post.index === currentIndex ? "scale(1) translateX(0)":`scale(${1 - Math.abs(post.index - currentIndex) * 0.05})`}}>       
+                 <div key={post.index} className="carousel flex flex-col transition-all duration-300 ease-in-out" onClick={() => {{router.push(`/blog/${formatTitleToKebabCase(post.title)}`)}}} style={{position: "absolute",left: post.index === currentIndex ? "0px": `${(currentIndex-post.index) * 25}px`, zIndex: post.index === currentIndex ? 10:10 - Math.abs(post.index - currentIndex), transform: post.index === currentIndex ? "scale(1) translateX(0)":`scale(${1 - Math.abs(post.index - currentIndex) * 0.05})`}}>       
                     <div className="carousel-content">
                         <Image src={post.imageSource} alt={post.title} className={post.index === currentIndex ? "carousel-image": "carousel-image-off"} width={500} height={500}/> 
                         <div className={post.index === currentIndex ? "carousel-info flex flex-col gap-2": "carousel-info-off flex flex-col gap-2"}>

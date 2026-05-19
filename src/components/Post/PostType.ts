@@ -4,7 +4,9 @@ interface PostType {
     publishDate: Date;
     tag: string | string[];
     title: string;
-    shortDescription: string;   
+    shortDescription: string; 
+    tableOfContents: {index: number, title: string}[];
+    content: string;  
 
 }
 

@@ -2,16 +2,19 @@ import PostType from "../Post/PostType";
 import Image from "next/image";
 import formatDateToString from '@/src/utils/formatDate';
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
+import formatTitleToKebabCase from '../../../src/utils/formatTitle';
 
 const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
 
     const image_width = 50;
     const image_height = 50;
+    const router = useRouter();
 
     return(
         <>
             {mapPosts.map((mapPost) => (
-                    <div key={mapPost.index} className="post-preview-content flex flex-row items-center justify-center">                           
+                    <div key={mapPost.index} className="post-preview-content flex flex-row items-center justify-center" onClick={() => {{router.push(`/blog/${formatTitleToKebabCase(mapPost.title)}`)}}}>                           
                             <div className="post-preview-text flex flex-col gap-2">
                                 <div className="date-separator-tag flex flex-row gap-4 items-center justify-center">
                                     <h3 className="date">{formatDateToString(mapPost.publishDate)}</h3>
@@ -22,7 +25,7 @@ const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
                                 <p className="post-preview-shortDescription">{mapPost.shortDescription}</p> 
                                 <Link className="post-slug-link text-xl" href="">Leer más...</Link>
                             </div>
-                            <Image src={mapPost.imageSource} alt={mapPost.title} className="post-preview-image object-cover" width={image_width} height={image_height}/>                           
+                            <Image src={mapPost.imageSource} alt={mapPost.title} className="post-preview-image object-cover" width={image_width} height={image_height}/>
                     </div>
             ))}   
         </>        
