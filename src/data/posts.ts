@@ -1,5 +1,3 @@
-import { title } from "process";
-
 
 //Usar máximo 2 tags por post
 const mapPosts = [

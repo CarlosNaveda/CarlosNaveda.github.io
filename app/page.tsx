@@ -9,16 +9,10 @@ import Image from 'next/image';
 import Carousel from '../src/components/Carousel/Carousel';
 import Link from 'next/link'
 import mapPosts from '../src/data/posts';
+import TopBarNav from '@/src/components/TopBar/TopBarNav';
+import mapSections from '../src/data/sections';
 
 //VARIABLES
-
-const mapSections = {
-  'Inicio': 'hero',
-  'Sobre mí': 'sobre-mi',
-  'Experiencia': 'experiencia',
-  'ToNextAxis': 'tonextaxis',
-  'Blog': 'blog',
-};
 
 const mapTitles = [
   {
@@ -178,6 +172,7 @@ const mapVideos = [
 
 
 
+
 //FUNCIONES
 
 /**
@@ -203,7 +198,8 @@ export default function Home() {
   return (    
     <main>
       {/* Hero */}
-      <section id={mapSections['Inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">
+      <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">
+        {/* {<TopBarNav topBarNavOption={"inicio"} />} */}
         <h1 className="text-4xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
           Hola, soy Carlos Naveda
         </h1>
@@ -214,11 +210,12 @@ export default function Home() {
           mientras avanzo.
           </span>
         </p>
-        {buttonChevronDown(mapSections['Sobre mí'])}           
+        {buttonChevronDown(mapSections['sobreMi'])}            
       </section> 
 
       {/* Sobre mí */}
-      <section id={mapSections['Sobre mí']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+        {/* {<TopBarNav topBarNavOption={"sobre mí"} />} */}
         <Title title={mapTitles[0]} />
         <p className="text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>
           
@@ -233,21 +230,23 @@ export default function Home() {
           Sé que todos estos skills confluirán en algo muy gratificante en un mediano plazo, y que los resultados no son inmediatos, hay un proceso y eso está bien, voy en mi dirección.
           
         </p>
-        {buttonChevronDown(mapSections['Experiencia'])}  
+        {buttonChevronDown(mapSections['experiencia'])}  
       </section>
 
       {/* Experiencia */} 
-      <div className="job-page flex flex-col">  
-         <section id={mapSections['Experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
+      <div className="job-page flex flex-col">        
+         <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
+          {<TopBarNav topBarNavOption={"experiencia"} />}  
           <Title title={mapTitles[1]} />
           {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} />))}    
-          {buttonChevronDown(mapSections['ToNextAxis'])}  
+          {buttonChevronDown(mapSections['tonextaxis'])}  
         </section>
       </div>
 
-        {/* ToNextAxis */}
-        <div className="toNextAxis-page flex flex-col">
-          <section id={mapSections['ToNextAxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>
+        {/* ToNextAxis */}        
+        <div className="toNextAxis-page flex flex-col">           
+          <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>
+            {<TopBarNav topBarNavOption={"tonextaxis"} />}  
             <Title title={mapTitles[2]} /> 
             <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400}/>
             <div className="toNextAxis-text-button-videos flex flex-row items-center justify-center gap-12">
@@ -267,12 +266,13 @@ export default function Home() {
                 ))}                
               </div>
             </div>    
-              {buttonChevronDown(mapSections['Blog'])}  
+              {buttonChevronDown(mapSections['blog'])}  
           </section>
         </div>
           
         {/* Blog */}
-        <section id={mapSections['Blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
+        <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
+          {<TopBarNav topBarNavOption={"blog"} />}  
           <Title title={mapTitles[3]} />
           {<Carousel posts={mapPosts} />}
           <Link className="blog-link text-xl" href="/blog">Ir al blog 🗒️</Link> 

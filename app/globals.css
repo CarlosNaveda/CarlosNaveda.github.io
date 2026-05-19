@@ -13,10 +13,11 @@
   --nodes_active: #6B68E8;
   --timeline: #2E2C7A;
   --nodes_inactive: #606071;
-  --selection: #434089;
+  /* --selection: #434089; */
+  --selection: #153A8587; 
   --no-selection: #969696;
   --icon: #A0A0B0;
-  --navbar-Background: #000000;
+  --navbar-Background: #0b0a15;  
   --comments: #565F89; 
   --black: #000000;
   --white: #FFFFFF;
@@ -48,6 +49,58 @@ html, body {
   
 
 }
+
+/* TOP-BAR */
+.top-bar{
+  width: 90%;     
+  height: auto;     
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  background-color: var(--navbar-Background);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);  
+}
+
+.Mi-logo{
+  margin: 5px; 
+}
+
+.top-bar-nav{
+  color: var(--icon); 
+}
+
+.inactive-nav{
+  width: auto;          
+  height: auto;
+  padding: 5px;     
+  color: var(--icon); 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;  
+}
+
+.active-nav{
+  width: auto;          
+  height: auto;
+  padding: 5px;       
+  background-color: var(--selection);
+  color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  /* font-weight: bold;       */
+}
+
+
+
+
+/* FOOTER */
 
 /* HERO */
 
