@@ -212,9 +212,9 @@ html, body {
   border-radius: 50%;
   object-fit: cover;    
   opacity: 10;  
-  top: 10%;     
-  right: 15%;     
-  position: absolute;        
+  /* top: 10%;     
+  right: 15%;      */
+  /* position: absolute;         */
   opacity: 0.2;
 
 }

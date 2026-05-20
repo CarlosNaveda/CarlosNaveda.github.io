@@ -231,17 +231,16 @@ export default function Home() {
 
         {/* ToNextAxis */}        
         <div className="toNextAxis-page flex flex-col">                       
-          <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced" style={{position: 'relative'}}>            
+          <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 px-8 text-balanced" style={{position: 'relative'}}>            
             {/* {<TopBarNav topBarNavOption={"tonextaxis"}/>} */}
             <Title title={mapTitles[2]} /> 
-            <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400}/>
-            <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-12">              
+            <Image className="toNextAxis-logo top-0 right-0 md:top-20 md:right-250 w-[200] h-[200] md:w-[400] md:h-[400]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}}/>
+            <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-4">              
                 <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
                   ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
-
                   Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
-
-                  Dale un vistazo, de seguro algo te va a servir. Últimos videos 👇🏻<br />            
+                  Dale un vistazo, de seguro algo te va a servir. <br />        
+                  Últimos videos 👇🏻
                 </p>
                 <ToNextAxisButton />             
             </div>
