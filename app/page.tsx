@@ -153,21 +153,6 @@ const mapVideos = [
     index: 5,
     source: "https://www.youtube.com/embed/8kjxS0aFqCQ",
     title: "Analicé 2694 candidatos con IA… esto fue lo que encontré | Perú 2026"    
-  },
-  {
-    index: 6,
-    source: "https://www.youtube.com/embed/9dDvshOVR3o",
-    title: "Cómo jugar Wolfenstein 3D y Spear of Destiny en PC moderna (ECWolf)"    
-  },
-  {
-    index: 7,
-    source: "https://www.youtube.com/embed/KvSNziCcDDk",
-    title: "¿Cómo elegir un monitor según tu uso (Productividad, Edición, Gaming o Competitivo)?"    
-  },
-  {
-    index: 8,
-    source: "https://www.youtube.com/embed/ECg2o7k36TU",
-    title: "¿Vale la pena el Stream Deck Neo? Casos de uso reales paso a paso"    
   }
 ];
 
@@ -246,28 +231,26 @@ export default function Home() {
 
         {/* ToNextAxis */}        
         <div className="toNextAxis-page flex flex-col">                       
-          <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>            
+          <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced" style={{position: 'relative'}}>            
             {/* {<TopBarNav topBarNavOption={"tonextaxis"}/>} */}
             <Title title={mapTitles[2]} /> 
             <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400}/>
-            <div className="toNextAxis-text-button-videos flex flex-row items-center justify-center gap-12">
-              <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 max-w-3xl">            
-                  <p className="text-xl max-w-md w-full text-justify" style={{color: 'var(--paragraph)'}}>          
-                    ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
+            <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-12">              
+                <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
+                  ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
 
-                    Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
+                  Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
 
-                    Dale un vistazo, de seguro algo te va a servir. Últimos videos 👉🏻<br />            
-                  </p>
-                  <ToNextAxisButton />             
-              </div>
-              <div className="toNextAxis-videos grid grid-cols-3 items-center justify-center gap-6 max-w-5xl">
-                {mapVideos.map((video) => (
-                  <ToNextAxisIframeVideos key={video.index} video={video} />
-                ))}                
-              </div>
-            </div>    
-              {buttonChevronDown(mapSections['blog'])}          
+                  Dale un vistazo, de seguro algo te va a servir. Últimos videos 👇🏻<br />            
+                </p>
+                <ToNextAxisButton />             
+            </div>
+            <div className="toNextAxis-videos grid grid-cols-2 items-center justify-center gap-6 max-w-5xl">
+              {mapVideos.map((video) => (
+                <ToNextAxisIframeVideos key={video.index} video={video} />
+              ))}                
+            </div>              
+            {buttonChevronDown(mapSections['blog'])}          
           </section>          
         </div>
           

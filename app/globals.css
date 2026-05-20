@@ -202,18 +202,18 @@ html, body {
   color: var(--paragraph);
   border: none;
   border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: 12px 24px;  
   cursor: pointer;
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  width: 100%;
 }
 
 .toNextAxis-logo{    
   border-radius: 50%;
   object-fit: cover;    
   opacity: 10;  
-  top: 30%;    
-  left: 15%;     
+  top: 10%;     
+  right: 15%;     
   position: absolute;        
   opacity: 0.2;
 
