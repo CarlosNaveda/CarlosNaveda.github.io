@@ -65,7 +65,7 @@ html, body {
 }
 
 .Mi-logo{
-  margin: 5px; 
+  margin: 10px; 
 }
 
 .top-bar-nav{
@@ -101,15 +101,11 @@ html, body {
 
 /* FOOTER */
 .footer{
-  width: 100%;      
-  height: auto;     
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
+  width: 100%;            
   background-color: var(--navbar-Background);  
 }
 
-.footer-text{
-  width: 80%;           
+.footer-text{         
   height: auto;      
 }
 

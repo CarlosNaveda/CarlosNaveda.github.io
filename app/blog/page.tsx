@@ -2,6 +2,7 @@
 'use client';
 import mapPosts from '../../src/data/posts';
 import PostPreview from '@/src/components/Post/PostPreview';
+import FooterBar from '@/src/components/FooterBar/FooterBar';
 
 export default function BlogMain() {
   return (    
@@ -26,7 +27,7 @@ export default function BlogMain() {
             </div> 
         </div>
             
-      
+      <FooterBar />
 
     </main>     
   );

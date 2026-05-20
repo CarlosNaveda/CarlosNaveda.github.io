@@ -237,7 +237,7 @@ export default function Home() {
       {/* Experiencia */} 
       <div className="job-page flex flex-col">        
          <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
-          {<TopBarNav topBarNavOption={"experiencia"} />}  
+          {/* {<TopBarNav topBarNavOption={"experiencia"} />}   */}
           <Title title={mapTitles[1]} />
           {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} />))}    
           {buttonChevronDown(mapSections['tonextaxis'])}  
@@ -247,7 +247,7 @@ export default function Home() {
         {/* ToNextAxis */}        
         <div className="toNextAxis-page flex flex-col">                       
           <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced" style={{position: 'relative'}}>            
-            {<TopBarNav topBarNavOption={"tonextaxis"}/>}
+            {/* {<TopBarNav topBarNavOption={"tonextaxis"}/>} */}
             <Title title={mapTitles[2]} /> 
             <Image className="toNextAxis-logo" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400}/>
             <div className="toNextAxis-text-button-videos flex flex-row items-center justify-center gap-12">
@@ -267,19 +267,19 @@ export default function Home() {
                 ))}                
               </div>
             </div>    
-              {buttonChevronDown(mapSections['blog'])}            
-          <FooterBar />
+              {buttonChevronDown(mapSections['blog'])}          
           </section>          
         </div>
           
         {/* Blog */}
         <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
-          {<TopBarNav topBarNavOption={"blog"} />}  
+          {/* {<TopBarNav topBarNavOption={"blog"} />}   */}
           <Title title={mapTitles[3]} />
           {<Carousel posts={mapPosts} />}
-          <Link className="blog-link text-xl" href="/blog">Ir al blog 🗒️</Link> 
+          <Link className="blog-link text-xl" href="/blog">Ir al blog 🗒️</Link>           
         </section>
 
+        <FooterBar />
 
     </main>    
   );

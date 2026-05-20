@@ -14,7 +14,7 @@ export default function TopBarNav({topBarNavOption}: {topBarNavOption:string}) {
     const icon_size = 40;    
 
     return (
-        <header className="top-bar grid grid-cols-3 items-center self-center">
+        <header className="top-bar h-16 grid grid-cols-3 items-center self-center">
             <div className="logo-link justify-self-center">
                 <a href="http://localhost:3000/">  
                     <Image  className="Mi-logo self-center" src="/images/logos/Mi_logo.png" alt="Mi-logo" width = {logo_width} height= {logo_height}/>                
