@@ -13,8 +13,8 @@ export default function FooterBar() {
     const icon_size = 40;    
 
     return (
-        <footer className="footer flex flex-col items-center justify-center gap-8 md:gap-4 h-[700px] md:h-auto md:flex-row md:items-center md:justify-center"> 
-            <div className="logo-brand flex flex-row items-center justify-center gap-4 w-[275px]  md:flex-1"> 
+        <footer className="footer flex flex-col items-center justify-center gap-8 md:gap-4 h-[700px] md:h-auto md:flex-row md:items-center md:justify-center bg-(var(--my_background))"> 
+            <div className="logo-brand flex flex-row items-center justify-center gap-1 w-[275px]  md:flex-1"> 
                 <Image  className="Mi-logo self-center" src="/images/logos/Mi_logo.png" alt="Mi-logo" width = {logo_width} height= {logo_height}/>
                 <div className="brand-text flex flex-col items-left justify-center">
                     <h3 className="text-xl" style={{color: 'var(--white)'}}>Carlos Naveda</h3>

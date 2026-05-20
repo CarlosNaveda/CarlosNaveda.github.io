@@ -7,9 +7,9 @@ import FooterBar from '@/src/components/FooterBar/FooterBar';
 export default function BlogMain() {
   return (    
     <main>
-        <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-4 px-8 text-balanced">
-            <h2 className='title-filter text-4xl'>Filtrar por tag: </h2>
-            <input type="text" id="blog-input-filter" placeholder="Ingresa un tag"/><hr />
+        <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-1 md:gap-4 px-2 md:px-8 text-balanced">
+            <h2 className='title-filter text-2xl md:text-4xl'>Filtrar por tag: </h2>
+            {/* <input type="text" id="blog-input-filter" placeholder="Ingresa un tag"/><hr /> */}
             <div className='blog-tags flex flex-col items-center justify-center center gap-2'>
                 {mapPosts.map((post) => (               
                  <small key={post.index} className='flex flex-row items-center justify-center center gap-2'> 
@@ -21,14 +21,12 @@ export default function BlogMain() {
                  ))
                 }
             </div><hr /> 
-            <h2 className='title-posts text-4xl'>Posts</h2>
-            <div className='blog-main-posts-preview grid grid-cols-2 items-center justify-center gap-4'>
+            <h2 className='title-posts text-2xl md:text-4xl'>Posts</h2>
+            <div className='blog-main-posts-preview flex flex-col md:grid md:grid-cols-2 items-center justify-center gap-2 md:gap-4'>
                 <PostPreview mapPosts={mapPosts}/>
-            </div> 
-        </div>
-            
-      <FooterBar />
-
+            </div>            
+        </div>            
+       <FooterBar />
     </main>     
   );
 }
