@@ -201,7 +201,7 @@ export default function Home() {
       {/* Hero */}
       <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">
         {/* {<TopBarNav topBarNavOption={"inicio"} />} */}
-        <h1 className="text-4xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
+        <h1 className="text-2xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
           Hola, soy Carlos Naveda
         </h1>
         <p className="text-lg md:text-3xl leading-relaxed" style={{color: 'var(--paragraph)'}}>
