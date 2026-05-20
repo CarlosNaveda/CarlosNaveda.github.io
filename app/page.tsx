@@ -215,10 +215,10 @@ export default function Home() {
       </section> 
 
       {/* Sobre mí */}
-      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">
+      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">  
         {/* {<TopBarNav topBarNavOption={"sobre mí"} />} */}
         <Title title={mapTitles[0]} />
-        <p className="text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>
+        <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify px-100" style={{color: 'var(--paragraph)'}}> 
           
           Soy alguien que suele mirar más hacia adentro, pero con una necesidad constante de compartir hacia afuera lo que voy aprendiendo.<br />
           Me apasiona la tecnología, no me imagino haciendo nada que no esté relacionado con ello, no solo por lo que es, sino por lo que permite construir.<br /><br />
