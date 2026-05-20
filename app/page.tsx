@@ -216,17 +216,19 @@ export default function Home() {
           Sé que todos estos skills confluirán en algo muy gratificante en un mediano plazo, y que los resultados no son inmediatos, hay un proceso y eso está bien, voy en mi dirección.
           
         </p>
-        {buttonChevronDown(mapSections['experiencia'])}  
+        {buttonChevronDown(mapSections['experiencia'])}   
       </section>
 
       {/* Experiencia */} 
       <div className="job-page flex flex-col">        
-         <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
+         <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-8 md:gap-20 p-8 text-balanced">
           {/* {<TopBarNav topBarNavOption={"experiencia"} />}   */}
           <Title title={mapTitles[1]} />
-          {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} />))}    
-          {buttonChevronDown(mapSections['tonextaxis'])}  
-        </section>
+          <div className='job-timeline flex flex-col gap-8 md:gap-14'>  
+            {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} />))}                 
+          </div>                       
+          {buttonChevronDown(mapSections['tonextaxis'])} 
+        </section>        
       </div>
 
       {/* ToNextAxis */}        

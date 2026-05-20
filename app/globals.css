@@ -123,18 +123,10 @@ html, body {
 .job-page{
     width: 100%; 
     height: auto;
-}
-
-.node-job-card{  
-    width: 1000px;  
-    height: 80px;    
 } 
 
-
-.node{  
-  width: 20px;       
-  height: 20px;          
-  border-radius: 50%; 
+.node{    
+  border-radius: 50%;  
   display: flex;        
   font-weight: bold;
   position: relative;  
@@ -158,10 +150,10 @@ html, body {
 }
 
 .job-card {
-  width: 450px; 
+  /* width: 450px;  */ 
   background-color: var(--cards);
   border-radius: 12px;
-  padding: 16px;
+  /* padding: 16px; */
   box-shadow: 20px 4px 8px rgba(0,0,0,0.1);
 }
 
