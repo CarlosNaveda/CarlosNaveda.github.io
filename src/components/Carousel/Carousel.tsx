@@ -45,7 +45,7 @@ const Carousel = ({posts}: {posts: PostType[]}) =>{
      */
     function buttonChevronLeft() { 
     return (
-        <button className="mt-8 animate-bounce absolute right-[310px] bottom-[200px] md:right-[700px] md:bottom-auto" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(previousSlide(currentIndex))}>
+        <button className="mt-8 animate-bounce absolute right-[310px] bottom-[200px] md:right-[600px] md:bottom-auto" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(previousSlide(currentIndex))}>
             <ChevronLeft size={40} />
         </button>        
     );
@@ -61,8 +61,6 @@ const Carousel = ({posts}: {posts: PostType[]}) =>{
         </button>        
     );
     }
-
-
    
     return(
         <div className="posts flex flex-row gap-4 items-center justify-center w-[350px] h-[350px] md:w-[600px] md:h-[600px]" style={{position: "relative"}}>  
@@ -76,10 +74,10 @@ const Carousel = ({posts}: {posts: PostType[]}) =>{
                     post.index === currentIndex
                         ? window.innerWidth < mobileMaxHeight
                         ? "55px"
-                        : "0px"
+                        : "25px"
                         : window.innerWidth < mobileMaxHeight
-                        ? `${55 + (currentIndex - post.index) * 5}px`
-                        : `${(currentIndex - post.index) * 25}px`,
+                        ? `${55 + (currentIndex - post.index) * 5}px` 
+                        : `${25 + (currentIndex - post.index) * 15}px`,
                     zIndex: post.index === currentIndex ? 10:10 - Math.abs(post.index - currentIndex), 
                     transform: post.index === currentIndex ? "scale(1) translateX(0)":`scale(${window.innerWidth < mobileMaxHeight ? 1 - Math.abs(post.index - currentIndex) * 0.02 : 1 - Math.abs(post.index - currentIndex) * 0.05})`
                  }}>       
