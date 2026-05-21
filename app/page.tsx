@@ -10,6 +10,7 @@ import Carousel from '../src/components/Carousel/Carousel';
 import Link from 'next/link'
 import mapPosts from '../src/data/posts';
 import TopBarNav from '@/src/components/TopBar/TopBarNav';
+import Accordion from '../src/components/Accordion/Accordion';
 import mapSections from '../src/data/sections';
 import FooterBar from '@/src/components/FooterBar/FooterBar';
 
@@ -184,6 +185,7 @@ export default function Home() {
       {/* Hero */}
       <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">
         {/* {<TopBarNav topBarNavOption={"inicio"} />} */}
+        <Accordion />    
         <h1 className="text-2xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
           Hola, soy Carlos Naveda
         </h1>

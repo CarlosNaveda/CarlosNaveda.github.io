@@ -65,6 +65,21 @@ html, body {
 /* FOOTER */
 
 
+/* ACCORDION */
+.accordion-icon{ 
+  position: fixed; 
+  top: 0;
+  left: 0;   
+}
+
+.accordion-options{  
+  border-radius: 4px; 
+  padding: 10px;
+  background: rgba(18, 17, 43, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(126, 122, 222, 0.2);  
+}
+
 /* HERO */
 
 
