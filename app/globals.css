@@ -1,4 +1,5 @@
-@import "Tailwindcss";
+@import "tailwindcss";
+
 
 /********************* VARIABLES GLOBALES  **********************/
 :root {
@@ -39,6 +40,11 @@
   radial-gradient(circle 500px at bottom, var(--bg-gradient-color-six) 0%, transparent 100%),
   var(--background);
   
+}
+
+/********************* BREAKPOINTS  **********************/
+@theme {
+  --breakpoint-tablet: 820px;
 }
 
 /********************* GENERAL  **********************/
