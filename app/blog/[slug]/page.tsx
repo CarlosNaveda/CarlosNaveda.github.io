@@ -19,7 +19,6 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
   const image_width = 500;
   const image_height = 300;
 
-
     return (    
           <>
               {post && ( //Si el post existe

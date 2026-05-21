@@ -1,5 +1,6 @@
 @import "Tailwindcss";
 
+/********************* VARIABLES GLOBALES  **********************/
 :root {
   --titles: #7E7ADE;
   --titles_blog: #4653a8;
@@ -40,6 +41,8 @@
   
 }
 
+/********************* GENERAL  **********************/
+
 * {
   margin: 0;  
   box-sizing: border-box;
@@ -50,9 +53,45 @@ html, body {
   color: var(--white);
   margin: 0;
   
+}
+
+
+/********************* MOBILE  **********************/
+@media (max-width: 768px) {
+
+/* TOP-BAR */
+
+
+/* FOOTER */
+
+
+/* HERO */
+
+
+/* SOBRE MÍ */
+
+
+/* EXPERIENCIA */
+
+
+/* TONEXTAXIS*/
+
+
+/* BLOG PREVIEW */
+/* .blog-link{ 
+    background-color: var(--selection); 
+  }  */
+
+/* BLOG MAIN */
+
+
+/* BLOG SLUG */
 
 }
- 
+
+
+/********************* DESKTOP  **********************/
+
 /* TOP-BAR */
 .top-bar{ 
   width: 90%;     
@@ -185,14 +224,18 @@ html, body {
   height: auto;
 }
 
-.toNextAxis-button{    
-  color: var(--paragraph);
+.toNextAxis-button{      
+  /* color: var(--paragraph); */
   border: none;
   border-radius: 8px;
   padding: 12px 24px;  
   cursor: pointer;
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   width: 100%;
+}
+
+.toNextAxis-button:hover{   
+  background-color: var(--selection);
 }
 
 .toNextAxis-logo{    
@@ -237,21 +280,9 @@ html, body {
 }
 
 /* BLOG PREVIEW */
-.blog-page{
+.blog-page{ 
   width: 100%;
   height: auto;   
-}
-
-
-.posts{ 
-  width: 600px;  
-  height: 600px;    
-}
-
-.carousel-content{
-  width: 550px;
-  height: 550px;     
-  position: relative;   
 }
 
 .carousel-image{ 
@@ -270,12 +301,11 @@ html, body {
 }
 
 .carousel-info{
-  height: auto; 
+  height: auto;    
   position: absolute;  
   bottom: 0; 
   left: 0; 
-  right: 0; 
-  padding: 20px;
+  right: 0;    
   background: rgba(255, 255, 255, 0.2);  
   backdrop-filter: blur(10px);     
   border-bottom-right-radius: 40px;   
@@ -310,21 +340,20 @@ html, body {
   font-weight: bold; 
 }
 
-.blog-link {
-  background-color: var(--no-selection); 
-  color: var(--paragraph);
-  transition: background-color 0.3s ease;
+.blog-link { 
+  /* background-color: var(--no-selection);  */
+  color: var(--paragraph);  
   border: none;
   border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: 12px 24px;  
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; 
 }
 
 .blog-link:hover {
   background-color: var(--selection); 
 }
+
 
 /* BLOG MAIN */
 

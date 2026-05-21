@@ -13,7 +13,7 @@ export default function FooterBar() {
     const icon_size = 40;    
 
     return (
-        <footer className="footer flex flex-col items-center justify-center gap-5 bg-(var(--my_background)) p-8 h-auto md:gap-4 md:flex-row md:items-center md:justify-center"> 
+        <footer className="footer flex flex-col items-center justify-center gap-5 bg-[var(--my_background)] p-8 h-auto md:gap-4 md:flex-row md:items-center md:justify-center"> 
             <div className="logo-brand flex flex-row items-center justify-center w-[275px]  md:flex-1">  
                 <Image  className="Mi-logo self-center w-[50px] h-[50px] md:w-[80px] md:h-[80px]" src="/images/logos/Mi_logo.png" alt="Mi-logo" width = {logo_width} height= {logo_height}/>
                 <div className="brand-text flex flex-col items-left justify-center">

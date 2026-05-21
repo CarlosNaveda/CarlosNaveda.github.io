@@ -157,8 +157,6 @@ const mapVideos = [
 ];
 
 
-
-
 //FUNCIONES
 
 /**
@@ -200,7 +198,7 @@ export default function Home() {
       </section> 
 
       {/* Sobre mí */}
-      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-6 px-8 text-balanced">  
+      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced">  
         {/* {<TopBarNav topBarNavOption={"sobre mí"} />} */}
         <Title title={mapTitles[0]} />
         <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}> 
@@ -237,7 +235,7 @@ export default function Home() {
           {/* {<TopBarNav topBarNavOption={"tonextaxis"}/>} */}
           <Title title={mapTitles[2]} /> 
           <Image className="toNextAxis-logo top-0 right-0 md:top-20 md:right-250 w-[200] h-[200] md:w-[400] md:h-[400]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}}/>
-          <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-4">              
+          <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8">               
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
                 ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
                 Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
@@ -255,12 +253,21 @@ export default function Home() {
         </section>          
       </div>
         
-      {/* Blog */}
-      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-20 px-8 text-balanced">
+      {/* Blog Preview*/}
+      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-4 md:gap-10 px-8 py-4 text-balanced">  
         {/* {<TopBarNav topBarNavOption={"blog"} />}   */}
         <Title title={mapTitles[3]} />
-        {<Carousel posts={mapPosts} />}
-        <Link className="blog-link text-xl" href="/blog">Ir al blog 🗒️</Link>           
+        <div className="blog-preview-text-button flex flex-col items-center justify-center gap-2">              
+              <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
+                Hace algunos años tenía un blog donde compartía videos musicales subtitulados, (¡espera! lo he encontrado, se llamaba: <a className="seafansub-link" style={{color: 'var(--titles)'}} href="https://seafansub.blogspot.com/search?updated-max=2010-05-29T07:20:00-05:00" target="_blank">SeaFansub</a> solo que los links de los videos ya están expirados 😅 )<br /><br />
+                Siempre me ha gustado crear y compartir cosas en internet, y ahora que he renovado mi web quiero volver a hacerlo.<br /><br />
+                Aquí encontrarás contenido técnico, proyectos personales y también cosas divertidas que disfruto hacer.<br /><br />
+                No será un espacio de un solo tema, sino un lugar para compartir todo lo que me inspira e interesa.
+              </p><br />
+              <Link className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] md:bg-[var(--no-selection)]" href="/blog">Ir al blog 🗒️</Link>   
+          </div>
+        {<Carousel posts={mapPosts} />} 
+        
       </section>
 
       <FooterBar />

@@ -12,6 +12,7 @@ const Carousel = ({posts}: {posts: PostType[]}) =>{
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const router = useRouter();
+    const mobileMaxHeight = 768;
 
     /**
      * Devuelve el índice del siguiente slide.
@@ -44,7 +45,7 @@ const Carousel = ({posts}: {posts: PostType[]}) =>{
      */
     function buttonChevronLeft() { 
     return (
-        <button className="mt-8 animate-bounce" style={{color: 'var(--paragraph)', position:"absolute", right: "700px"}} onClick={() => setCurrentIndex(previousSlide(currentIndex))}>
+        <button className="mt-8 animate-bounce absolute right-[310px] bottom-[200px] md:right-[700px] md:bottom-auto" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(previousSlide(currentIndex))}>
             <ChevronLeft size={40} />
         </button>        
     );
@@ -55,8 +56,8 @@ const Carousel = ({posts}: {posts: PostType[]}) =>{
      */
     function buttonChevronRight() { 
     return (
-        <button className="mt-8 animate-bounce" style={{color: 'var(--paragraph)', position:"absolute", left: "600px"}} onClick={() => setCurrentIndex(nextSlide(currentIndex))}>
-            <ChevronRight size={40} />
+        <button className="mt-8 animate-bounce absolute left-[310px] bottom-[200px] md:left-[600px] md:bottom-auto" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(nextSlide(currentIndex))}>
+            <ChevronRight size={40} /> 
         </button>        
     );
     }
@@ -64,20 +65,34 @@ const Carousel = ({posts}: {posts: PostType[]}) =>{
 
    
     return(
-        <div className="posts flex flex-row gap-4 items-center justify-center" style={{position: "relative"}}> 
+        <div className="posts flex flex-row gap-4 items-center justify-center w-[350px] h-[350px] md:w-[600px] md:h-[600px]" style={{position: "relative"}}>  
             {buttonChevronLeft()}
             {posts.toReversed().map((post) => (               
-                 <div key={post.index} className="carousel flex flex-col transition-all duration-300 ease-in-out" onClick={() => {{router.push(`/blog/${formatTitleToKebabCase(post.title)}`)}}} style={{position: "absolute",left: post.index === currentIndex ? "0px": `${(currentIndex-post.index) * 25}px`, zIndex: post.index === currentIndex ? 10:10 - Math.abs(post.index - currentIndex), transform: post.index === currentIndex ? "scale(1) translateX(0)":`scale(${1 - Math.abs(post.index - currentIndex) * 0.05})`}}>       
-                    <div className="carousel-content">
+                 <div key={post.index} className="carousel flex flex-col transition-all duration-300 ease-in-out bottom-[110px] md:bottom-auto" 
+                 onClick={() => {{router.push(`/blog/${formatTitleToKebabCase(post.title)}`)}}} 
+                 style={{
+                    position: "absolute", 
+                    left:
+                    post.index === currentIndex
+                        ? window.innerWidth < mobileMaxHeight
+                        ? "55px"
+                        : "0px"
+                        : window.innerWidth < mobileMaxHeight
+                        ? `${55 + (currentIndex - post.index) * 5}px`
+                        : `${(currentIndex - post.index) * 25}px`,
+                    zIndex: post.index === currentIndex ? 10:10 - Math.abs(post.index - currentIndex), 
+                    transform: post.index === currentIndex ? "scale(1) translateX(0)":`scale(${window.innerWidth < mobileMaxHeight ? 1 - Math.abs(post.index - currentIndex) * 0.02 : 1 - Math.abs(post.index - currentIndex) * 0.05})`
+                 }}>       
+                    <div className="carousel-content w-[245px] h-[245px] md:w-[550px] md:h-[550px]" style={{position: "relative"}}>
                         <Image src={post.imageSource} alt={post.title} className={post.index === currentIndex ? "carousel-image": "carousel-image-off"} width={500} height={500}/> 
-                        <div className={post.index === currentIndex ? "carousel-info flex flex-col gap-2": "carousel-info-off flex flex-col gap-2"}>
+                        <div className={post.index === currentIndex ? "carousel-info flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5": "carousel-info-off flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5"}>
                             <div className="date-separator-tag flex flex-row gap-4 items-center justify-center">
-                                <h3 className="date">{formatDateToString(post.publishDate)}</h3>
+                                <h3 className="date text-[10px] items-end md:text-base">{formatDateToString(post.publishDate)}</h3>
                                 <hr className="separator"></hr>
-                                <h3 className="tag">{post.tag}</h3>
+                                <h3 className="tag text-[10px] md:text-base">{post.tag}</h3>
                             </div>
-                            <h2 className="carousel-title text-2xl">{post.title}</h2> 
-                            <p className="carousel-shortDescription">{post.shortDescription}</p> 
+                            <h2 className="carousel-title text-[12px] md:text-2xl">{post.title}</h2> 
+                            <p className="carousel-shortDescription text-[10px] md:text-base">{post.shortDescription}</p> 
                         </div>
                     </div>
                 </div>                         
