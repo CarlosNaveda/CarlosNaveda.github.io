@@ -7,7 +7,7 @@ import FooterBar from '@/src/components/FooterBar/FooterBar';
 export default function BlogMain() {
   return (    
     <main>
-        <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-1 md:gap-4 px-2 md:px-8 text-balanced">
+        <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-1 md:gap-4 px-2 md:px-8 pb-20 md:pb-0 text-balanced"> 
             <h2 className='title-filter text-2xl md:text-4xl'>Filtrar por tag: </h2>
             {/* <input type="text" id="blog-input-filter" placeholder="Ingresa un tag"/><hr /> */}
             <div className='blog-tags flex flex-col items-center justify-center center gap-2'>

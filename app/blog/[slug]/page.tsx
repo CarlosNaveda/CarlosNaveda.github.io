@@ -23,7 +23,7 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
           <>
               {post && ( //Si el post existe
                   <main>
-                    <div className="blog-slug flex flex-row items-center justify-center p-10 gap-5 md:gap-10 h-auto">  
+                    <div className="blog-slug flex flex-row items-center justify-center p-10 gap-5 md:gap-10 h-auto pb-20 md:pb-0">   
                         <div className='blog-slug-content min-h-screen flex flex-col items-left md:justify-center gap-2'> 
                             <h1 className='blog-slug-title text-2xl md:text-4xl'>{post.title}</h1>
                             <h2 className='blog-slug-created text-xl md:text-2xl'>{postCreated} {formatDateToString(post.publishDate)}</h2>
