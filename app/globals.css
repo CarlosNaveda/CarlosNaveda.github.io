@@ -155,7 +155,9 @@ html, body {
 
 /* FOOTER */
 .footer{
-  width: 100%;              
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 16, 96, 0.6));
+  border-top: 1px solid rgba(126, 122, 222, 0.15);                
 }
 
 

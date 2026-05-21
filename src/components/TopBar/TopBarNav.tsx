@@ -21,7 +21,7 @@ export default function TopBarNav({topBarNavOption}: {topBarNavOption:string}) {
                 </a>               
             </div>
             <nav>
-                <ul className='top-bar-nav flex flex-row items-center justify-center gap-4'>
+                <ul className='top-bar-nav flex flex-row items-center justify-center gap-4'> 
                     <li className={mapSections['inicio'] === topBarNavOption ? "active-nav" : "inactive-nav"} >
                         <a href=""><HouseHeart size={icon_size}/>
                         </a>{mapSections['inicio'] === topBarNavOption ? `${mapSections['inicio'].toUpperCase()}` : ''}    

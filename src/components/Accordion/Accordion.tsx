@@ -38,7 +38,7 @@ const Accordion = () => {
 
 
     return (
-        <div ref={accordionRef} className="accordion"> 
+        <div ref={accordionRef} className="accordion md:hidden">  
             <ListCollapse className="accordion-icon relative" onClick={() => setCurrentState(invertedState(currentState))}/>
             {currentState && ( //Si se hizo click en el icono, se muestra el menu
                 <nav className="accordion-options w-auto h-auto bg-[var(--white)] absolute left-[5px] top-[25px] z-10">
