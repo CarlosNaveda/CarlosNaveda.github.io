@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Calendar} from 'lucide-react';
 import Image from 'next/image';
-import JobType from './JobType';
+import jobType from './jobType';
 
-const JobCard = ({job, lastJobIndex}: {job: JobType, lastJobIndex: number}) =>{
+const JobCard = ({job, lastJobIndex}: {job: jobType, lastJobIndex: number}) =>{
        
    const image_width = 50;
    const image_height = 50;

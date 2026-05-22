@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react';
-import PostType from "../Post/PostType";
+import postType from "../Post/postType";
 import Image from 'next/image';
 import formatDateToString from '@/src/utils/formatDate';
 import {ChevronLeft, ChevronRight } from 'lucide-react';
@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 
 
 
-const Carousel = ({posts}: {posts: PostType[]}) =>{
+const Carousel = ({posts}: {posts: postType[]}) =>{
 
     const [currentIndex, setCurrentIndex] = useState(0);    
     const router = useRouter();

@@ -1,4 +1,4 @@
-import PostType from "../Post/PostType";
+import PostType from "./postType";
 import Image from "next/image";
 import formatDateToString from '@/src/utils/formatDate';
 import Link from 'next/link'

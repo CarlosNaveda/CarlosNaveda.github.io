@@ -1,4 +1,4 @@
-interface PostType {
+interface postType {
     index: number;
     imageSource: string;
     publishDate: Date;
@@ -10,6 +10,6 @@ interface PostType {
 
 }
 
-export default PostType;
+export default postType;
 
 
