@@ -262,17 +262,19 @@ html, body {
   object-fit: cover;    
   opacity: 10;  
   opacity: 0.2;
+  pointer-events: none; 
 
 }
 
-.toNextAxis-last-videos{
-  pointer-events: none;
-}
+/* .toNextAxis-last-videos{   
+  color: var(--titles);   
+  font-weight: bold;  
+
+} */
 
 .toNextAxis-video-modal{
   position: fixed;
   inset: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;

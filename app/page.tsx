@@ -144,16 +144,6 @@ const mapVideos = [
     index: 3,
     source: "https://www.youtube.com/embed/4mJSiV53vfQ",
     title: "Filtración de Claude Code"    
-  },
-  {
-    index: 4,
-    source: "https://www.youtube.com/embed/qRhye8g8HPc",
-    title: "Es importante saber cómo pedirle las cosas a la IA — Serie IA #2"    
-  },
-  {
-    index: 5,
-    source: "https://www.youtube.com/embed/8kjxS0aFqCQ",
-    title: "Analicé 2694 candidatos con IA… esto fue lo que encontré | Perú 2026"    
   }
 ];
 
@@ -236,8 +226,8 @@ export default function Home() {
         <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 px-8 text-balanced" style={{position: 'relative'}}>            
           {/* {<TopBarNav topBarNavOption={"tonextaxis"}/>} */}
           <Title title={mapTitles[2]} /> 
-          <Image className="toNextAxis-logo top-0 right-0 md:top-20 md:right-250 w-[200] h-[200] md:w-[400] md:h-[400]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}}/>
-          <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8">               
+          <Image className="toNextAxis-logo top-0 right-0 md:top-20 md:right-250 lg:top-0 lg:right-100 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}}/>
+          <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 pb-5">               
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
                 ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
                 Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
@@ -246,7 +236,7 @@ export default function Home() {
               </p>
               <ToNextAxisButton />             
           </div>
-          <div className="toNextAxis-videos grid grid-cols-2 items-center justify-center gap-6 max-w-5xl">
+          <div className="toNextAxis-videos flex flex-col xl:grid xl:grid-cols-2 items-center justify-center gap-6 max-w-5xl">
             {mapVideos.map((video) => (
               <ToNextAxisIframeVideos key={video.index} video={video} />
             ))}                
