@@ -16,14 +16,14 @@ const JobCard = ({job, lastJobIndex}: {job: jobType, lastJobIndex: number}) =>{
                 <hr className="timeline hidden lg:block" style={{opacity: lastJobIndex === job.index ? 0 : 1}}>  
                 </hr>
             </div>
-            <div className={`job-card w-[300px] md:w-[350px] lg:w-[450px] p-[8px] md:p-[16px] flex flex-col gap-4 mt-8 row-start-1 ${moduleIndex === 'even' ? 'lg:col-start-3 lg:justify-self-start' : 'lg:col-start-1 lg:justify-self-end'}`} onMouseLeave={() => setState(false)}>
+            <div className={`job-card w-[300px] md:w-[350px] lg:w-[450px] p-[15px] md:p-[16px] flex flex-col gap-4 mt-8 row-start-1 ${moduleIndex === 'even' ? 'lg:col-start-3 lg:justify-self-start' : 'lg:col-start-1 lg:justify-self-end'}`} onMouseLeave={() => setState(false)}>
                 <div className="job-card-base flex flex-col gap-2" onMouseEnter={() => setState(true)}> 
                     <time className="dateRange text-xs md:text-base flex flex-row items-center gap-2" style={{color: 'var(--paragraph)',fontWeight: 'bold'}}>  
                         <Calendar />              
                         {job.start} - {job.end}
                     </time>   
                     <div className="logoCompany-role flex flex-row items-center justify-content gap-4 gap-y-4">    
-                        <h4 className="logoCompany text-base md:text-base lg:text-lg flex flex-row items-center gap-2" style={{color: 'var(--paragraph)', fontWeight: 'bold'}}>              
+                        <h4 className="logoCompany text-base md:text-sm lg:text-lg flex flex-row items-center gap-2" style={{color: 'var(--paragraph)', fontWeight: 'bold'}}>              
                             <Image 
                                 className="jobs-logo  w-[25] h-[25] md:w-[50] md:h-[50]"  
                                 src={job.logo} 
@@ -33,7 +33,7 @@ const JobCard = ({job, lastJobIndex}: {job: jobType, lastJobIndex: number}) =>{
                             />
                             {job.company}
                         </h4>             
-                        <h4 className="role text-[10px] md:text-base lg:text-lg" style={{color: 'var(--position)',fontWeight: 'bold'}}>
+                        <h4 className="role text-[8px] md:text-xs lg:text-lg" style={{color: 'var(--position)',fontWeight: 'bold'}}>
                         {job.role}
                         </h4> 
                     </div>   
