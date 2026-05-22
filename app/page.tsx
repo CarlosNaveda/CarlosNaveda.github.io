@@ -261,9 +261,8 @@ export default function Home() {
         <Title title={mapTitles[3]} />
         <div className="blog-preview-text-button flex flex-col items-center justify-center gap-2">              
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
-                Hace algunos años tenía un blog donde compartía videos musicales subtitulados, (¡espera! lo he encontrado, se llamaba: <a className="seafansub-link" style={{color: 'var(--titles)'}} href="https://seafansub.blogspot.com/search?updated-max=2010-05-29T07:20:00-05:00" target="_blank">SeaFansub</a> solo que los links de los videos ya están expirados 😅 )<br /><br />
-                Siempre me ha gustado crear y compartir cosas en internet, y ahora que he renovado mi web quiero volver a hacerlo.<br /><br />
-                Aquí encontrarás contenido técnico, proyectos personales y también cosas divertidas que disfruto hacer.<br /><br />
+                Hace algunos años tenía un blog donde compartía videos musicales subtitulados con animaciones, siempre me ha gustado crear y compartir cosas en internet, y ahora que he renovado mi web quiero volver a hacerlo.<br /><br />
+                Aquí encontrarás contenido técnico, proyectos personales y también cosas que para mi son divertidas de hacer.<br /><br />
                 No será un espacio de un solo tema, sino un lugar para compartir todo lo que me inspira e interesa.
               </p><br />
               <Link className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)]" href="/blog">Ir al blog 🗒️</Link>   

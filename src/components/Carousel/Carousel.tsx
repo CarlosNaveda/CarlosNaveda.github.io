@@ -98,7 +98,7 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
                     transform: post.index === currentIndex ? "scale(1) translateX(0)":`scale(${isMobile ? 1 - Math.abs(post.index - currentIndex) * 0.02 : 1 - Math.abs(post.index - currentIndex) * 0.05})`
                  }}>       
                     <div className="carousel-content w-[245px] h-[245px] md:w-[550px] md:h-[550px]" style={{position: "relative"}}>
-                        <Image src={post.imageSource} alt={post.title} className={post.index === currentIndex ? "carousel-image": "carousel-image-off"} width={500} height={500}/> 
+                        <Image src={post.imageSource} alt={post.title} className={post.index === currentIndex ? "carousel-image": "carousel-image-off"} width={500} height={500} loading="eager"/> 
                         <div className={post.index === currentIndex ? "carousel-info flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5": "carousel-info-off flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5"}>
                             <div className="date-separator-tag flex flex-row gap-4 items-center justify-center">
                                 <h3 className="date text-[10px] items-end md:text-base">{formatDateToString(post.publishDate)}</h3>
