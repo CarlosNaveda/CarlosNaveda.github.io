@@ -42,10 +42,6 @@
   
 }
 
-/********************* BREAKPOINTS  **********************/
-@theme {
-  --breakpoint-tablet: 820px;
-}
 
 /********************* GENERAL  **********************/
 
@@ -74,8 +70,8 @@ html, body {
 /* ACCORDION */
 .accordion-icon{ 
   position: fixed; 
-  top: 0;
-  left: 0;   
+  top: 10; 
+  left: 10;    
 }
 
 .accordion-options{  

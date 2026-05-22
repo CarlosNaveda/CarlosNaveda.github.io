@@ -1,4 +1,4 @@
-import IframeVideos from "./IframeVideos";
+import IframeVideos from "./IframeVideosType";
 import { useState } from "react";
 
 

@@ -168,9 +168,9 @@ export function buttonChevronDown(sectionID: string) {
   return (
       <button className="mt-8 animate-bounce" style={{color: 'var(--paragraph)'}}
           onClick={() => {
-            const aboutSection = document.getElementById(sectionID);
-            if (aboutSection) {
-              aboutSection.scrollIntoView({ behavior: "smooth" });
+            const section = document.getElementById(sectionID);
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth", block: "start" });              
             }
           }}>
           <ChevronDown size={40} />
@@ -251,7 +251,7 @@ export default function Home() {
               <ToNextAxisIframeVideos key={video.index} video={video} />
             ))}                
           </div>              
-          {buttonChevronDown(mapSections['blog'])}          
+          {buttonChevronDown(mapSections['blog'])}           
         </section>          
       </div>
         
@@ -266,7 +266,7 @@ export default function Home() {
                 Aquí encontrarás contenido técnico, proyectos personales y también cosas divertidas que disfruto hacer.<br /><br />
                 No será un espacio de un solo tema, sino un lugar para compartir todo lo que me inspira e interesa.
               </p><br />
-              <Link className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] md:bg-[var(--no-selection)]" href="/blog">Ir al blog 🗒️</Link>   
+              <Link className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)]" href="/blog">Ir al blog 🗒️</Link>   
           </div>
         {<Carousel posts={mapPosts} />} 
         
