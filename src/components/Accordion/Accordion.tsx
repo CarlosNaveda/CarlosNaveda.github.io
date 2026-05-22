@@ -37,6 +37,7 @@ const Accordion = () => {
     }, []);
 
 
+    //Lo muestro solo en mobile
     return (
         <div ref={accordionRef} className="accordion md:hidden">  
             <ListCollapse className="accordion-icon relative" onClick={() => setCurrentState(invertedState(currentState))}/>

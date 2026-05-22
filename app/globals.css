@@ -109,12 +109,10 @@ html, body {
 
 /********************* DESKTOP  **********************/
 
-/* TOP-BAR */
+/* TOP-BAR / LEFT-BAR */
 .top-bar{ 
   width: 90%;     
-  height: auto;     
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
+  height: auto;          
   background-color: var(--navbar-Background);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -125,11 +123,11 @@ html, body {
   margin: 10px; 
 }
 
-.top-bar-nav{
+.top-bar-nav, .left-bar{
   color: var(--icon); 
 }
 
-.inactive-nav{
+.inactive-top-nav{
   width: auto;          
   height: auto;
   padding: 5px;     
@@ -141,7 +139,7 @@ html, body {
   gap: 2px;  
 }
 
-.active-nav{
+.active-top-nav{
   width: auto;          
   height: auto;
   padding: 5px;       
@@ -154,6 +152,44 @@ html, body {
   align-items: center;
   gap: 2px;  
 }
+
+.left-bar{ 
+  width: auto;      
+  height: fit-content; 
+  position: fixed;
+  z-index: 50;   
+  left: 1%; 
+  top: 40%;     
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(126, 122, 222, 0.2); 
+  padding-left: 2px; 
+}
+.inactive-left-nav{ 
+  width: auto;          
+  height: auto;
+  padding: 5px;     
+  color: var(--icon); 
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center; 
+  gap: 2px;  
+}
+
+.active-left-nav{
+  width: auto;          
+  height: auto;
+  padding: 5px;       
+  background-color: var(--nodes_active);
+  color: var(--white);
+  border-radius: 10px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 2px;  
+}
+
 
 /* FOOTER */
 .footer{
@@ -264,13 +300,7 @@ html, body {
   opacity: 0.2;
   pointer-events: none; 
 
-}
-
-/* .toNextAxis-last-videos{   
-  color: var(--titles);   
-  font-weight: bold;  
-
-} */
+} 
 
 .toNextAxis-video-modal{
   position: fixed;

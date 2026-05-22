@@ -9,10 +9,13 @@ import Image from 'next/image';
 import Carousel from '../src/components/Carousel/Carousel';
 import Link from 'next/link'
 import mapPosts from '../src/data/posts';
-import TopBarNav from '@/src/components/TopBar/TopBarNav';
+import LeftBarNav from '../src/components/NavBar/LeftBarNav';
 import Accordion from '../src/components/Accordion/Accordion';
 import mapSections from '../src/data/sections';
 import FooterBar from '@/src/components/FooterBar/FooterBar';
+import { useState,useContext,useEffect } from 'react';
+import {useSection} from '../src/Hook/useSection';
+
 
 //VARIABLES
 
@@ -148,6 +151,7 @@ const mapVideos = [
 ];
 
 
+
 //FUNCIONES
 
 /**
@@ -169,12 +173,35 @@ export function buttonChevronDown(sectionID: string) {
 }
 
 //COMPONENTE PRINCIPAL
-export default function Home() {
+
+export default function Home() { 
+  
+  const { setActiveSection } = useSection();
+
+  //OBSERVER - Para mapear las secciones mientras se hace el scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll("section").forEach((sec) => {
+      observer.observe(sec);
+    });
+
+    return () => observer.disconnect();
+  }, [setActiveSection]);
+
+
+
+
   return (    
     <main>
       {/* Hero */}
-      <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">
-        {/* {<TopBarNav topBarNavOption={"inicio"} />} */}
+      <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">              
         <Accordion/>    
         <h1 className="text-2xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
           Hola, soy Carlos Naveda
@@ -190,8 +217,7 @@ export default function Home() {
       </section> 
 
       {/* Sobre mí */}
-      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced">  
-        {/* {<TopBarNav topBarNavOption={"sobre mí"} />} */}
+      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced">                  
         <Title title={mapTitles[0]} />
         <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}> 
           
@@ -211,8 +237,7 @@ export default function Home() {
 
       {/* Experiencia */} 
       <div className="job-page flex flex-col">        
-         <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-8 md:gap-20 p-8 text-balanced">
-          {/* {<TopBarNav topBarNavOption={"experiencia"} />}   */}
+         <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-8 md:gap-20 p-8 text-balanced">                    
           <Title title={mapTitles[1]} />
           <div className='job-timeline flex flex-col gap-8 md:gap-14'>  
             {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} />))}                 
@@ -223,8 +248,7 @@ export default function Home() {
 
       {/* ToNextAxis */}        
       <div className="toNextAxis-page flex flex-col">                       
-        <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 px-8 text-balanced" style={{position: 'relative'}}>            
-          {/* {<TopBarNav topBarNavOption={"tonextaxis"}/>} */}
+        <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 px-8 text-balanced" style={{position: 'relative'}}>                                
           <Title title={mapTitles[2]} /> 
           <Image className="toNextAxis-logo top-0 right-0 md:top-20 md:right-250 lg:top-0 lg:right-100 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}}/>
           <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 pb-5">               
@@ -246,8 +270,7 @@ export default function Home() {
       </div>
         
       {/* Blog Preview*/}
-      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-4 md:gap-10 px-8 py-4 text-balanced">  
-        {/* {<TopBarNav topBarNavOption={"blog"} />}   */}
+      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-4 md:gap-10 px-8 py-4 text-balanced">                  
         <Title title={mapTitles[3]} />
         <div className="blog-preview-text-button flex flex-col items-center justify-center gap-2">              
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          

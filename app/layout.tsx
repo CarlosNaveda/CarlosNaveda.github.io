@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SectionProvider } from '../src/Context/SectionContext';
+import LeftBarNav from '../src/components/NavBar/LeftBarNav';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,14 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}      
     >
-      <body> {children}</body>
+      <body> 
+        {/* Agregamos el provider de secciones */}
+        <SectionProvider>
+          {/* Aquí llamamos a LeftBarNav */}
+          <LeftBarNav /> 
+          {children}
+        </SectionProvider> 
+      </body>
     </html>
   );
 }

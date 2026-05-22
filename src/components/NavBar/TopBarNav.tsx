@@ -9,36 +9,35 @@ import mapLinks from '@/src/data/socialLinks';
 
 export default function TopBarNav({topBarNavOption}: {topBarNavOption:string}) {
 
-    const logo_width = 80;
-    const logo_height = 80;
+    const logo_size = 80;    
     const icon_size = 40;    
 
     return (
-        <header className="top-bar h-16 grid grid-cols-3 items-center self-center">
+        <header className="top-bar grid grid-cols-[1fr_1fr_1fr] items-center self-center">
             <div className="logo-link justify-self-center">
                 <a href="http://localhost:3000/">  
-                    <Image  className="Mi-logo self-center" src="/images/logos/Mi_logo.png" alt="Mi-logo" width = {logo_width} height= {logo_height}/>                
+                    <Image  className="Mi-logo self-center" src="/images/logos/Mi_logo.png" alt="Mi-logo" width = {logo_size} height= {logo_size}/>                
                 </a>               
             </div>
             <nav>
                 <ul className='top-bar-nav flex flex-row items-center justify-center gap-4'> 
-                    <li className={mapSections['inicio'] === topBarNavOption ? "active-nav" : "inactive-nav"} >
+                    <li className={mapSections['inicio'] === topBarNavOption ? "active-top-nav" : "inactive-top-nav"} >
                         <a href=""><HouseHeart size={icon_size}/>
                         </a>{mapSections['inicio'] === topBarNavOption ? `${mapSections['inicio'].toUpperCase()}` : ''}    
                     </li>
-                    <li className={mapSections['sobreMi'] === topBarNavOption ? "active-nav" : "inactive-nav"} >
+                    <li className={mapSections['sobreMi'] === topBarNavOption ? "active-top-nav" : "inactive-top-nav"} >
                         <a href=""><UserStar size={icon_size}/>
                         </a>{mapSections['sobreMi'] === topBarNavOption ? `${mapSections['sobreMi'].toUpperCase()}` : ''}    
                     </li>
-                    <li className={mapSections['experiencia'] === topBarNavOption ? "active-nav" : "inactive-nav"} >
+                    <li className={mapSections['experiencia'] === topBarNavOption ? "active-top-nav" : "inactive-top-nav"} >
                         <a href=""><BriefcaseBusiness size={icon_size}/>
                         </a>{mapSections['experiencia'] === topBarNavOption ? `${mapSections['experiencia'].toUpperCase()}` : ''}    
                     </li>                    
-                    <li className={mapSections['tonextaxis'] === topBarNavOption ? "active-nav" : "inactive-nav"} >
+                    <li className={mapSections['tonextaxis'] === topBarNavOption ? "active-top-nav" : "inactive-top-nav"} >
                         <a href=""><CirclePlay size={icon_size}/>
                         </a>{mapSections['tonextaxis'] === topBarNavOption ? `${mapSections['tonextaxis'].toUpperCase()}` : ''}    
                     </li>
-                    <li className={mapSections['blog'] === topBarNavOption ? "active-nav" : "inactive-nav"} >
+                    <li className={mapSections['blog'] === topBarNavOption ? "active-top-nav" : "inactive-top-nav"} >
                         <a href=""><NotebookPen size={icon_size}/>
                         </a>{mapSections['blog'] === topBarNavOption ? `${mapSections['blog'].toUpperCase()}` : ''}    
                     </li>                    

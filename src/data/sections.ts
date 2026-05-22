@@ -1,6 +1,6 @@
 const mapSections = {
   inicio: 'inicio',
-  sobreMi: 'sobre mí',
+  sobreMi: 'sobreMi',
   experiencia: 'experiencia',
   tonextaxis: 'tonextaxis',
   blog: 'blog',
