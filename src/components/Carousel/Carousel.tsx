@@ -1,3 +1,5 @@
+'use client';
+
 import { useState,useEffect } from 'react';
 import postType from "../Post/postType";
 import Image from 'next/image';
@@ -14,17 +16,17 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
     const router = useRouter();
 
     //Para mobile
-    const mobileMaxHeight = 768;
+    const mobileMaxWidth = 768;
     const [isMobile, setIsMobile] = useState<boolean | null>(null); 
 
     //Para Tablet   
-    const tabletMaxHeight = 1024;
+    const tabletMaxWidth = 1024;
     const [isTablet, setIsTablet] = useState<boolean | null>(null); 
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < mobileMaxHeight);
-            setIsTablet(window.innerWidth < tabletMaxHeight);
+            setIsMobile(window.innerWidth < mobileMaxWidth);
+            setIsTablet(window.innerWidth < tabletMaxWidth);
     };
 
     handleResize(); 
@@ -111,17 +113,14 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
                         : 10 - Math.abs(post.index - currentIndex), //Si no, ponemos un z-index basado en la distancia al post actual
                     transform: 
                     post.index === currentIndex 
-                        ? "scale(1) translateX(0)" //Si estamos en el post actual, no aplicamos ninguna transformación
-                        //Si no, aplicamos una transformación basada en la distancia al post actual
-                        :`scale( 
-                                ${isMobile || isTablet ? 1 - Math.abs(post.index - currentIndex) * 0.02  //Para mobile y tablet                                
-                                : 1 - Math.abs(post.index - currentIndex) * 0.05})` //Para desktop
+                        ? "scale(1) translateX(0)" //Si estamos en el post actual, no aplicamos ninguna transformación                        
+                        :`scale(${isMobile || isTablet ? 1 - Math.abs(post.index - currentIndex) * 0.02: 1 - Math.abs(post.index - currentIndex) * 0.05})` //Si no, aplicamos una transformación basada en la distancia al post actual
                  }}>       
                     <div className="carousel-content w-[245px] h-[245px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px]" style={{position: "relative"}}>
                         <Image src={post.imageSource} alt={post.title} className={post.index === currentIndex ? "carousel-image": "carousel-image-off"} width={500} height={500} loading="eager"/> 
                         <div className={post.index === currentIndex ? "carousel-info flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5": "carousel-info-off flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5"}>
                             <div className="date-separator-tag flex flex-row gap-4 items-center justify-center">
-                                <h3 className="date text-[10px] items-end md:text-base">{formatDateToString(post.publishDate)}</h3>
+                                <h3 className="date text-[10px] items-end md:text-base">{formatDateToString(post.publishDate)}</h3> 
                                 <hr className="separator"></hr>
                                 <h3 className="tag text-[10px] md:text-base">{post.tag}</h3>
                             </div>
