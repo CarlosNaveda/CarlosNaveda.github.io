@@ -9,7 +9,6 @@ import Image from 'next/image';
 import Carousel from '../src/components/Carousel/Carousel';
 import Link from 'next/link'
 import mapPosts from '../src/data/posts'; 
-import Accordion from '../src/components/Accordion/Accordion';
 import mapSections from '../src/data/sections';
 import FooterBar from '@/src/components/FooterBar/FooterBar';
 import {useEffect } from 'react';
@@ -179,13 +178,16 @@ export default function Home() {
 
   //OBSERVER - Para mapear las secciones mientras se hace el scroll
   useEffect(() => {
+    
+    const threshold = window.innerWidth > 1024 ? 0.6 : window.innerWidth > 400 ? 0.3 : 0.2; //Para mobile o tablet el límite tiene que ser menor.
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }
       });
-    }, { threshold: 0.6 });
+    }, { threshold });
 
     document.querySelectorAll("section").forEach((sec) => {
       observer.observe(sec);
@@ -201,7 +203,6 @@ export default function Home() {
     <main>
       {/* Hero */}
       <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">              
-        <Accordion/>    
         <h1 className="text-2xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
           Hola, soy Carlos Naveda
         </h1>
