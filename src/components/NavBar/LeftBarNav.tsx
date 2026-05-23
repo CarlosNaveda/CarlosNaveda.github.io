@@ -81,7 +81,7 @@ export default function LeftBarNav() {
                     <li className={activeSection === "experiencia" ? "active-left-nav" : "inactive-left-nav"} >
                         <a href=""><BriefcaseBusiness size={icon_size}/></a>EXPERIENCIA
                     </li>                    
-                    <li className={activeSection === "tonextaxis" ? "active-left-nav" : "inactive-left-nav"} >
+                    <li className={activeSection === "tonextaxis" ? "active-left-nav" : "inactive-left-nav"} > 
                         <a href=""><CirclePlay size={icon_size}/></a>TONEXTAXIS 
                     </li>
                     <li className={activeSection === "blog" ? "active-left-nav" : "inactive-left-nav"} >

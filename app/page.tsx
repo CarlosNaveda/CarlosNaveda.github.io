@@ -8,12 +8,11 @@ import ToNextAxisIframeVideos from '../src/components/IFrame/ToNextAxisIframeVid
 import Image from 'next/image';
 import Carousel from '../src/components/Carousel/Carousel';
 import Link from 'next/link'
-import mapPosts from '../src/data/posts';
-import LeftBarNav from '../src/components/NavBar/LeftBarNav';
+import mapPosts from '../src/data/posts'; 
 import Accordion from '../src/components/Accordion/Accordion';
 import mapSections from '../src/data/sections';
 import FooterBar from '@/src/components/FooterBar/FooterBar';
-import { useState,useContext,useEffect } from 'react';
+import {useEffect } from 'react';
 import {useSection} from '../src/Hook/useSection';
 
 

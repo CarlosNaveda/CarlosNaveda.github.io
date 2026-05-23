@@ -164,16 +164,18 @@ html, body {
   border-left: 1px solid rgba(126, 122, 222, 0.2); 
   padding-left: 2px; 
 }
+ 
 .inactive-left-nav{ 
   width: auto;          
   height: auto;
   padding: 5px;     
+  border-radius: 10px;  
   color: var(--icon); 
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center; 
-  gap: 2px;  
+  gap: 4px;   
 }
 
 .active-left-nav{
@@ -188,6 +190,7 @@ html, body {
   justify-content: left;
   align-items: center;
   gap: 4px;  
+  transition: all 0.5s linear;   
 }
 
 
