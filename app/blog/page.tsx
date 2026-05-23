@@ -21,7 +21,7 @@ export default function BlogMain() {
                 }
             </div><hr /> 
             <h2 className='title-posts text-2xl md:text-4xl'>Posts</h2>
-            <div className='blog-main-posts-preview flex flex-col md:pb-10 xl:grid xl:grid-cols-2 items-center justify-center gap-2 md:gap-4'>
+            <div className='blog-main-posts-preview flex flex-col md:pb-20 lg:pb-auto xl:grid xl:grid-cols-2 items-center justify-center gap-2 md:gap-4'> 
                 <PostPreview mapPosts={mapPosts}/>
             </div>            
         </div>            
