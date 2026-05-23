@@ -19,7 +19,11 @@ const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
                                 <div className="date-separator-tag flex flex-row gap-4 items-center justify-center">
                                     <h3 className="date text-xs md:text-base">{formatDateToString(mapPost.publishDate)}</h3> 
                                     <hr className="separator"></hr>
-                                    <h3 className="tag text-xs md:text-base">{mapPost.tag}</h3>
+                                    <h3 className="text-xs md:text-base flex flex-row gap-2">
+                                        {mapPost.tag.map((tag) => ( //Recorro el array de tags
+                                            <span key={tag} className="tag">{tag}</span> 
+                                        ))}
+                                    </h3>
                                 </div>
                                 <h2 className="post-preview-title text-lg md:text-2xl">{mapPost.title}</h2> 
                                 <p className="post-preview-shortDescription text-xs md:text-base">{mapPost.shortDescription}</p>     
@@ -30,6 +34,6 @@ const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
             ))}   
         </>        
     )
-}
+} 
 
-export default PostPreview
+export default PostPreview;
