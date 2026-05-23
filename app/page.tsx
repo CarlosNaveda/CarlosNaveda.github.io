@@ -186,7 +186,7 @@ export default function Home() {
           setActiveSection(entry.target.id);
         }
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.6 });
 
     document.querySelectorAll("section").forEach((sec) => {
       observer.observe(sec);
