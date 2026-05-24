@@ -6,7 +6,6 @@ import Title from '../src/components/Title/Title';
 import JobCard from '../src/components/Job/JobCard';
 import ToNextAxisButton from '../src/components/Button/ToNextAxisButton';
 import ToNextAxisIframeVideos from '../src/components/IFrame/ToNextAxisIframeVideos';
-import Image from 'next/image';
 import Carousel from '../src/components/Carousel/Carousel';
 import Link from 'next/link'
 import mapPosts from '../src/data/posts'; 
@@ -92,8 +91,6 @@ export function buttonChevronDown(sectionID: string) {
       </button>        
   );
 }
-
-
 
 
 //COMPONENTE PRINCIPAL

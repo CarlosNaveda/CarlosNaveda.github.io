@@ -55,7 +55,7 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}      
     >
-      <body className={`${spaceGrotesk.variable} ${inter.variable} ${outfit.variable} ${dmSans.variable}`}> 
+      <body className={`${outfit.variable} ${dmSans.variable}`}> 
         {/* Agregamos el provider de secciones */}
         <SectionProvider>
           {/* Aquí llamamos a LeftBarNav solo si no estamos en el blog */}
