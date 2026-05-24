@@ -510,11 +510,13 @@ html, body {
 
 .post-slug-link{ 
   color: var(--no-selection);
-  cursor: pointer;   
+  cursor: pointer;     
 } 
 
 .post-slug-link:hover{ 
   color: var(--link_blog);      
+  animation: jello;
+  animation-duration: 1s;   
 } 
 
 .post-preview-image{     
