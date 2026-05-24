@@ -66,7 +66,7 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
      */
     function buttonChevronLeft() { 
     return (
-        <button className="mt-8 animate-bounce absolute right-[310px] bottom-[170px] md:bottom-[370px] lg:bottom-auto md:right-[540px] lg:right-[600px]" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(previousSlide(currentIndex))}>
+        <button className="mt-8 animate-bounce absolute right-[310px] bottom-[200px] xs:bottom-[170px] md:bottom-[370px] lg:bottom-auto md:right-[540px] lg:right-[600px]" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(previousSlide(currentIndex))}>
             <ChevronLeft size={40} />
         </button>        
     );
@@ -77,7 +77,7 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
      */
     function buttonChevronRight() { 
     return (
-        <button className="mt-8 animate-bounce absolute left-[310px] bottom-[170px] md:bottom-[370px] lg:bottom-auto md:left-[500px] lg:left-[600px]" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(nextSlide(currentIndex))}>
+        <button className="mt-8 animate-bounce absolute left-[310px] bottom-[200px] xs:bottom-[170px] md:bottom-[370px] lg:bottom-auto md:left-[500px] lg:left-[600px]" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(nextSlide(currentIndex))}>
             <ChevronRight size={40} /> 
         </button>        
     );
@@ -91,9 +91,9 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
         <div className="posts flex flex-row gap-4 items-center justify-center w-[350px] h-[350px] md:w-[600px] md:h-[600px]" style={{position: "relative"}}>  
             {buttonChevronLeft()}
             {posts.toReversed().map((post) => (               
-                 <div key={post.index} className="carousel flex flex-col transition-all duration-300 ease-in-out bottom-[80px] md:bottom-[190px] lg:bottom-auto" 
-                 onClick={() => router.push(`/blog/${formatTitleToKebabCase(post.title)}`)} 
-                 style={{
+                <div key={post.index} className="carousel flex flex-col transition-all duration-300 ease-in-out bottom-[110px] xs:bottom-[80px] md:bottom-[190px] lg:bottom-auto" 
+                    onClick={() => router.push(`/blog/${formatTitleToKebabCase(post.title)}`)} 
+                    style={{
                     position: "absolute", 
                     left:
                     post.index === currentIndex
@@ -115,8 +115,8 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
                     post.index === currentIndex 
                         ? "scale(1) translateX(0)" //Si estamos en el post actual, no aplicamos ninguna transformación                        
                         :`scale(${isMobile || isTablet ? 1 - Math.abs(post.index - currentIndex) * 0.02: 1 - Math.abs(post.index - currentIndex) * 0.05})` //Si no, aplicamos una transformación basada en la distancia al post actual
-                 }}>       
-                    <div className="carousel-content w-[245px] h-[245px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px]" style={{position: "relative"}}>
+                    }}>       
+                    <div className="carousel-content w-[245px] h-[245px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px] font-dm-sans" style={{position: "relative"}}>
                         <Image src={post.imageSource} alt={post.title} className={post.index === currentIndex ? "carousel-image": "carousel-image-off"} width={500} height={500} loading="eager"/> 
                         <div className={post.index === currentIndex ? "carousel-info flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5": "carousel-info-off flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5"}>
                             <div className="date-separator-tag flex flex-row gap-4 items-center justify-center">
@@ -124,7 +124,7 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
                                 <hr className="separator"></hr>
                                 <h3 className="tag text-[10px] md:text-base">{post.tag}</h3>
                             </div>
-                            <h2 className="carousel-title text-[12px] md:text-2xl">{post.title}</h2> 
+                            <h2 className="carousel-title text-[12px] md:text-2xl font-outfit">{post.title}</h2> 
                             <p className="carousel-shortDescription text-[10px] md:text-base">{post.shortDescription}</p>  
                         </div>
                     </div>

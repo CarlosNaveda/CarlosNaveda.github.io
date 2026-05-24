@@ -24,15 +24,15 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
               {post && ( //Si el post existe
                   <main>
                     <div className="blog-slug flex flex-row items-center justify-center p-10 gap-5 md:gap-10 h-auto pb-20 md:pb-20 lg:pb-auto">   
-                        <div className='blog-slug-content min-h-screen flex flex-col items-left md:justify-center gap-2'> 
+                        <div className='blog-slug-content min-h-screen flex flex-col items-left md:justify-center gap-2 font-outfit'> 
                             <h1 className='blog-slug-title text-2xl md:text-4xl'>{post.title}</h1>
                             <h2 className='blog-slug-created text-xl md:text-2xl'>{postCreated} {formatDateToString(post.publishDate)}</h2>
                             <Image src={post.imageSource} alt={post.title} className="post-image object-cover w-[100%] h-[200px] md:w-[100%] md:h-[300px]" width={image_width} height={image_height}/>
-                            <p className='content text-xs md:text-base h-auto'>{post.content}</p> 
+                            <p className='content text-xs md:text-base h-auto font-dm-sans'>{post.content}</p> 
                         </div>
                         <div className="index-content self-center md:p-5"> 
-                            <h2 className='index-content-title hidden md:block'>{indexContent}</h2>
-                            <ul className="index-content-list hidden md:block">
+                            <h2 className='index-content-title hidden md:block font-outfit'>{indexContent}</h2>
+                            <ul className="index-content-list hidden md:block font-dm-sans">
                                 {post.tableOfContents.map((tableOfContent) => (
                                     <li key={tableOfContent.index} className="marker:text-[#7E7ADE]" style={{listStyle: "square"}}>
                                       {tableOfContent.title}

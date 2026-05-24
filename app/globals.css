@@ -60,6 +60,11 @@ html, body {
 /********************* THEME  **********************/
 @theme {
   --breakpoint-xs: 400px;
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+
 }
 
 /********************* MOBILE  **********************/
@@ -179,14 +184,17 @@ html, body {
   height: auto;
   padding: 5px;       
   background-color: var(--nodes_active);
-  color: var(--white);
+  color: var(--white); 
   border-radius: 10px; 
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
   gap: 4px;  
-  transition: all 0.5s linear;   
+  transition: all 0.5s linear;
+  flex: row;
+  justify-content: left; 
+  align-items: center;
 } 
 
 .accordion-icon{ 

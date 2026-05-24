@@ -12,7 +12,7 @@ const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
     return(
         <>
             {mapPosts.map((mapPost) => (
-                    <div key={mapPost.index} className="post-preview-content flex flex-row items-center justify-center w-[350] h-[200] md:w-[600] md:h-[260] gap-0">                           
+                    <div key={mapPost.index} className="post-preview-content flex flex-row items-center justify-center w-[350] h-[200] md:w-[600] md:h-[260] gap-0 font-dm-sans">                           
                             <div className="post-preview-text flex flex-col gap-1 md:gap-2 w-[260] md:w-[450] h-auto p-1 md:p-10 text-base justify-start"> 
                                 <div className="date-separator-tag flex flex-row gap-4 items-center justify-start">
                                     <h3 className="date text-xs md:text-base">{formatDateToString(mapPost.publishDate)}</h3> 
@@ -23,7 +23,7 @@ const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
                                         ))}
                                     </h3>
                                 </div>
-                                <h2 className="post-preview-title text-lg md:text-2xl">{mapPost.title}</h2> 
+                                <h2 className="post-preview-title text-lg md:text-2xl font-outfit">{mapPost.title}</h2> 
                                 <p className="post-preview-shortDescription text-xs md:text-base">{mapPost.shortDescription}</p>     
                                 <Link className="post-slug-link text-sm md:text-lg lg:w-[90px]" href={`/blog/${formatTitleToKebabCase(mapPost.title)}`}>Leer más...</Link>
                             </div>

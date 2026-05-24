@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk, Inter, Outfit, DM_Sans} from "next/font/google";
 import "./globals.css";
 import { SectionProvider } from '../src/Context/SectionContext';
-import LeftBarNav from '../src/components/NavBar/LeftBarNav';
+import NavWrapper from '../src/components/NavBar/NavWrapper';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +14,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dmSans",
+  subsets: ["latin"],
+});
+
+
 export const metadata: Metadata = {
   title: "Carlos Naveda",
   description: "Mi espacio personal donde comparto lo que voy aprendiendo y construyendo en el mundo de la tecnología.",
@@ -21,6 +43,7 @@ export const metadata: Metadata = {
     icon: '/images/logos/Mi_logo.png',   
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -32,14 +55,14 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}      
     >
-      <body> 
+      <body className={`${spaceGrotesk.variable} ${inter.variable} ${outfit.variable} ${dmSans.variable}`}> 
         {/* Agregamos el provider de secciones */}
         <SectionProvider>
-          {/* Aquí llamamos a LeftBarNav */}
-          <LeftBarNav /> 
+          {/* Aquí llamamos a LeftBarNav solo si no estamos en el blog */}
+          <NavWrapper />      
           {children}
         </SectionProvider> 
-      </body>
+      </body> 
     </html>
   );
 }

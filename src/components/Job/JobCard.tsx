@@ -11,7 +11,7 @@ const JobCard = ({job, lastJobIndex}: {job: jobType, lastJobIndex: number}) =>{
    const moduleIndex = job.index % 2 === 0 ? 'even' : 'odd';  // Determina si el índice es par o impar   
    
     return (
-        <div className="node-job-card grid grid-cols-[1fr_auto_1fr] gap-4 items-start w-[300px] md:w-[350px] lg:w-[1000px]"> 
+        <div className="node-job-card grid grid-cols-[1fr_auto_1fr] gap-4 items-start w-[300px] md:w-[350px] lg:w-[1000px] font-dm-sans"> 
             <div className="node row-start-1 col-start-2 hidden lg:block lg:w-[20px] lg:h-[20px]" style={{backgroundColor: state ? 'var(--nodes_active)' : 'var(--nodes_inactive)'}}>
                 <hr className="timeline hidden lg:block" style={{opacity: lastJobIndex === job.index ? 0 : 1}}>  
                 </hr>
@@ -23,7 +23,7 @@ const JobCard = ({job, lastJobIndex}: {job: jobType, lastJobIndex: number}) =>{
                         {job.start} - {job.end}
                     </time>   
                     <div className="logoCompany-role flex flex-row items-center justify-content gap-4 gap-y-4">    
-                        <h4 className="logoCompany text-base md:text-sm lg:text-lg flex flex-row items-center gap-2" style={{color: 'var(--paragraph)', fontWeight: 'bold'}}>              
+                        <h4 className="logoCompany text-base md:text-sm lg:text-lg flex flex-row items-center gap-2 font-outfit" style={{color: 'var(--paragraph)', fontWeight: 'bold'}}>              
                             <Image 
                                 className="jobs-logo  w-[25] h-[25] md:w-[50] md:h-[50]"  
                                 src={job.logo} 
@@ -33,7 +33,7 @@ const JobCard = ({job, lastJobIndex}: {job: jobType, lastJobIndex: number}) =>{
                             />
                             {job.company}
                         </h4>             
-                        <h4 className="role text-[8px] md:text-xs lg:text-lg" style={{color: 'var(--position)',fontWeight: 'bold'}}>
+                        <h4 className="role text-[8px] md:text-xs lg:text-lg font-outfit" style={{color: 'var(--position)',fontWeight: 'bold'}}>
                         {job.role}
                         </h4> 
                     </div>   

@@ -16,7 +16,7 @@ export default function FooterBar() {
         <footer className="footer flex flex-col items-center justify-center gap-5 bg-[var(--my_background)] p-6 lg:p-8 h-auto md:gap-4 md:flex-row md:items-center md:justify-center"> 
             <div className="logo-brand flex flex-col md:flex-row lg:flex-row items-center justify-center w-[275px]  md:flex-1">  
                 <Image  className="Mi-logo self-center w-[50px] h-[50px] md:w-[80px] md:h-[80px]" src="/images/logos/Mi_logo.png" alt="Mi-logo" width = {logo_width} height= {logo_height}/>
-                <div className="brand-text flex flex-col">
+                <div className="brand-text flex flex-col font-outfit">
                     <h3 className="text-xl text-center" style={{color: 'var(--white)'}}>Carlos Naveda</h3>
                     <h4 className="text-base text-center tracking-wide" style={{color: '#888888'}}>Tech x Creative Builder</h4> 
                 </div>                
@@ -28,7 +28,7 @@ export default function FooterBar() {
                 <li className='instagram-social' style={{color: "#FF0069"}}><a href={mapLinks['Instagram']} target='_blank'><FaSquareInstagram size={icon_size}/></a></li>
                 <li className='gmail-social' style={{color: "#EA4335"}}><a href={mapLinks['Gmail']} target='_blank'><SiGmail size={icon_size}/></a></li>                    
             </ul>            
-            <div className='footer-text text-[14px] flex flex-col items-center justify-center w-[350px] text-justify leading-relaxed flex-1 '>  
+            <div className='footer-text text-[14px] flex flex-col items-center justify-center w-[350px] text-justify leading-relaxed flex-1 font-dm-sans'>  
                 <p style={{color: '#888888'}}>
                     Diseñado y construido desde cero con Figma, Next.js, Tailwind CSS, MDX, Supabase y desplegado en Vercel.<br/>
                     Este espacio crecerá conmigo mientras continúe aprendiendo, documentando y creando nuevas ideas.<br/><br/>

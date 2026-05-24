@@ -205,10 +205,10 @@ export default function Home() {
     <main>
       {/* Hero */}
       <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">              
-        <h1 className="text-2xl md:text-6xl font-bold" style={{color: 'var(--titles)'}}>
+        <h1 className="text-2xl md:text-6xl font-bold font-outfit" style={{color: 'var(--titles)'}}>
           Hola, soy Carlos Naveda
         </h1>
-        <p className="text-lg md:text-3xl leading-relaxed" style={{color: 'var(--paragraph)'}}>
+        <p className="text-lg md:text-3xl leading-relaxed font-dm-sans" style={{color: 'var(--paragraph)'}}>
           Aprendo, construyo...<br />
           <span className="text-[var(--paragraph)]">          
           y voy descubriendo el camino<br />
@@ -221,7 +221,7 @@ export default function Home() {
       {/* Sobre mí */}
       <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced">                  
         <Title title={mapTitles[0]} />
-        <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}> 
+        <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify font-dm-sans" style={{color: 'var(--paragraph)'}}> 
           
           Soy alguien que suele mirar más hacia adentro, pero con una necesidad constante de compartir hacia afuera lo que voy aprendiendo.<br />
           Me apasiona la tecnología, no me imagino haciendo nada que no esté relacionado con ello, no solo por lo que es, sino por lo que permite construir.<br /><br />
@@ -250,10 +250,10 @@ export default function Home() {
 
       {/* ToNextAxis */}        
       <div className="toNextAxis-page flex flex-col">                       
-        <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 px-8 text-balanced" style={{position: 'relative'}}>                                
+        <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 p-8 text-balanced">                                
           <Title title={mapTitles[2]} /> 
-          <Image className="toNextAxis-logo top-0 right-0 md:top-20 md:right-250 lg:top-0 lg:right-100 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}}/>
-          <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 pb-5">               
+          {/* <Image className="toNextAxis-logo top-0 right-0 md:top-20 md:right-250 lg:top-0 lg:right-100 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}}/> */}
+          <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 pb-5 font-dm-sans">               
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
                 ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
                 Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
@@ -272,15 +272,15 @@ export default function Home() {
       </div>
         
       {/* Blog Preview*/}
-      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-4 md:gap-10 px-8 py-4 text-balanced">                  
+      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-4 md:gap-10 p-8 text-balanced">                  
         <Title title={mapTitles[3]} />
-        <div className="blog-preview-text-button flex flex-col items-center justify-center gap-2">              
+        <div className="blog-preview-text-button flex flex-col items-center justify-center gap-1 font-dm-sans">              
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
                 Hace algunos años tenía un blog donde compartía videos musicales subtitulados con animaciones, siempre me ha gustado crear y compartir cosas en internet, y ahora que he renovado mi web quiero volver a hacerlo.<br /><br />
                 Aquí encontrarás contenido técnico, proyectos personales y también cosas que para mi son divertidas de hacer.<br /><br />
                 No será un espacio de un solo tema, sino un lugar para compartir todo lo que me inspira e interesa. Estos son los últimos posts 👇🏻
               </p><br />
-              <Link className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2" href="/blog">
+              <Link className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit" href="/blog">
               Ir al blog <NotebookPen size={icon_size}/>
               </Link>
           </div>
