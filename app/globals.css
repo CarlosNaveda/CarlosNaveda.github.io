@@ -564,3 +564,26 @@ html, body {
   position: sticky;
   top: 2rem;
 } 
+
+.index-content-text{
+  color: var(--no-selection); 
+  cursor: pointer;       
+}
+
+.index-content-arrow:hover{
+  animation: shakeX;
+  animation-duration: 1.5s;  
+  cursor: pointer;  
+}
+
+.index-content-text:hover{
+  color: var(--white); 
+  cursor: pointer;      
+}
+
+.index-content-text:hover .index-content-arrow {
+  animation: shakeX;
+  animation-duration: 1.5s; 
+  cursor: pointer;
+  
+} 
