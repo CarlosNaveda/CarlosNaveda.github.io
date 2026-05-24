@@ -64,7 +64,8 @@ html, body {
   --font-inter: 'Inter', sans-serif;
   --font-outfit: 'Outfit', sans-serif;
   --font-dm-sans: 'DM Sans', sans-serif;
-
+  --animate-breathe: breathe 2.5s ease-in-out infinite;
+ 
 }
 
 /********************* MOBILE  **********************/
@@ -84,7 +85,7 @@ html, body {
   padding: 10px;
   background: rgba(18, 17, 43, 0.95);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(126, 122, 222, 0.2);  
+  border: 1px solid rgba(126, 122, 222, 0.2);   
 }
 
 /* HERO */
@@ -232,12 +233,13 @@ html, body {
   border-radius: 50%;  
   display: flex;        
   font-weight: bold;
-  position: relative;  
+  position: relative;    
 } 
+
 
 .timeline {     
   width: 4px; 
-  height: 210px;  
+  /* height: 210px;   */   
   border: none; 
   background-color: var(--timeline); 
   position: absolute; 
@@ -247,7 +249,7 @@ html, body {
 }
 
 .jobs-logo {  
-  border-radius: 50%; 
+  border-radius: 50%;  
   object-fit: cover; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
@@ -255,11 +257,27 @@ html, body {
 .job-card {  
   background-color: var(--cards);
   border-radius: 12px;  
-  box-shadow: 20px 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 20px 4px 8px rgba(0,0,0,0.1);  
 }
 
-.job-card-expanded {      
-  transition: opacity 0.2s ease-in-out;  
+.job-card:hover {
+  box-shadow: 0 0 20px rgba(107, 104, 232, 0.3); /* --nodes_active con opacidad */
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.node-job-card:has(.job-card:hover) .node {
+  box-shadow: 0 0 20px rgba(137, 136, 227, 0.3); /* --nodes_active con opacidad */
+  transition: box-shadow 0.3s ease-in-out;  
+}
+
+.job-card-expanded {          
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;  
 }
 
 .role {  
