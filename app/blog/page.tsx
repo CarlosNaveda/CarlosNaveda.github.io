@@ -3,33 +3,10 @@
 import mapPosts from '../../src/data/posts';
 import PostPreview from '@/src/components/Post/PostPreview';
 import FooterBar from '@/src/components/FooterBar/FooterBar';
-
-
-function generateDistance(postIndex:number, tagIndex:number) :string {
-    const radius = 50 + (postIndex * 20) + (tagIndex * 10); // Radio diferente por tag
-    return `${radius}`;
-}
- 
-function generateDelay(postIndex:number, tagIndex:number) :string {        
-   const delay = (postIndex * 1.5) + (tagIndex * 0.5);
-    return `${delay}s`;
-}
-
-function generateDuration(postIndex: number, tagIndex: number): string {
-  const duration = 8 + (postIndex * 2) + (tagIndex * 3); // Duración diferente
-  return `${duration}s`;  
-}
-
-function getUniqueArray(array: string[]): string[] {
-  const uniqueArray: string[] = [];
-  array.forEach((element) => {
-    if (!uniqueArray.includes(element)) {
-      uniqueArray.push(element);
-    }
-  });
-  return uniqueArray;
-
-}
+import generateDelay  from '@/src/utils/generateDelay';
+import generateDuration from '@/src/utils/generateDuration';
+import generateDistance from '@/src/utils/generateDistance';
+import getUniqueArray  from '@/src/utils/getUniqueArray';
 
 export default function BlogMain() {
   

@@ -15,6 +15,7 @@ import {useEffect } from 'react';
 import {useSection} from '../src/Hook/useSection';
 import mapJobs from '../src/data/jobs';
 import {useState} from 'react';
+import FloatingEmojis from '../src/components/Animations/FloatingEmojis';
 
 
 //VARIABLES
@@ -121,22 +122,34 @@ export default function Home() {
 
   //Para saber si el último JobCard está expandido o no
   const [lastJobExpanded, setLastJobExpanded] = useState(false);
-  
+
+  //Para saber qué palabra es la que tiene el hover
+  const [hoverWord, setHoverWord] = useState('');  
 
   return (    
     <main>
       {/* Hero */}
       <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">              
-        <h1 className="text-2xl md:text-6xl font-bold font-outfit" style={{color: 'var(--titles)'}}>
-          Hola, soy Carlos Naveda
-        </h1>
-        <p className="text-lg md:text-3xl leading-relaxed font-dm-sans" style={{color: 'var(--paragraph)'}}>
-          Aprendo, construyo...<br />
-          <span className="text-[var(--paragraph)]">          
-          y voy descubriendo el camino<br />
-          mientras avanzo.
-          </span>
-        </p>
+        <div className="text-2xl md:text-6xl font-bold font-outfit flex flex-row items-center justify-center gap-3" style={{color: 'var(--titles)'}}>
+          <h1 className='saludo'>Hola soy</h1>           
+          <h2 className='mi-nombre'>Carlos Naveda</h2>             
+        </div>
+        <div className="text-lg md:text-3xl leading-relaxed font-dm-sans" style={{color: 'var(--paragraph)'}}>          
+          <p className="flex flex-row items-center justify-center gap-2">
+            <span id="aprendo" className="relative highlight-words " onMouseEnter={() => {setHoverWord('aprendo');}} onMouseLeave={() => {setHoverWord('');}}>Aprendo{hoverWord === 'aprendo' && <FloatingEmojis word='aprendo'/>}</span>          
+            <span id="construyo" className="relative highlight-words" onMouseEnter={() => {setHoverWord('construyo');}} onMouseLeave={() => {setHoverWord('');}}>construyo{hoverWord === 'construyo' && <FloatingEmojis word='construyo'/>}</span>          
+            <span>...</span><br />
+          </p>
+          <p className="flex flex-row items-center justify-center gap-2">
+            <span>y voy </span>
+            <span id="descubriendo" className="relative highlight-words" onMouseEnter={() => {setHoverWord('descubriendo');}} onMouseLeave={() => {setHoverWord('');}}>descubriendo{hoverWord === 'descubriendo' && <FloatingEmojis word='descubriendo'/>}</span>          
+            <span>el</span><br />
+          </p>
+          <p className="flex flex-row items-center justify-center gap-2">
+            <span>camino mientras</span>          
+            <span id="avanzo" className="relative highlight-words" onMouseEnter={() => {setHoverWord('avanzo');}} onMouseLeave={() => {setHoverWord('');}}>avanzo{hoverWord === 'avanzo' && <FloatingEmojis word='avanzo'/>}</span>          
+          </p>
+        </div>
         {buttonChevronDown(mapSections['sobreMi'])}            
       </section> 
 

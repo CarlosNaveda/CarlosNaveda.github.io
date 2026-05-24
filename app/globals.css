@@ -216,7 +216,32 @@ html, body {
   font-weight: bold; 
 }
 
-/* HERO */
+.mi-nombre{
+  animation: bounceIn;
+  animation-duration: 2s;   
+}
+.mi-nombre:hover{  
+  animation: jello;
+  animation-duration: 1s;  
+} 
+.highlight-words:hover{ 
+  color: var(--nodes_active); /* #6B68E8 — morado vibrante */
+  text-shadow: 0 0 20px rgba(107, 104, 232, 0.6);
+  transition: all 0.3s ease-in-out;    
+  animation: rubberBand;
+  animation-duration: 1s;      
+}
+
+@keyframes floatingEmoji {
+  0% { transform: rotate(var(--start-angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--start-angle))); }
+  100% { transform: rotate(calc(var(--start-angle) + 360deg)) translateX(var(--orbit-radius)) rotate(calc(-1 * (var(--start-angle) + 360deg))); }
+}
+.floating-emoji{
+   animation: floatingEmoji 1s linear infinite;    
+   left: 15%;   
+   bottom: 20%;     
+   backdrop-filter: blur(0.5px);      
+}
 
 
 /* SOBRE MÍ */
@@ -485,7 +510,6 @@ html, body {
   0% { transform: rotate(0deg) translateX(var(--orbit-radius, 150px)) rotate(0deg); }
   100% { transform: rotate(360deg) translateX(var(--orbit-radius, 150px)) rotate(-360deg); }
 }
-
 
 .post-preview-content{        
   background: 
