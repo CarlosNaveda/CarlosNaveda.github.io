@@ -37,10 +37,10 @@ export default function BlogMain() {
 
   return (    
     <main>
-        <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-1 md:gap-4 px-2 md:px-8 pb-20 md:pb-0 text-balanced"> 
+        <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-1 md:gap-4 p-8 pb-20 md:pb-0 text-balanced"> 
             <div className="blog-tags flex flex-col items-center justify-center center gap-2 font-dm-sans">
                 <h2 className='title-filter text-2xl md:text-4xl font-outfit'>Filtrar por tag</h2>             
-                <div className='wrapper-tags w-[300px] h-[200px] xs:w-[400px] xs:h-[250px] md:w-[500px] md:h-[300px] lg:w-[900px] lg:h-[500px]'>                                    
+                <div className='wrapper-tags w-[300px] h-[200px] xs:w-[350px] xs:h-[250px] md:w-[500px] md:h-[300px] lg:w-[900px] lg:h-[500px]'>                                    
                     <small className='flex flex-row items-center justify-center center gap-2'> 
                         {allUniqueTags.map((tag, tagIndex) => ( //Recorro el array de tags únicos
                             <span key={tag} className="tag-to-filter top-[55%] md:top-[50%]"  
