@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Carlos Naveda",
   description: "Mi espacio personal donde comparto lo que voy aprendiendo y construyendo en el mundo de la tecnología.",
+  icons: {
+    icon: '/images/logos/Mi_logo.png',   
+  },
 };
 
 export default function RootLayout({
