@@ -10,6 +10,7 @@
     "dev:mobile": "next dev --turbopack --hostname 0.0.0.0"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "lucide-react": "^1.8.0",
     "next": "^16.2.6",
     "react": "19.2.4",
