@@ -2,10 +2,11 @@ import wordEmojis from '../../data/wordEmojis';
 import generateDelay  from '@/src/utils/generateDelay';
 import generateDistance from '@/src/utils/generateDistance';
 import Image from 'next/image';
-
+import {useIsDesktop} from '../../Hook/useIsDesktop';
 const FloatingEmojis = ({word}: {word: string}) =>{
 
-    const icon_size = 20;    
+    const icon_size = 20;
+    const isDesktop = useIsDesktop();    
     
 
    return (
@@ -17,7 +18,7 @@ const FloatingEmojis = ({word}: {word: string}) =>{
                   alt={word}
                   width={icon_size} height={icon_size} 
                   style={{
-                  '--orbit-radius': `${generateDistance(0, index)}px`,
+                  '--orbit-radius': `${generateDistance(0, index,isDesktop)}px`,
                    '--start-angle': `${index * 120}deg`,  
                   animationDelay: `${generateDelay(0, index)}s`, 
                   animationDuration: "8s"}as React.CSSProperties}>                    

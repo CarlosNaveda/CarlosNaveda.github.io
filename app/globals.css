@@ -18,6 +18,7 @@
   --timeline: #2E2C7A;
   --nodes_inactive: #606071;
   --separator: #8E9599;
+  --preSelection: #7480fd;
   --selection: #153A8587; 
   --no-selection: #969696;
   --icon: #A0A0B0;
@@ -491,7 +492,7 @@ html, body {
 
 .blog-tags {
   position: relative;  
-  margin: 0 auto;
+  margin: 0 auto; 
   display: flex;
   justify-content: center;
   align-items: center; 
@@ -515,8 +516,9 @@ html, body {
 }  
 
 .tag-to-filter:hover{   
+  background-color: var(--preSelection);
   cursor: pointer;
-  box-shadow: 0 0 40px rgba(107, 104, 232, 0.3); /* --nodes_active con opacidad */
+  box-shadow: 0 0 40px rgba(140, 104, 232, 0.919); /* --nodes_active con opacidad */
   transition: box-shadow 0.2s ease-in-out;            
 }  
 
@@ -541,21 +543,24 @@ html, body {
   color: var(--titles_blog); 
 }
 
-.post-slug-link{ 
-  color: var(--no-selection);
-  cursor: pointer;     
-} 
-
-.post-slug-link:hover{ 
-  color: var(--link_blog);      
-  animation: jello 1s;  
-} 
-
 .post-preview-image{     
   border-radius: 50%; 
   object-fit: cover;  
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);     
 }
+
+.post-slug-link{ 
+  color: var(--no-selection);
+  cursor: pointer;     
+} 
+
+.post-slug-link:hover{   
+  animation: jello 1s; 
+  color: var(--preSelection);  
+  cursor: pointer;  
+  font-weight: bold;   
+
+} 
 
 /* BLOG SLUG */
 .blog-slug-content{ 
