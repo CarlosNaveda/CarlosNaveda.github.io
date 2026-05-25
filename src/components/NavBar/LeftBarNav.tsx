@@ -143,7 +143,7 @@ export default function LeftBarNav() {
                             {navItems.map((item) => (
                                 <li key={item.id} className={activeSection === item.id ? "active-left-nav" : "inactive-left-nav"} onClick={(e) => { if(isMobileTablet) e.stopPropagation(); setCurrentState(false); }}>
                                     {item.icon}
-                                    <Link className={`${item.id === "inicio" ? "transition-all" : ""}`} href={`#${item.id}`} onClick={() => { if (isMobileTablet) if (item.id === "inicio") setAnimationClass("opacity-0 pointer-events-none");}}>{item.label}</Link>                        
+                                    <Link className={`${item.id === "inicio" ? "transition-all" : ""}`} href={`#${item.id}`} onClick={() => { if (!isMobileTablet) if (item.id === "inicio") setAnimationClass("opacity-0 pointer-events-none");}}>{item.label}</Link>                        
                                 </li>
                             ))}                                               
                         </ul>                                       
