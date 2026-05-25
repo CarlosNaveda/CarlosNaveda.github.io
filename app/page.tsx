@@ -126,6 +126,8 @@ export default function Home() {
   //Para saber qué palabra es la que tiene el hover
   const [hoverWord, setHoverWord] = useState('');  
 
+ 
+
   return (    
     <main>
       {/* Hero */}
@@ -158,7 +160,7 @@ export default function Home() {
         <Title title={mapTitles[0]} />
         <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify font-dm-sans" style={{color: 'var(--paragraph)'}}> 
           
-          Soy alguien que suele mirar más hacia adentro, pero con una necesidad constante de compartir hacia afuera lo que voy aprendiendo.<br />
+          Soy alguien que suele mirar hacia adentro, pero con una necesidad constante de compartir hacia afuera lo que voy aprendiendo.<br />
           Me apasiona la tecnología, no me imagino haciendo nada que no esté relacionado con ello, no solo por lo que es, sino por lo que permite construir.<br /><br />
 
           Actualmente estoy desarrollando ToNextAxis, un espacio donde documento lo que voy aprendiendo y exploro la creación de contenido audiovisual.<br />

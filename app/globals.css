@@ -165,6 +165,11 @@ html, body {
   z-index: 50;     
   border-left: 1px solid rgba(126, 122, 222, 0.2);    
 }
+
+.inactive-left-nav:hover{      
+  color: var(--white);   
+} 
+
  
 .inactive-left-nav{  
   width: auto;          
@@ -216,20 +221,16 @@ html, body {
   font-weight: bold; 
 }
 
-.mi-nombre{
-  animation: bounceIn;
-  animation-duration: 2s;   
-}
-.mi-nombre:hover{  
-  animation: jello;
-  animation-duration: 1s;  
+.mi-nombre:hover,
+.mi-nombre:active,
+.mi-nombre:focus {
+  animation: jello 1s;  
 } 
 .highlight-words:hover{ 
   color: var(--nodes_active); /* #6B68E8 — morado vibrante */
   text-shadow: 0 0 20px rgba(107, 104, 232, 0.6);
   transition: all 0.3s ease-in-out;    
-  animation: rubberBand;
-  animation-duration: 1s;      
+  animation: rubberBand 1s;         
 }
 
 @keyframes floatingEmoji {
@@ -238,7 +239,7 @@ html, body {
 }
 .floating-emoji{
    animation: floatingEmoji 1s linear infinite;    
-   left: 15%;   
+   left: 40%;     
    bottom: 20%;     
    backdrop-filter: blur(0.5px);      
 }
@@ -539,8 +540,7 @@ html, body {
 
 .post-slug-link:hover{ 
   color: var(--link_blog);      
-  animation: jello;
-  animation-duration: 1s;   
+  animation: jello 1s;  
 } 
 
 .post-preview-image{     
@@ -595,8 +595,7 @@ html, body {
 }
 
 .index-content-arrow:hover{
-  animation: shakeX;
-  animation-duration: 1.5s;  
+  animation: shakeX 1.5s;  
   cursor: pointer;  
 }
 
@@ -606,8 +605,7 @@ html, body {
 }
 
 .index-content-text:hover .index-content-arrow {
-  animation: shakeX;
-  animation-duration: 1.5s; 
+  animation: shakeX 1.5s;   
   cursor: pointer;
   
 } 
