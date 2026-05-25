@@ -5,16 +5,17 @@ import Image from 'next/image';
 
 const FloatingEmojis = ({word}: {word: string}) =>{
 
-    const icon_size = 40;
+    const icon_size = 20;    
+    
 
    return (
         <>
-            {wordEmojis[word] && wordEmojis[word].map((emoji, index) => 
-            <Image className="floating-emoji absolute" 
+            {wordEmojis[word] && wordEmojis[word].map((emoji, index) =>                       
+            <Image className="floating-emoji absolute w-[20] h-[20] md:w-[40] md:h-[40]" 
                   key={index} 
                   src={emoji}
                   alt={word}
-                  width={icon_size} height={icon_size}
+                  width={icon_size} height={icon_size} 
                   style={{
                   '--orbit-radius': `${generateDistance(0, index)}px`,
                    '--start-angle': `${index * 120}deg`,  
