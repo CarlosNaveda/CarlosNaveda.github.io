@@ -101,19 +101,26 @@ export default function Home() {
   const { setActiveSection } = useSection();
 
   //OBSERVER - Para mapear las secciones mientras se hace el scroll
-  useEffect(() => {
+  useEffect(() => {   
     
-    const threshold = window.innerWidth > 1024 ? 0.6 : window.innerWidth > 400 ? 0.3 : 0.2; //Para mobile o tablet el límite tiene que ser menor.
-    
+    //Para mobile o tablet el límite tiene que ser menor.
+    const getOptions = (): IntersectionObserverInit => {
+    const w = window.innerWidth;
+    if (w <= 400) return { threshold: 0.2 };
+    if (w <= 1024) return { threshold: 0.3 };
+    return { rootMargin: '-40% 0px -40% 0px', threshold: 0 };
+  };
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
+          history.replaceState(null, '', `#${entry.target.id}`); // Actualizo el URL sin recargar ni agregar al historial
         }
       });
-    }, { threshold });
+    }, getOptions());
 
-    document.querySelectorAll("section").forEach((sec) => {
+      document.querySelectorAll("section").forEach((sec) => {
       observer.observe(sec);
     });
 
@@ -163,8 +170,7 @@ export default function Home() {
           Soy alguien que suele mirar hacia adentro, pero con una necesidad constante de compartir hacia afuera lo que voy aprendiendo.<br />
           Me apasiona la tecnología, no me imagino haciendo nada que no esté relacionado con ello, no solo por lo que es, sino por lo que permite construir.<br /><br />
 
-          Actualmente estoy desarrollando ToNextAxis, un espacio donde documento lo que voy aprendiendo y exploro la creación de contenido audiovisual.<br />
-          Ha sido una de las decisiones más importantes que he tomado porque me permite aprender haciendo temas como guión, narrativa, edición y en cada tarea usar la creatividad.<br /><br />
+          Actualmente estoy desarrollando ToNextAxis, un espacio donde documento lo que voy aprendiendo y exploro la creación de contenido audiovisual. Ha sido una de las decisiones más importantes que he tomado porque me permite aprender haciendo temas como guión, narrativa, edición y en cada tarea usar la creatividad.<br /><br />
 
           En paralelo, sigo fortaleciendo mis habilidades en Ingeniería, como QA Automation, construyendo una base más sólida para lo que se viene más adelante.<br /><br />
 
