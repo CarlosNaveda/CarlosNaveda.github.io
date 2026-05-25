@@ -16,6 +16,7 @@ import {useSection} from '../src/Hook/useSection';
 import mapJobs from '../src/data/jobs';
 import {useState} from 'react';
 import FloatingEmojis from '../src/components/Animations/FloatingEmojis';
+import Image from 'next/image';
 
 
 //VARIABLES
@@ -192,16 +193,16 @@ export default function Home() {
       </div>
 
       {/* ToNextAxis */}        
-      <div className="toNextAxis-page flex flex-col">                       
+      <div className="toNextAxis-page flex flex-col relative">                       
         <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 p-8 text-balanced">                                
-          <Title title={mapTitles[2]} /> 
-          {/* <Image className="toNextAxis-logo top-0 right-0 md:top-20 md:right-250 lg:top-0 lg:right-100 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}}/> */}
+          <Title title={mapTitles[2]}/> 
+          <Image className="toNextAxis-logo absolute -top-15 -right-10 md:-top-30 md:-right-10 lg:-top-20 lg:right-200 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}} loading="eager" />
           <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 pb-5 font-dm-sans">               
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
                 ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
                 Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
                 Dale un vistazo, de seguro algo te va a servir. <br />        
-                Últimos videos 👇🏻
+                Últimos videos 👇🏻 
               </p>
               <ToNextAxisButton />             
           </div>

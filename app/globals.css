@@ -275,7 +275,7 @@ html, body {
 /* EXPERIENCIA */
 .job-page{
     width: 100%; 
-    height: auto;
+    height: 100%; 
 } 
 
 .node{    
@@ -318,9 +318,9 @@ html, body {
   transition: box-shadow 0.3s ease-in-out;  
 }
 
-.job-card-expanded {          
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;  
+.job-card-expanded {           
+  overflow: hidden;  
+  /* transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;    */
 }
 
 .role {  
@@ -368,7 +368,7 @@ html, body {
 .toNextAxis-logo{    
   border-radius: 50%;
   object-fit: cover;    
-  opacity: 10;    
+  opacity: 0.2;     
   pointer-events: none; 
 
 } 

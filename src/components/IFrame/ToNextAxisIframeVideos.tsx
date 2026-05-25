@@ -16,7 +16,8 @@ const ToNextAxisIframeVideos = ({video}: {video: IframeVideos}) => {
                 src={`https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`}
                 alt={`Thumbnail del video ${video.title}`}                                
                 width={640}
-                height={360}                
+                height={360}
+                loading="eager"                
                 />                   
             </div>
             

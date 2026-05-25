@@ -7,7 +7,6 @@ import Link from 'next/link'
 import { useIsDesktop } from '../../Hook/useIsDesktop';
 import TypingKeyboard from '../Animations/TypingKeyboard';
 
-
 const sectionsToShowNav = ["sobreMi", "experiencia","tonextaxis","blog"]; //Secciones que se muestran en la barra lateral
 export default function LeftBarNav() {
     
