@@ -67,6 +67,24 @@ html, body {
  
 }
 
+/********************* KEYFRAMES  **********************/
+@keyframes orbita {
+  0% { transform: rotate(0deg) translateX(var(--orbit-radius, 150px)) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(var(--orbit-radius, 150px)) rotate(-360deg); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes floatingEmoji {
+  0% { transform: rotate(var(--start-angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--start-angle))); }
+  100% { transform: rotate(calc(var(--start-angle) + 360deg)) translateX(var(--orbit-radius)) rotate(calc(-1 * (var(--start-angle) + 360deg))); }
+}
+
+
+
 /********************* MOBILE  **********************/
 @media (max-width: 768px) {
 
@@ -113,6 +131,15 @@ html, body {
 
 
 /********************* DESKTOP  **********************/
+
+/* LOGO */
+.animate-keyboard{ 
+  position: fixed;   
+  backdrop-filter: blur(10px);
+  opacity: 0.5;
+  z-index: 100;       
+}
+
 
 /* TOP-BAR / LEFT-BAR */
 .top-bar{ 
@@ -166,16 +193,18 @@ html, body {
   border-left: 1px solid rgba(126, 122, 222, 0.2);    
 }
 
-.inactive-left-nav:hover{      
-  color: var(--white);   
+.inactive-left-nav:hover{        
+  opacity: 0.8;   
 } 
 
  
 .inactive-left-nav{  
   width: auto;          
-  height: auto;
-  padding: 5px;     
-  border-radius: 10px;  
+  height: auto;  
+  border-radius: 10px;    
+  padding: 4px 8px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
   color: var(--icon); 
   display: flex;
   flex-direction: row;
@@ -186,31 +215,26 @@ html, body {
 
 .active-left-nav{
   width: auto;          
-  height: auto;
-  padding: 5px;       
-  background-color: var(--nodes_active);
-  color: var(--white); 
-  border-radius: 10px; 
-  display: flex;
-  flex-direction: row;
+  height: auto;  
+  background-color: rgba(126, 122, 222, 1);
+  border-left: 1px solid rgba(126, 122, 222, 0.25);
+  border-radius: 6px;
+  padding: 4px 8px;
+  color: var(--white);   
+  display: flex;  
   justify-content: left;
-  align-items: center;
-  gap: 4px;  
-  transition: all 0.5s linear;
+  align-items: center;   
+  transition: all 0.5s linear; 
   flex: row;
   justify-content: left; 
   align-items: center;
+  gap: 4px; 
 } 
 
-.accordion-icon{ 
-  position: fixed;   
-  top: 10; 
-  left: 10;    
-}
 
 /* FOOTER */
 .footer{
-  width: 100%;
+  width: 100%; 
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 16, 96, 0.6));
   border-top: 1px solid rgba(126, 122, 222, 0.15);                
 }
@@ -227,16 +251,12 @@ html, body {
   animation: jello 1s;  
 } 
 .highlight-words:hover{ 
-  color: var(--nodes_active); /* #6B68E8 — morado vibrante */
+  color: var(--nodes_active); 
   text-shadow: 0 0 20px rgba(107, 104, 232, 0.6);
   transition: all 0.3s ease-in-out;    
   animation: rubberBand 1s;         
 }
 
-@keyframes floatingEmoji {
-  0% { transform: rotate(var(--start-angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--start-angle))); }
-  100% { transform: rotate(calc(var(--start-angle) + 360deg)) translateX(var(--orbit-radius)) rotate(calc(-1 * (var(--start-angle) + 360deg))); }
-}
 .floating-emoji{
    animation: floatingEmoji 1s linear infinite;    
    left: 40%;     
@@ -263,8 +283,7 @@ html, body {
 
 
 .timeline {     
-  width: 4px; 
-  /* height: 210px;   */   
+  width: 4px;   
   border: none; 
   background-color: var(--timeline); 
   position: absolute; 
@@ -288,11 +307,6 @@ html, body {
 .job-card:hover {
   box-shadow: 0 0 20px rgba(107, 104, 232, 0.3); /* --nodes_active con opacidad */
   transition: box-shadow 0.5s ease-in-out;
-}
-
-@keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.02); }
 }
 
 .node-job-card:has(.job-card:hover) .node {
@@ -334,8 +348,7 @@ html, body {
   height: auto;
 }
 
-.toNextAxis-button{      
-  /* color: var(--paragraph); */
+.toNextAxis-button{        
   border: none;
   border-radius: 8px;
   padding: 12px 24px;  
@@ -351,8 +364,7 @@ html, body {
 .toNextAxis-logo{    
   border-radius: 50%;
   object-fit: cover;    
-  opacity: 10;  
-  opacity: 0.2;
+  opacity: 10;    
   pointer-events: none; 
 
 } 
@@ -364,7 +376,7 @@ html, body {
   justify-content: center;
   align-items: center;
 
-  z-index: 999;
+  z-index: 99;
 }
 
 .toNextAxis-video-overlay{
@@ -446,8 +458,7 @@ html, body {
   font-weight: bold; 
 }
 
-.blog-link { 
-  /* background-color: var(--no-selection);  */
+.blog-link {   
   color: var(--paragraph);  
   border: none;
   border-radius: 8px;
@@ -505,12 +516,6 @@ html, body {
   box-shadow: 0 0 40px rgba(107, 104, 232, 0.3); /* --nodes_active con opacidad */
   transition: box-shadow 0.2s ease-in-out;            
 }  
-
-
-@keyframes orbita {
-  0% { transform: rotate(0deg) translateX(var(--orbit-radius, 150px)) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(var(--orbit-radius, 150px)) rotate(-360deg); }
-}
 
 .post-preview-content{        
   background: 

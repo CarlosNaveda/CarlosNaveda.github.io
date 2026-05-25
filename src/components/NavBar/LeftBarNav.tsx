@@ -3,8 +3,9 @@
 import {HouseHeart, UserStar, BriefcaseBusiness, CirclePlay, NotebookPen} from 'lucide-react';
 import {useSection} from '../../Hook/useSection';
 import { useState,useEffect,useRef } from 'react';
-import { ListPlus,ListMinus } from 'lucide-react';
 import Link from 'next/link'
+import { useIsDesktop } from '../../Hook/useIsDesktop';
+import TypingKeyboard from '../Animations/TypingKeyboard';
 
 
 const sectionsToShowNav = ["sobreMi", "experiencia","tonextaxis","blog"]; //Secciones que se muestran en la barra lateral
@@ -109,34 +110,22 @@ export default function LeftBarNav() {
     return () => window.removeEventListener("scroll", handleScroll);
     }, []);    
     
-    //Para manejar si estoy o no en Desktop
-    const [isDesktop, setIsDesktop] = useState(false);
-
-    useEffect(() => {
-    const handleResize = () => {
-        setIsDesktop(window.innerWidth > 1024);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-    }, []);    
+    // Hook para manejar si estoy o no en desktop
+    const isDesktop = useIsDesktop();    
 
     const isMobileTablet = !isDesktop;
-    const classConfigDesktop = `left-bar flex flex-col transition-all duration-500 ${animationClass} left-[1%] top-[6%] xs:top-[5%] md:top-[4%] lg:top-[40%] text-xs md:text-xl`;
-    const backgroundMobileTablet = "max-lg:bg-[rgba(18,17,43,0.85)] max-lg:backdrop-blur-md max-lg:border max-lg:border-[rgba(126,122,222,0.2)] max-lg:rounded-xl p-3";     
-    const classConfigMobileTablet = `left-bar flex flex-col transition-all duration-500 left-[1%] top-[6%] xs:top-[5%] md:top-[4%] lg:top-[40%] ${backgroundMobileTablet} text-xs md:text-base ${currentState ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`
-    
-    function getAccordion()
-    {   return (                
-                currentState 
-                    ? (<ListMinus className="accordion-icon relative" onClick={() => {setCurrentState(!currentState)}}/>) 
-                    : (<ListPlus className="accordion-icon relative" onClick={() => {setCurrentState(!currentState)}}/>) 
-         );
-    }    
+    const classConfigDesktop = `left-bar flex flex-col transition-all duration-500 ${animationClass} left-[1%] top-[6%] xs:top-[5%] md:top-[4%] lg:top-[40%] text-xs md:text-xl`;    
+    const backgroundMobileTablet = "max-lg:bg-[rgba(126, 122, 222, 1)] max-lg:backdrop-blur-md max-lg:border max-lg:border-[rgba(126,122,222,0.2)] max-lg:rounded-xl p-3";         
+    const classConfigMobileTablet = `left-bar flex flex-col transition-all duration-500 left-[5%] md:left-[2%] ${animationClass} top-[9%] xs:top-[7%] md:top-[7%] lg:top-[40%] ${backgroundMobileTablet} text-xs md:text-base ${currentState ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`
  
     return (      
-           <div ref={accordionRef} className="accordion">
-                {isMobileTablet ? getAccordion() : null}
+           <div ref={accordionRef} className="accordion">  
+                {isMobileTablet && (
+                    <TypingKeyboard  
+                    className={`animate-keyboard left-5 top-5 w-[40px] h-[40px] md:w-[60px] md:h-[60px] cursor-pointer transition-transform duration-150 rounded-lg ${currentState ? 'ring-2 ring-[#4653a8] scale-95' : 'hover:scale-105'}`}
+                    onClick={() => setCurrentState(!currentState)} 
+                    />)
+                }            
                 <aside className={isMobileTablet ? classConfigMobileTablet : classConfigDesktop}>                               
                     <nav className='font-outfit'>
                         <ul className='left-bar-nav flex flex-col items-left gap-2'> 
