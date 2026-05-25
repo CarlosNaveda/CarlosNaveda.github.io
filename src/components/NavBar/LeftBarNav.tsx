@@ -116,7 +116,7 @@ export default function LeftBarNav() {
     const isMobileTablet = !isDesktop;
     const classConfigDesktop = `left-bar flex flex-col transition-all duration-500 ${animationClass} left-[1%] top-[6%] xs:top-[5%] md:top-[4%] lg:top-[40%] text-xs md:text-xl`;    
     const backgroundMobileTablet = "max-lg:bg-[rgba(126, 122, 222, 1)] max-lg:backdrop-blur-md max-lg:border max-lg:border-[rgba(126,122,222,0.2)] max-lg:rounded-xl p-3";         
-    const classConfigMobileTablet = `left-bar flex flex-col transition-all duration-500 left-[5%] md:left-[2%] ${animationClass} top-[9%] xs:top-[7%] md:top-[7%] lg:top-[40%] ${backgroundMobileTablet} text-xs md:text-base ${currentState ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`
+    const classConfigMobileTablet = `left-bar flex flex-col transition-all duration-500 left-[5%] md:left-[2%] top-[9%] xs:top-[7%] md:top-[7%] lg:top-[40%] ${backgroundMobileTablet} text-xs md:text-base ${currentState ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`
  
     return (      
            <div ref={accordionRef} className="accordion">  

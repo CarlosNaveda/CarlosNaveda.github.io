@@ -167,14 +167,14 @@ export default function Home() {
         <Title title={mapTitles[0]} />
         <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify font-dm-sans" style={{color: 'var(--paragraph)'}}> 
           
-          Soy alguien que suele mirar hacia adentro, pero con una necesidad constante de compartir hacia afuera lo que voy aprendiendo.<br />
-          Me apasiona la tecnología, no me imagino haciendo nada que no esté relacionado con ello, no solo por lo que es, sino por lo que permite construir.<br /><br />
+          Suelo mirar mucho hacia adentro, pero también siento una necesidad constante de expresar y compartir lo que aprendo en el proceso.<br />
+          Me apasiona la tecnología porque, más allá de las herramientas, es la posibilidad de construir ideas y darles un sentido.<br /><br /> 
 
-          Actualmente estoy desarrollando ToNextAxis, un espacio donde documento lo que voy aprendiendo y exploro la creación de contenido audiovisual. Ha sido una de las decisiones más importantes que he tomado porque me permite aprender haciendo temas como guión, narrativa, edición y en cada tarea usar la creatividad.<br /><br />
+          Actualmente estoy desarrollando <span className="highlight-words">ToNextAxis</span>, un espacio donde documento lo que voy aprendiendo y exploro la creación de contenido audiovisual. Ha sido una de las decisiones más importantes que he tomado porque me permite aprender haciendo temas como guión, narrativa, edición y en cada tarea usar la creatividad.<br /><br />
 
-          En paralelo, sigo fortaleciendo mis habilidades en Ingeniería, como QA Automation, construyendo una base más sólida para lo que se viene más adelante.<br /><br />
+          También sigo aprendiendo y creciendo en el lado de ingeniería, especialmente en QA Automation. Siento que todo eso forma parte de una base importante para lo que quiero construir con el tiempo.<br /><br />
 
-          Sé que todos estos skills confluirán en algo muy gratificante en un mediano plazo, y que los resultados no son inmediatos, hay un proceso y eso está bien, voy en mi dirección.
+          Sé que todo lo que estoy aprendiendo en algún momento va a conectar de una forma muy gratificante. Los resultados no llegan de inmediato, hay un proceso detrás, y estoy bien con eso. Siento que voy en mi dirección.
           
         </p>
         {buttonChevronDown(mapSections['experiencia'])}   

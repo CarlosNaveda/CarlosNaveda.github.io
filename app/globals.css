@@ -62,7 +62,7 @@ html, body {
 @theme {
   --breakpoint-xs: 400px;   
   --font-outfit: 'Outfit', sans-serif;
-  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif; 
   --animate-breathe: breathe 2.5s ease-in-out infinite;  
  
 }
@@ -248,14 +248,17 @@ html, body {
 .mi-nombre:hover,
 .mi-nombre:active,
 .mi-nombre:focus {
-  animation: jello 1s;  
+  animation: jello 1s;   
 } 
+
 .highlight-words:hover{ 
   color: var(--nodes_active); 
   text-shadow: 0 0 20px rgba(107, 104, 232, 0.6);
   transition: all 0.3s ease-in-out;    
   animation: rubberBand 1s;         
 }
+
+
 
 .floating-emoji{
    animation: floatingEmoji 1s linear infinite;    
