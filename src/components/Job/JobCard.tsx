@@ -40,7 +40,7 @@ const JobCard = ({job, lastJobIndex,isLastJobExpanded,onLastJobHover}: {job: job
                                     ? "lg:h-[180px]"
                                     : lastJobIndex-1 === job.index && !isLastJobExpanded // Si es el penúltimo y el último card está contraído 
                                         ? "lg:h-[180px]"     
-                                        : "lg:h-[250px]"  // Para los demás cards
+                                        : "lg:h-[270px]"  // Para los demás cards
                     }`} style={{opacity: lastJobIndex === job.index ? 0 : 1}}>  
                 </hr>
             </div>

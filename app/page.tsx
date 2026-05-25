@@ -175,7 +175,8 @@ export default function Home() {
 
           También sigo aprendiendo y creciendo en el lado de ingeniería, especialmente en QA Automation. Siento que todo eso forma parte de una base importante para lo que quiero construir con el tiempo.<br /><br />
 
-          Sé que todo lo que estoy aprendiendo en algún momento va a conectar de una forma muy gratificante. Los resultados no llegan de inmediato, hay un proceso detrás, y estoy bien con eso. Siento que voy en mi dirección.
+          Sé que todo lo que estoy aprendiendo en algún momento va a conectar de una forma muy gratificante. Los resultados no llegan de inmediato, hay un proceso detrás, y estoy bien con eso. <br />
+          Siento que voy en mi dirección.
           
         </p>
         {buttonChevronDown(mapSections['experiencia'])}   

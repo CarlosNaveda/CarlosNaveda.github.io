@@ -282,7 +282,7 @@ html, body {
   border-radius: 50%;  
   display: flex;        
   font-weight: bold;
-  position: relative;    
+  position: relative;      
 } 
 
 
@@ -303,31 +303,30 @@ html, body {
 }
 
 .job-card {  
-  background-color: var(--cards);
+  background-color: var(--cards); 
   border-radius: 12px;  
   box-shadow: 20px 4px 8px rgba(0,0,0,0.1);  
 }
 
 .job-card:hover {
-  box-shadow: 0 0 20px rgba(107, 104, 232, 0.3); /* --nodes_active con opacidad */
+  box-shadow: 0 0 20px rgba(107, 104, 232, 0.3);
   transition: box-shadow 0.5s ease-in-out;
 }
 
 .node-job-card:has(.job-card:hover) .node {
-  box-shadow: 0 0 20px rgba(137, 136, 227, 0.3); /* --nodes_active con opacidad */
+  box-shadow: 0 0 20px rgba(137, 136, 227, 0.3); 
   transition: box-shadow 0.3s ease-in-out;  
 }
 
-.job-card-expanded {           
-  overflow: hidden;  
-  /* transition: max-height 0.5s ease-in-out, opacity 1s ease-in-out;    */
+.job-card-expanded {            
+  overflow: hidden;     
 }
 
 .role {  
   background-color: var(--tag_position-background); 
   color: var(--position);    
   border-radius: 8px;
-  padding: 4px 8px;       
+  padding: 4px 8px;        
   margin-right: auto;
   text-align: center;  
 }

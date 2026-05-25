@@ -18,7 +18,7 @@ export default function FooterBar() {
                 <Image  className="Mi-logo self-center w-[50px] h-[50px] md:w-[80px] md:h-[80px]" src="/images/logos/Mi_logo_2.png" alt="Mi-logo" width = {logo_width} height= {logo_height}/>
                 <div className="brand-text flex flex-col font-outfit">
                     <h3 className="text-xl text-center" style={{color: 'var(--white)'}}>Carlos Naveda</h3>
-                    <h4 className="text-base text-center tracking-wide" style={{color: '#888888'}}>Tech x Creative Builder</h4> 
+                    <h4 className="text-base text-center tracking-wide" style={{color: '#888888'}}>Tech x Content Creator</h4> 
                 </div>                
             </div>            
             <ul className='footer-social flex flex-row justify-center gap-4 md:gap-2 lg:gap-4 w-[275px] self-center flex-1'>    

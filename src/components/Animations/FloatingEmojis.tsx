@@ -12,7 +12,7 @@ const FloatingEmojis = ({word}: {word: string}) =>{
    return (
         <>
             {wordEmojis[word] && wordEmojis[word].map((emoji, index) =>                       
-            <Image className="floating-emoji absolute w-[20] h-[20] md:w-[40] md:h-[40]" 
+            <Image className="floating-emoji absolute w-[20] h-[20] md:w-[30] md:h-[30] lg:w-[40] lg:h-[40]" 
                   key={index} 
                   src={emoji}
                   alt={word}
