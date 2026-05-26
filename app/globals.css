@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import 'animate.css';
+@import 'animate.css'; 
 
 
 /********************* VARIABLES GLOBALES  **********************/
@@ -33,7 +33,7 @@
   --bg-gradient-color-five:#0F2A1A;
   --bg-gradient-color-six:#2A0E4A;   
   --footer: #2A2A2A;
-  --my_background: 
+  --my_background:  
   radial-gradient(circle 600px at top right, var(--bg-gradient-color-one) 0%, transparent 100%), 
   radial-gradient(circle 600px at top left, var(--bg-gradient-color-two) 0%, transparent 100%), 
   radial-gradient(circle 800px at center, var(--bg-gradient-color-three) 0%, transparent 100%), 
@@ -194,13 +194,14 @@ html, body {
   border-left: 1px solid rgba(126, 122, 222, 0.2);    
 }
 
-.inactive-left-nav:hover{        
-  opacity: 0.8;   
+.inactive-left-nav:hover{         
+  opacity: 0.8;
+  color: white;           
 } 
 
  
 .inactive-left-nav{  
-  width: auto;          
+  width: fit-content;           
   height: auto;  
   border-radius: 10px;    
   padding: 4px 8px;
@@ -215,16 +216,16 @@ html, body {
 }
 
 .active-left-nav{
-  width: auto;          
+  width: fit-content;          
   height: auto;  
   background-color: rgba(126, 122, 222, 1);
   border-left: 1px solid rgba(126, 122, 222, 0.25);
-  border-radius: 6px;
+  border-radius: 10px; 
   padding: 4px 8px;
   color: var(--white);   
   display: flex;  
   justify-content: left;
-  align-items: center;   
+  align-items: center;    
   transition: all 0.5s linear; 
   flex: row;
   justify-content: left; 
@@ -249,7 +250,12 @@ html, body {
 .mi-nombre:hover,
 .mi-nombre:active,
 .mi-nombre:focus {
-  animation: jello 1s;   
+  animation: jello 1s;
+   background: linear-gradient(90deg, #534AB7, #3d47cc, #534AB7);     
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.7s ease;        
 } 
 
 .highlight-words:hover{ 
@@ -517,7 +523,7 @@ html, body {
 .tag-to-filter:hover{   
   background-color: var(--preSelection);
   cursor: pointer;
-  box-shadow: 0 0 40px rgba(140, 104, 232, 0.919); /* --nodes_active con opacidad */
+  box-shadow: 0 0 40px rgba(140, 104, 232, 0.919);
   transition: box-shadow 0.2s ease-in-out;            
 }  
 
@@ -554,9 +560,9 @@ html, body {
 } 
 
 .post-slug-link:hover{   
-  animation: jello 1s; 
+  animation: swing 1s; 
   color: var(--preSelection);  
-  cursor: pointer;  
+  cursor: pointer;   
   font-weight: bold;   
 
 } 

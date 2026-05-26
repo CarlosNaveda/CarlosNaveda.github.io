@@ -9,6 +9,7 @@ import generateDistance from '@/src/utils/generateDistance';
 import getUniqueArray  from '@/src/utils/getUniqueArray';
 import { useState } from 'react';
 import {useIsDesktop} from '@/src/Hook/useIsDesktop';
+import {useSound} from '@/src/Hook/useSound';
 
 export default function BlogMain() {
   
@@ -21,6 +22,10 @@ export default function BlogMain() {
     return mapPosts.filter(post => post.tag.includes(tag));
   };
 
+  //Para el sonido cuando se hace hover en un tag
+  const { play: playUiOrbit} = useSound('ui-orbit', '/sounds/ui-orbit.mp3', 0.4);  
+
+
   return (    
     <main>
         <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-1 md:gap-4 p-8 pb-20 md:pb-0 text-balanced"> 
@@ -28,11 +33,11 @@ export default function BlogMain() {
                 <h2 className='title-filter text-2xl md:text-4xl font-outfit'>Filtrar por tag</h2>             
                 <div className='wrapper-tags w-[300px] h-[200px] xs:w-[350px] xs:h-[250px] md:w-[500px] md:h-[300px] lg:w-[900px] lg:h-[500px]'>                                    
                     <small className='flex flex-row items-center justify-center center gap-2'> 
-                        {allUniqueTags.map((tag, tagIndex) => ( //Recorro el array de tags únicos
-                            <span key={tag} className="tag-to-filter text-base top-[55%] md:top-[50%]" onClick={() => setTagToFilter(tag)} 
+                        {allUniqueTags.map((tag, tagIndex) => ( //Recorro el array de tags únicos                     
+                            <span key={tag} className="tag-to-filter text-base top-[55%] md:top-[50%]" onClick={() => {setTagToFilter(tag);playUiOrbit();}}  
                                 style={{'--orbit-radius': `${generateDistance(0, tagIndex,isDesktop)}px`, 
                                     animationDelay: `${generateDelay(0, tagIndex)}s`,
-                                    animationDuration: generateDuration(0, tagIndex),  
+                                    animationDuration: generateDuration(0, tagIndex),   
                                 }as React.CSSProperties}>{tag}
                             </span>  
                         ))

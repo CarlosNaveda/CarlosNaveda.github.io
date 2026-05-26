@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import {useSound} from '../../Hook/useSound';
   
 
 const frames = Array.from({ length: 14 }, (_, i) =>
@@ -8,8 +9,13 @@ const frames = Array.from({ length: 14 }, (_, i) =>
     : `/images/animate/logoTeclado/LogoTeclado-${i}.png`
   );
 
+
   function TypingKeyboard({ onClick, className }: { onClick?: () => void; className?: string }) {
+
     const [currentFrame, setCurrentFrame] = useState(0);
+    
+    //Para el sonido cuando hacen click en la imagen
+    const { play: playUiInterface} = useSound('ui-interface', '/sounds/ui-interface.mp3', 0.4);    
 
     useEffect(() => {
       const interval = setInterval(() => {
@@ -25,7 +31,7 @@ const frames = Array.from({ length: 14 }, (_, i) =>
               alt="Logo teclado animado"
               width={50}
               height={50}
-              onClick={onClick}          
+              onClick={() => {onClick?.(); playUiInterface(); }}              
             />
         ); 
 } 

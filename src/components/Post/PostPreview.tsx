@@ -4,11 +4,15 @@ import formatDateToString from '@/src/utils/formatDate';
 import Link from 'next/link'
 import formatTitleToKebabCase from '../../../src/utils/formatTitle';
 import { AnimatePresence, motion } from "framer-motion";
+import {useSound} from '../../Hook/useSound';
 
 const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
 
     const image_width = 100;
     const image_height = 100;    
+
+    //Para el sonido cuando se hace hover en leer más
+    const { play: playUiReadMore, stop: stopUiReadMore } = useSound('ui-to-open', '/sounds/ui-to-open.mp3', 0.4);    
 
     return(
         <AnimatePresence mode="popLayout">
@@ -32,7 +36,7 @@ const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
                             </div>
                             <h2 className="post-preview-title text-lg md:text-2xl font-outfit">{mapPost.title}</h2> 
                             <p className="post-preview-shortDescription text-xs md:text-base">{mapPost.shortDescription}</p>      
-                            <Link className="post-slug-link text-sm md:text-lg lg:w-[100px]" href={`/blog/${formatTitleToKebabCase(mapPost.title)}`}>Leer más...</Link>
+                            <Link className="post-slug-link text-sm md:text-lg lg:w-[100px]" href={`/blog/${formatTitleToKebabCase(mapPost.title)}`} onMouseEnter={() => playUiReadMore()} onMouseLeave={() => stopUiReadMore()}>Leer más...</Link>
                         </div>
                         <Image src={mapPost.imageSource} alt={mapPost.title} className="post-preview-image object-cover w-[50] h-[50] md:w-[100] md:h-[100]" width={image_width} height={image_height} loading="eager"/>
                     </motion.div>

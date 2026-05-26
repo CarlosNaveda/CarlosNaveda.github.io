@@ -17,6 +17,7 @@ import mapJobs from '../src/data/jobs';
 import {useState} from 'react';
 import FloatingEmojis from '../src/components/Animations/FloatingEmojis';
 import Image from 'next/image';
+import {useSound} from '../src/Hook/useSound';
 
 
 //VARIABLES
@@ -134,7 +135,11 @@ export default function Home() {
   //Para saber qué palabra es la que tiene el hover
   const [hoverWord, setHoverWord] = useState('');  
 
- 
+  //Para sonidos
+  const { play: playUiPop, stop: stopUiPop } = useSound('ui-pop', '/sounds/ui-pop.mp3', 0.4);  
+  const { play: playShine, stop: stopShine } = useSound('shine', '/sounds/shine.mp3', 0.4);  
+  const { play: playUiButtonPressed} = useSound('ui-button-pressed', '/sounds/ui-button-pressed.mp3', 0.4);    
+  
 
   return (    
     <main>
@@ -142,22 +147,22 @@ export default function Home() {
       <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">              
         <div className="text-2xl md:text-6xl font-bold font-outfit flex flex-row items-center justify-center gap-3" style={{color: 'var(--titles)'}}>
           <h1 className='saludo'>Hola soy</h1>           
-          <h2 className='mi-nombre'>Carlos Naveda</h2>             
+          <h2 className='mi-nombre' onMouseEnter={() => {playShine();}} onMouseLeave={() => {stopShine();}}>Carlos Naveda</h2>             
         </div>
         <div className="text-lg md:text-3xl leading-relaxed font-dm-sans" style={{color: 'var(--paragraph)'}}>          
           <p className="flex flex-row items-center justify-center gap-2">
-            <span id="aprendo" className="relative highlight-words " onMouseEnter={() => {setHoverWord('aprendo');}} onMouseLeave={() => {setHoverWord('');}}>Aprendo{hoverWord === 'aprendo' && <FloatingEmojis word='aprendo'/>}</span>          
-            <span id="construyo" className="relative highlight-words" onMouseEnter={() => {setHoverWord('construyo');}} onMouseLeave={() => {setHoverWord('');}}>construyo{hoverWord === 'construyo' && <FloatingEmojis word='construyo'/>}</span>          
+            <span id="aprendo" className="relative highlight-words " onMouseEnter={() => {setTimeout(() => playUiPop(), 200); setHoverWord('aprendo');}} onMouseLeave={() => {stopUiPop(); setHoverWord('');}}>Aprendo{hoverWord === 'aprendo' && <FloatingEmojis word='aprendo'/>}</span>          
+            <span id="construyo" className="relative highlight-words" onMouseEnter={() => {setTimeout(() => playUiPop(), 200);setHoverWord('construyo');}} onMouseLeave={() => {stopUiPop();setHoverWord('');}}>construyo{hoverWord === 'construyo' && <FloatingEmojis word='construyo'/>}</span>          
             <span>...</span><br />
           </p>
-          <p className="flex flex-row items-center justify-center gap-2">
+          <p className="flex flex-row items-center justify-center gap-2"> 
             <span>y voy </span>
-            <span id="descubriendo" className="relative highlight-words" onMouseEnter={() => {setHoverWord('descubriendo');}} onMouseLeave={() => {setHoverWord('');}}>descubriendo{hoverWord === 'descubriendo' && <FloatingEmojis word='descubriendo'/>}</span>          
+            <span id="descubriendo" className="relative highlight-words" onMouseEnter={() => {setTimeout(() => playUiPop(), 200);setHoverWord('descubriendo');}} onMouseLeave={() => {stopUiPop();setHoverWord('');}}>descubriendo{hoverWord === 'descubriendo' && <FloatingEmojis word='descubriendo'/>}</span>          
             <span>el</span><br />
           </p>
           <p className="flex flex-row items-center justify-center gap-2">
             <span>camino mientras</span>          
-            <span id="avanzo" className="relative highlight-words" onMouseEnter={() => {setHoverWord('avanzo');}} onMouseLeave={() => {setHoverWord('');}}>avanzo{hoverWord === 'avanzo' && <FloatingEmojis word='avanzo'/>}</span>          
+            <span id="avanzo" className="relative highlight-words" onMouseEnter={() => {setTimeout(() => playUiPop(), 200);setHoverWord('avanzo');}} onMouseLeave={() => {stopUiPop();setHoverWord('');}}>avanzo{hoverWord === 'avanzo' && <FloatingEmojis word='avanzo'/>}</span>          
           </p>
         </div>
         {buttonChevronDown(mapSections['sobreMi'])}            
@@ -225,9 +230,9 @@ export default function Home() {
                 Aquí encontrarás contenido técnico, proyectos personales y también cosas que para mi son divertidas de hacer.<br /><br />
                 No será un espacio de un solo tema, sino un lugar para compartir todo lo que me inspira e interesa. Estos son los últimos posts 👇🏻
               </p><br />
-              <Link className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit" href="/blog">
+              <button className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit" onClick={(e) => {playUiButtonPressed(); setTimeout(() => { window.location.href = '/blog'; }, 300);}}> 
               Ir al blog <NotebookPen size={icon_size}/>
-              </Link>
+              </button>
           </div>
         {<Carousel posts={mapPosts} />} 
         

@@ -6,6 +6,7 @@ import { useState,useEffect,useRef } from 'react';
 import Link from 'next/link'
 import { useIsDesktop } from '../../Hook/useIsDesktop';
 import TypingKeyboard from '../Animations/TypingKeyboard';
+import { useSound } from '../../Hook/useSound';
 
 const sectionsToShowNav = ["sobreMi", "experiencia","tonextaxis","blog"]; //Secciones que se muestran en la barra lateral
 export default function LeftBarNav() {
@@ -112,6 +113,9 @@ export default function LeftBarNav() {
     // Hook para manejar si estoy o no en desktop
     const isDesktop = useIsDesktop();    
 
+    //Para el sonido cuando se selecciona una sección
+    const { play: playSoftGlass} = useSound('ui-soft-glass', '/sounds/ui-soft-glass.mp3', 0.4);  
+
     const isMobileTablet = !isDesktop;
     const classConfigDesktop = `left-bar flex flex-col transition-all duration-500 ${animationClass} left-[1%] top-[6%] xs:top-[5%] md:top-[4%] lg:top-[40%] text-xs md:text-xl`;    
     const backgroundMobileTablet = "max-lg:bg-[rgba(126, 122, 222, 1)] max-lg:backdrop-blur-md max-lg:border max-lg:border-[rgba(126,122,222,0.2)] max-lg:rounded-xl p-3";         
@@ -125,11 +129,11 @@ export default function LeftBarNav() {
                     onClick={() => setCurrentState(!currentState)} 
                     />)
                 }            
-                <aside className={isMobileTablet ? classConfigMobileTablet : classConfigDesktop}>                               
+                <aside className={isMobileTablet ? classConfigMobileTablet : classConfigDesktop}>
                     <nav className='font-outfit'>
-                        <ul className='left-bar-nav flex flex-col items-left gap-2'> 
+                        <ul className='left-bar-nav flex flex-col items-left gap-2'>  
                             {navItems.map((item) => (
-                                <li key={item.id} className={activeSection === item.id ? "active-left-nav" : "inactive-left-nav"} onClick={(e) => { if(isMobileTablet) e.stopPropagation(); setCurrentState(false); }}>
+                                <li key={item.id} className={activeSection === item.id ? "active-left-nav" : "inactive-left-nav"} onClick={(e) => { if(isMobileTablet) e.stopPropagation(); setCurrentState(false); playSoftGlass(); }}>
                                     {item.icon}
                                     <Link className={`${item.id === "inicio" ? "transition-all" : ""}`} href={`#${item.id}`} onClick={() => { if (!isMobileTablet) if (item.id === "inicio") setAnimationClass("opacity-0 pointer-events-none");}}>{item.label}</Link>                        
                                 </li>

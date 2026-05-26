@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react';
 import { Calendar} from 'lucide-react';
 import Image from 'next/image';
 import jobType from './jobType';
+import {useSound} from '../../Hook/useSound';
 
 const JobCard = ({job, lastJobIndex,isLastJobExpanded,onLastJobHover}: {job: jobType, lastJobIndex: number, isLastJobExpanded: boolean, onLastJobHover?: (value: boolean) => void}) =>{
        
@@ -24,7 +25,9 @@ const JobCard = ({job, lastJobIndex,isLastJobExpanded,onLastJobHover}: {job: job
     return () => observer.disconnect();
     }, [job.index]);
 
-
+    //Para sonido cuando se entra y sale del job card
+    const { play: playUiFocus, stop: stopUiFocus } = useSound('ui-focus', '/sounds/ui-focus.mp3', 0.4);    
+    
 
     return (
         <div className="node-job-card grid grid-cols-[1fr_auto_1fr] gap-4 items-start w-[300px] md:w-[350px] lg:w-[1000px] font-dm-sans">    
@@ -49,8 +52,9 @@ const JobCard = ({job, lastJobIndex,isLastJobExpanded,onLastJobHover}: {job: job
                 className={`job-card hover:animate-breathe w-[300px] md:w-[350px] lg:w-[450px] p-[15px] md:p-[16px] flex flex-col gap-4 mt-8 row-start-1  
                             ${moduleIndex === 'even' ? 'lg:col-start-3 lg:justify-self-start' : 'lg:col-start-1 lg:justify-self-end'} transition-all duration-1000 ease-in-out 
                             ${isJobCardVisible ? 'opacity-100 translate-y-0' : "opacity-0 translate-y-8"}`} 
-                onMouseLeave={() => {setState(false); onLastJobHover?.(false);}}>
-                <div className="job-card-base flex flex-col gap-2" onMouseEnter={() => {setState(true); onLastJobHover?.(true);}}> 
+                onMouseEnter={() => {setState(true); onLastJobHover?.(true); playUiFocus();}}
+                onMouseLeave={() => {setState(false); onLastJobHover?.(false); stopUiFocus();}}>                    
+                <div className="job-card-base flex flex-col gap-2"> 
                     <time className="dateRange text-xs md:text-base flex flex-row items-center gap-2" style={{color: 'var(--paragraph)',fontWeight: 'bold'}}>  
                         <Calendar />              
                         {job.start} - {job.end}
