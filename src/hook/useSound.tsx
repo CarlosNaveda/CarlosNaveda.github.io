@@ -5,8 +5,7 @@ export function useSound(name: string, src: string, volume = 0.5) {
   const soundRef = useRef<Howl | null>(null);
   const audioContextResumedRef = useRef(false);
 
-  useEffect(() => {
-    // ☝️ Resume AudioContext al primer interacción
+  useEffect(() => {    
     const resumeAudioContext = () => {
       if (!audioContextResumedRef.current) {
         try {
@@ -27,8 +26,7 @@ export function useSound(name: string, src: string, volume = 0.5) {
         audioContextResumedRef.current = true;
       }
     };
-
-    // Resume on user interaction
+    
     document.addEventListener('click', resumeAudioContext, { once: true });
     document.addEventListener('touchstart', resumeAudioContext, { once: true });
     document.addEventListener('mousemove', resumeAudioContext, { once: true });
@@ -38,6 +36,8 @@ export function useSound(name: string, src: string, volume = 0.5) {
       src: [src], 
       volume,
       html5: true,
+      pool: 1,      
+      preload: true 
     });
 
     return () => {

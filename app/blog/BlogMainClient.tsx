@@ -35,9 +35,18 @@ export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
                 <div className='wrapper-tags w-[300px] h-[200px] xs:w-[350px] xs:h-[250px] md:w-[500px] md:h-[300px] lg:w-[900px] lg:h-[500px]'>                                    
                     <small className='flex flex-row items-center justify-center center gap-2'> 
                         {/* Recorro el array de tags únicos     */}
-                        {allUniqueTags.map((tag, tagIndex) => (                  
-                            <span key={tag} className="tag-to-filter text-base top-[55%] md:top-[50%]" onClick={() => {setTagToFilter(tag);playUiOrbit();}}  
-                                style={{'--orbit-radius': `${generateDistance(0, tagIndex,isDesktop)}px`, 
+                        {allUniqueTags.map((tag, tagIndex) => (                    
+                            <span key={tag} className={`tag-to-filter text-base top-[55%] md:top-[50%] ${tagToFilter===tag ? 'tag-active' : ''}`} 
+                            // onClick={() => {setTagToFilter(tag===tagToFilter ? "" : tag); playUiOrbit();}}  
+                            onClick={() => {
+                            const newTag = tag === tagToFilter ? '' : tag;
+                            console.log('tag clicked:', tag);
+                            console.log('tagToFilter antes:', tagToFilter);
+                            console.log('nuevo tagToFilter:', newTag);
+                            setTagToFilter(newTag);
+                            playUiOrbit();
+                            }}    
+                                style={{'--orbit-radius': `${generateDistance(0, tagIndex,isDesktop)}px`,  
                                     animationDelay: `${generateDelay(0, tagIndex)}s`,
                                     animationDuration: generateDuration(0, tagIndex),   
                                 }as React.CSSProperties}>{tag}

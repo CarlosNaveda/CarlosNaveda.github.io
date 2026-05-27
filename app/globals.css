@@ -521,12 +521,20 @@ html, body {
   animation: orbita 20s linear infinite;      
 }  
 
-.tag-to-filter:hover{   
+.tag-to-filter:hover{    
   background-color: var(--preSelection);
   cursor: pointer;
   box-shadow: 0 0 40px rgba(140, 104, 232, 0.919);
   transition: box-shadow 0.2s ease-in-out;            
 }  
+
+.tag-to-filter:hover,
+.tag-to-filter.tag-active {
+  background-color: var(--preSelection);
+  cursor: pointer;
+  box-shadow: 0 0 40px rgba(140, 104, 232, 0.919);
+  transition: box-shadow 0.2s ease-in-out;            
+} 
 
 .post-preview-content{        
   background: 
