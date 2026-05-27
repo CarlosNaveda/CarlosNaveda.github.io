@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import LeftBarNav from './LeftBarNav';
 import { useIsDesktop } from '../../hook/useIsDesktop';
 import TypingKeyboard from '../Animations/TypingKeyboard';
-
+import SwitchSound from '../NavBar/SwitchSound';
 
 export default function NavWrapper() {
   const pathname = usePathname();
@@ -13,9 +13,10 @@ export default function NavWrapper() {
   return (
     <>
        {isDesktop && <TypingKeyboard className="animate-keyboard left-10 top-10 w-[80px] h-[80px] rounded-lg p-1 bg-[rgba(126,122,222,0.15)] border border-[rgba(126,122,222,0.2)]"/>} 
+      <SwitchSound />
       {!pathname.startsWith('/blog') ? <LeftBarNav /> : null}
     </>
-  );
+  ); 
 
   
 }

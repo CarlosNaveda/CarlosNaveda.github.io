@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Outfit, DM_Sans} from "next/font/google";
 import "./globals.css";
 import { SectionProvider } from '../src/context/SectionContext';
 import NavWrapper from '../src/components/NavBar/NavWrapper';
+import { SoundProvider } from '@/src/context/SoundContext';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,12 +46,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}      
     >
       <body className={`${outfit.variable} ${dmSans.variable}`}> 
-        {/* Agregamos el provider de secciones */}
-        <SectionProvider>
-          {/* Aquí llamamos a LeftBarNav solo si no estamos en el blog */}
-          <NavWrapper />      
-          {children}
-        </SectionProvider> 
+        <SoundProvider> {/* Agregamos el provider del sonido */}
+          <SectionProvider> {/* Agregamos el provider de secciones */}        
+            <NavWrapper /> {/* Aquí llamamos a LeftBarNav solo si no estamos en el blog */}
+            {children}
+          </SectionProvider> 
+        </SoundProvider>      
       </body> 
     </html>
   );

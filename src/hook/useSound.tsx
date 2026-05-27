@@ -1,9 +1,11 @@
 import { Howl } from 'howler';
 import { useCallback, useEffect, useRef } from 'react';
+import { useSoundContext } from '../context/SoundContext';
 
 export function useSound(name: string, src: string, volume = 0.5) {
   const soundRef = useRef<Howl | null>(null);
   const audioContextResumedRef = useRef(false);
+  const { soundEnabled } = useSoundContext();  
 
   useEffect(() => {    
     const resumeAudioContext = () => {
@@ -31,7 +33,6 @@ export function useSound(name: string, src: string, volume = 0.5) {
     document.addEventListener('touchstart', resumeAudioContext, { once: true });
     document.addEventListener('mousemove', resumeAudioContext, { once: true });
 
-    // Crear el Howl
     soundRef.current = new Howl({ 
       src: [src], 
       volume,
@@ -49,8 +50,9 @@ export function useSound(name: string, src: string, volume = 0.5) {
   }, [src, volume]);
 
   const play = useCallback(() => { 
-    soundRef.current?.play(); 
-  }, []);
+    if (soundEnabled) soundRef.current?.play();
+    // ☝️ NUEVO: solo suena si soundEnabled es true
+  }, [soundEnabled]);
 
   const stop = useCallback(() => { 
     soundRef.current?.stop(); 

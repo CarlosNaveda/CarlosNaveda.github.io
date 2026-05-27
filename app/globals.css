@@ -56,8 +56,7 @@
 html, body {
   background: var(--my_background); 
   color: var(--white);
-  margin: 0;
-  
+  margin: 0; 
 }
 
 /********************* THEME  **********************/
@@ -139,9 +138,14 @@ html, body {
   position: fixed;   
   backdrop-filter: blur(10px);
   opacity: 0.5;
-  z-index: 100;       
-}
+  z-index: 100;        
+} 
 
+/* SWITCH SOUND */ 
+/* .switcher-sound {
+   position: fixed;   
+    backdrop-filter: blur(10px);        
+} */
 
 /* TOP-BAR / LEFT-BAR */
 .top-bar{ 
