@@ -482,18 +482,16 @@ html, body {
 }
 
 .blog-link:hover {
-  background-color: var(--selection); 
+  background-color: var(--selection);  
 }
 
 
-/* BLOG MAIN */
+/* BLOG MAIN */ 
 
 .blog-main{
   width: 100%;
   height: 100%;         
 }
-
-
 .title-filter, .title-posts {
   color: var(--titles);
   font-weight: bold; 

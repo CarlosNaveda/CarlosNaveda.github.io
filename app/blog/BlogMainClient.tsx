@@ -11,6 +11,7 @@ import { useState } from 'react';
 import {useIsDesktop} from '@/src/hook/useIsDesktop';
 import {useSound} from '@/src/hook/useSound';
 import postType from '@/src/components/Post/postType';
+import {ChevronLeft} from 'lucide-react';
 
 export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
     
@@ -26,11 +27,24 @@ export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
   //Para el sonido cuando se hace hover en un tag
   const { play: playUiOrbit} = useSound('ui-orbit', '/sounds/ui-orbit.mp3', 0.4);  
 
+   
+  //Botón para regresar al blog preview.  
+  function buttonBlogPreview() { 
+  return (
+      <div className="blog-preview-link flex flex-start w-[100%] md:w-[70%] lg:w-[35%]"> 
+            <button className="mt-8 animate-bounce flex flex-row items-center gap-1 lg:gap-2 cursor-pointer text-[var(--paragraph)] hover:text-[var(--titles)] transition-colors" onClick={() => {window.location.href = './#blog';}}>
+              <ChevronLeft size={30} /> 
+              <span className="text-base md:text-lg lg:text-xl font-dm-sans">Volver</span> 
+          </button>        
+      </div>           
+  );
+  } 
 
   return (    
-    <main>
-        <div className="blog-main min-h-screen flex flex-col items-center justify-center gap-1 md:gap-4 p-8 pb-20 md:pb-0 text-balanced"> 
-            <div className="blog-tags flex flex-col items-center justify-center center gap-2 font-dm-sans">
+    <main>                
+        <div className="blog-main min-h-screen flex flex-col items-center gap-1 md:gap-4 p-8 pb-20 md:pb-0 text-balanced"> 
+            {buttonBlogPreview()}
+            <div className="blog-tags flex flex-col items-center justify-center center gap-2 font-dm-sans">                
                 <h2 className='title-filter text-2xl md:text-4xl font-outfit'>Filtrar por tag</h2>             
                 <div className='wrapper-tags w-[300px] h-[200px] xs:w-[350px] xs:h-[250px] md:w-[500px] md:h-[300px] lg:w-[900px] lg:h-[500px]'>                                    
                     <small className='flex flex-row items-center justify-center center gap-2'> 

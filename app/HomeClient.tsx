@@ -19,7 +19,6 @@ import {useSound} from '../src/hook/useSound';
 import postType from '@/src/components/Post/postType';
 
 //VARIABLES
-
 const mapTitles = [
   {
     index: 0,
