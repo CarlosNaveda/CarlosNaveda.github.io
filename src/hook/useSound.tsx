@@ -37,8 +37,8 @@ export function useSound(name: string, src: string, volume = 0.5) {
       src: [src], 
       volume,
       html5: true,
-      pool: 1,      
-      preload: true 
+      pool: 5,      
+      preload: false 
     });
 
     return () => {
