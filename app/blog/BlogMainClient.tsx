@@ -32,7 +32,7 @@ export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
   function buttonBlogPreview() { 
   return (
       <div className="blog-preview-link flex flex-start w-[100%] md:w-[70%] lg:w-[35%]"> 
-            <button className="mt-8 animate-bounce flex flex-row items-center gap-1 lg:gap-2 cursor-pointer text-[var(--paragraph)] hover:text-[var(--titles)] transition-colors" onClick={() => {window.location.href = './#blog';}}>
+          <button className="mt-8 animate-bounce flex flex-row items-center gap-1 lg:gap-2 cursor-pointer text-[var(--paragraph)] hover:text-[var(--titles)] transition-colors" onClick={() => {window.location.href = './#blog';}}>
               <ChevronLeft size={30} /> 
               <span className="text-base md:text-lg lg:text-xl font-dm-sans">Volver</span> 
           </button>        

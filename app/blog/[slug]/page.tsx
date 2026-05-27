@@ -10,6 +10,8 @@ import remarkGfm from 'remark-gfm';
 import mdxStyles from '../../../src/utils/mdxStyles';
 import Link from 'next/link'
 import {ChevronLeft} from 'lucide-react';
+import { notFound } from 'next/navigation';
+
 
 
 export async function generateStaticParams() {
@@ -25,12 +27,8 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
   const mapPosts = await getMapPosts();
   const post = mapPosts.find(p => formatTitleToKebabCase(p.title) === slug) //Obtengo el post que corresponde al slug  
   
-  if (!post) { //Si el post no existe
-    return (
-      <main>
-        <h1>Post no encontrado</h1>
-      </main>
-    );
+  if (!post) { //Si el post no existe    
+      notFound();      
   }  
     
   const postDetails = `Autor: ${post.author} | Fecha: ${formatDateToString(post.publishDate)}`;      

@@ -42,6 +42,7 @@
   radial-gradient(circle 1500px at bottom right, var(--bg-gradient-color-five) 0%, transparent 100%), 
   radial-gradient(circle 500px at bottom, var(--bg-gradient-color-six) 0%, transparent 100%),
   var(--background); 
+  --notFound: #6B8CAE;
   
 }
 
@@ -647,4 +648,20 @@ html, body {
   margin-top: 1rem; 
   margin-bottom: 1rem;
   color: var(--titles); 
+}
+
+/* NOT FOUND */
+.not-found-warning{ 
+  color: var(--notFound);
+  font-weight: bold; 
+} 
+.not-found-return{
+  color: var(--white);
+  font-weight: bold;  
+  cursor: pointer;
+}
+
+.not-found-return:hover{
+  color: var(--titles);   
+  font-weight: bold;
 }
