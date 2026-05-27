@@ -4,10 +4,11 @@ interface postType {
     publishDate: Date;
     tag: string[];
     title: string;
-    shortDescription: string; 
+    shortDescription: string;
+    author: string; 
     tableOfContents: {index: number, title: string}[];
-    content: string;  
-
+    content: string;
+    serializedContent?: Record<string, unknown>;
 }
 
 export default postType;

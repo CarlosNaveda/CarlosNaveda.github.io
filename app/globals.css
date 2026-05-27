@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import 'animate.css'; 
+@plugin "@tailwindcss/typography";
 
 
 /********************* VARIABLES GLOBALES  **********************/
@@ -40,7 +41,7 @@
   radial-gradient(circle 900px at bottom left, var(--bg-gradient-color-four) 0%, transparent 100%), 
   radial-gradient(circle 1500px at bottom right, var(--bg-gradient-color-five) 0%, transparent 100%), 
   radial-gradient(circle 500px at bottom, var(--bg-gradient-color-six) 0%, transparent 100%),
-  var(--background);
+  var(--background); 
   
 }
 
@@ -578,7 +579,7 @@ html, body {
   color: var(--titles);
 }
 
-.blog-slug-created{ 
+.blog-slug-details{   
   font-style: italic;
   color: var(--sub-paragraph);
 }
@@ -624,6 +625,16 @@ html, body {
 
 .index-content-text:hover .index-content-arrow {
   animation: shakeX 1.5s;   
-  cursor: pointer;
-  
+  cursor: pointer;  
 } 
+
+.mdx-content h1 {
+  margin-bottom: 2rem;
+  color: var(--titles); 
+}
+
+.mdx-content h2 {
+  margin-top: 1rem; 
+  margin-bottom: 1rem;
+  color: var(--titles); 
+}
