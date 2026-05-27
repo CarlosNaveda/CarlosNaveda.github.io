@@ -1,9 +1,15 @@
 'use client'
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import {Frown, ArrowUpLeft} from 'lucide-react';
 
 export default function NotFoundPage() {
+
+  useEffect(() => {
+    document.body.setAttribute('data-page', 'not-found');    
+    return () => document.body.removeAttribute('data-page');
+  }, []);
 
   return (    
     <section className="not-found-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8 font-dm-sans">              

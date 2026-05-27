@@ -224,7 +224,7 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
         <div className="blog-preview-text-button flex flex-col items-center justify-center gap-1 font-dm-sans">              
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
                 Hace algunos años tenía un blog donde compartía videos musicales subtitulados con animaciones, siempre me ha gustado crear y compartir cosas en internet, y ahora que he renovado mi web quiero volver a hacerlo.<br /><br />
-                Aquí encontrarás contenido técnico, proyectos personales y también cosas que para mi son divertidas de hacer.<br /><br />
+                Aquí encontrarás contenido técnico, proyectos personales y también cosas que para mi son interesantes de hacer o conversar.<br /><br />
                 No será un espacio de un solo tema, sino un lugar para compartir todo lo que me inspira e interesa. Estos son los últimos posts 👇🏻
               </p><br />
               <button className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit" onClick={(e) => {playUiButtonPressed(); setTimeout(() => { window.location.href = '/blog'; }, 300);}}> 
