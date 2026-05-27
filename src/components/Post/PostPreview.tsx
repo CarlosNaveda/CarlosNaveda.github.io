@@ -4,14 +4,14 @@ import formatDateToString from '@/src/utils/formatDate';
 import Link from 'next/link'
 import formatTitleToKebabCase from '../../../src/utils/formatTitle';
 import { AnimatePresence, motion } from "framer-motion";
-import {useSound} from '../../Hook/useSound';
+import {useSound} from '../../hook/useSound';
 
 const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
 
     const image_width = 100;
     const image_height = 100; 
     
-    //Para el sonido cuando se hace click en leer más
+    //Para el sonido cuando se hace hover en leer más
     const { play: playUiReadMore, stop: stopUiReadMore } = useSound('ui-to-open', '/sounds/ui-to-open.mp3', 0.5);    
 
     return(

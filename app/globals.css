@@ -561,7 +561,7 @@ html, body {
 } 
 
 .post-slug-link:hover{   
-  animation: swing 1s; 
+  animation: swing 1s;   
   color: var(--preSelection);  
   cursor: pointer;   
   font-weight: bold;   

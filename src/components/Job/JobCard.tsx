@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react';
 import { Calendar} from 'lucide-react';
 import Image from 'next/image';
 import jobType from './jobType';
-import {useSound} from '../../Hook/useSound';
+import {useSound} from '../../hook/useSound';
 
 const JobCard = ({job, lastJobIndex,isLastJobExpanded,onLastJobHover}: {job: jobType, lastJobIndex: number, isLastJobExpanded: boolean, onLastJobHover?: (value: boolean) => void}) =>{
        

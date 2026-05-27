@@ -1,12 +1,12 @@
 'use client';
 
 import {HouseHeart, UserStar, BriefcaseBusiness, CirclePlay, NotebookPen} from 'lucide-react';
-import {useSection} from '../../Hook/useSection';
+import {useSection} from '../../hook/useSection';
 import { useState,useEffect,useRef } from 'react';
 import Link from 'next/link'
-import { useIsDesktop } from '../../Hook/useIsDesktop';
+import { useIsDesktop } from '../../hook/useIsDesktop';
 import TypingKeyboard from '../Animations/TypingKeyboard';
-import { useSound } from '../../Hook/useSound';
+import { useSound } from '../../hook/useSound';
 
 const sectionsToShowNav = ["sobreMi", "experiencia","tonextaxis","blog"]; //Secciones que se muestran en la barra lateral
 export default function LeftBarNav() {

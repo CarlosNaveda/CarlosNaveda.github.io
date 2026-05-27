@@ -10,12 +10,12 @@ import Carousel from '../src/components/Carousel/Carousel';
 import mapSections from '../src/data/sections';
 import FooterBar from '@/src/components/FooterBar/FooterBar';
 import {useEffect } from 'react';
-import {useSection} from '../src/Hook/useSection';
+import {useSection} from '../src/hook/useSection';
 import mapJobs from '../src/data/jobs';
 import {useState} from 'react';
 import FloatingEmojis from '../src/components/Animations/FloatingEmojis';
 import Image from 'next/image';
-import {useSound} from '../src/Hook/useSound';
+import {useSound} from '../src/hook/useSound';
 import postType from '@/src/components/Post/postType';
 
 //VARIABLES

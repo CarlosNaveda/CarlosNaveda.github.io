@@ -2,7 +2,7 @@ import wordEmojis from '../../data/wordEmojis';
 import generateDelay  from '@/src/utils/generateDelay';
 import generateDistance from '@/src/utils/generateDistance';
 import Image from 'next/image';
-import {useIsDesktop} from '../../Hook/useIsDesktop';
+import {useIsDesktop} from '../../hook/useIsDesktop';
 const FloatingEmojis = ({word}: {word: string}) =>{
 
     const icon_size = 20;

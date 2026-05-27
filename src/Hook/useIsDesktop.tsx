@@ -1,4 +1,3 @@
-// Hook/useIsDesktop.ts
 import { useState, useEffect } from 'react';
 
 export function useIsDesktop(breakpoint = 1024) {

@@ -8,8 +8,8 @@ import generateDuration from '@/src/utils/generateDuration';
 import generateDistance from '@/src/utils/generateDistance';
 import getUniqueArray  from '@/src/utils/getUniqueArray';
 import { useState } from 'react';
-import {useIsDesktop} from '@/src/Hook/useIsDesktop';
-import {useSound} from '@/src/Hook/useSound';
+import {useIsDesktop} from '@/src/hook/useIsDesktop';
+import {useSound} from '@/src/hook/useSound';
 import postType from '@/src/components/Post/postType';
 
 export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {

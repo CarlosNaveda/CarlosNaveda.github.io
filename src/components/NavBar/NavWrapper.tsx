@@ -1,7 +1,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import LeftBarNav from './LeftBarNav';
-import { useIsDesktop } from '../../Hook/useIsDesktop';
+import { useIsDesktop } from '../../hook/useIsDesktop';
 import TypingKeyboard from '../Animations/TypingKeyboard';
 
 
