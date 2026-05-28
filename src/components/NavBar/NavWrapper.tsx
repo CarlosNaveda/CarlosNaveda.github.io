@@ -5,6 +5,7 @@ import { useIsDesktop } from '../../hook/useIsDesktop';
 import TypingKeyboard from '../Animations/TypingKeyboard';
 import SwitchSound from '../NavBar/SwitchSound';
 import { useEffect, useState } from 'react';
+import TopBarNav from './TopBarNav';
 
 
 export default function NavWrapper() {
@@ -23,9 +24,15 @@ export default function NavWrapper() {
 
   return (
     <>
-      {isDesktop && !isNotFound && (<TypingKeyboard className="animate-keyboard left-10 top-10 w-[80px] h-[80px] rounded-lg p-1 bg-[rgba(126,122,222,0.15)] border border-[rgba(126,122,222,0.2)]"/>)} 
-      {!isNotFound && <SwitchSound />}
-      {!pathname.startsWith('/blog') && !isNotFound ? <LeftBarNav /> : null}
+      {!isDesktop && !isNotFound && <TopBarNav />}      
+      {isDesktop && !isNotFound && (
+        <>
+          <TypingKeyboard className="animate-keyboard left-10 top-10 w-[80px] h-[80px] rounded-lg p-1 bg-[rgba(126,122,222,0.15)] border border-[rgba(126,122,222,0.2)]"/>
+          <SwitchSound />
+          {!pathname.startsWith('/blog') && <LeftBarNav />}
+        </>
+        )
+      }      
     </>
   ); 
 
