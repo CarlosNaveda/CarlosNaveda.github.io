@@ -25,6 +25,10 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Carlos Naveda",
@@ -41,10 +45,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}      
-    >
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={`${outfit.variable} ${dmSans.variable}`}> 
         <SoundProvider> {/* Agregamos el provider del sonido */}
           <SectionProvider> {/* Agregamos el provider de secciones */}        
