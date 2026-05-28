@@ -7,7 +7,7 @@ import {ChevronLeft} from 'lucide-react';
 export default function TopBarBlogNav() {    
     
     const isDesktop = useIsDesktop();
-    const classConfigMobileTablet = `top-bar-blog-nav top-0 left-0 w-[370px] xs:w-[400px] md:w-[664px] gap-1 items-center justify-between pt-1 px-2`;        
+    const classConfigMobileTablet = `top-bar-blog-nav top-0 left-0 w-[320px] xs:w-[400px] md:w-[664px] gap-1 items-center justify-between pt-1 px-2`;        
     const classConfigDesktop = `top-bar-blog-nav top-0 left-0 w-[1200px] h-[50px] gap-1 items-center justify-between pt-1 px-5`;         
     
 
