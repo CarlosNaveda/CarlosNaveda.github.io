@@ -84,7 +84,7 @@ const mdxStyles = `
   prose-hr:border-white/10
 
   pb-20 
-  lg:pb-260
+  lg:pb-140
 `;
 
 export default mdxStyles;

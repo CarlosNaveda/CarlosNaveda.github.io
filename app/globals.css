@@ -660,6 +660,10 @@ html, body {
   color: var(--titles); 
 }
 
+.giscus-frame {
+  min-height: 500px !important;  
+}
+
 /* NOT FOUND */
 .not-found-warning{ 
   color: var(--notFound);

@@ -10,6 +10,7 @@ import remarkGfm from 'remark-gfm';
 import mdxStyles from '../../../src/utils/mdxStyles';
 import { notFound } from 'next/navigation';
 import TopBarBlogNav from '../../../src/components/NavBar/TopBarBlogNav';
+import GiscusComments from '../../../src/components/Comments/GiscusComments';
 
 
 
@@ -53,7 +54,8 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                                             },
                                             }}
                                 />
-                            </div>    
+                            </div>
+                            <GiscusComments />    
                         </div>                                          
                         <DynamicTableOfContents /> 
                     </div>                    
