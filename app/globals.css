@@ -142,10 +142,8 @@ html, body {
   z-index: 100;        
 } 
 
-.animate-keyboard-MobileTablet{     
-  backdrop-filter: blur(10px);
-  opacity: 0.5;
-  z-index: 100;        
+.animate-keyboard-MobileTablet{       
+  opacity: 0.5;         
 } 
 
 
