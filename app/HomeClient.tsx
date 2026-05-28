@@ -19,7 +19,6 @@ import Image from 'next/image';
 import {useSound} from '../src/hook/useSound';
 import postType from '@/src/components/Post/postType';
 import { useRouter } from 'next/navigation';
-import itemType from '@/src/components/Youtube/itemType';
 
 //VARIABLES
 const mapTitles = [
@@ -49,18 +48,6 @@ const mapTitles = [
 const icon_size = 20;   
 const lastJobIndex = mapJobs[mapJobs.length - 1].index;
 
-//Para traer la información del API de YouTube
-const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/youtube`, {
-  next: { revalidate: 3600 }
-});
-const data = await response.json();
-
-const mapVideos = data.items.map((item: itemType, index: number) => ({
-  index,
-  source: `https://www.youtube.com/embed/${item.id.videoId}`,
-  title: item.snippet.title
-}));
-
 
 //FUNCIONES
 
@@ -85,7 +72,7 @@ export function buttonChevronDown(sectionID: string) {
 
 //COMPONENTE PRINCIPAL
 
-export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) { 
+export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[],mapVideos: IframeVideos[] }) {
   
   const { setActiveSection } = useSection();
   const router = useRouter();
@@ -128,7 +115,11 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
   const { play: playShine, stop: stopShine } = useSound('shine', '/sounds/shine.mp3', 0.4);  
   const { play: playUiButtonPressed} = useSound('ui-button-pressed', '/sounds/ui-button-pressed.mp3', 0.4);    
   
-
+  //Para ordenar los post por index (usamos una copia)
+  const latestPosts = [...mapPosts]
+  .sort((a, b) => b.index - a.index)
+  .slice(0, 4);
+  
   return (    
     <main>
       {/* Hero */}
@@ -223,8 +214,8 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
                 onClick={(e) => {playUiButtonPressed(); setTimeout(() => { router.push('/blog');}, 300);}}> 
                 Ir al blog <NotebookPen size={icon_size}/>
               </button>
-          </div>
-        {<Carousel posts={mapPosts.slice(0, 3)} />}         
+          </div>          
+        {<Carousel posts={latestPosts} />}           
       </section>
 
       <FooterBar />
