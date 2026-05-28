@@ -13,7 +13,6 @@ import TopBarBlogNav from '../../../src/components/NavBar/TopBarBlogNav';
 import GiscusComments from '../../../src/components/Comments/GiscusComments';
 
 
-
 export async function generateStaticParams() {
   const mapPosts = await getMapPosts();
 
@@ -54,10 +53,10 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                                             },
                                             }}
                                 />
-                            </div>
+                            </div>                            
                             <GiscusComments />    
                         </div>                                          
-                        <DynamicTableOfContents /> 
+                        <DynamicTableOfContents slug={slug}/>                       
                     </div>                    
                     <FooterBar />    
                   </main>          

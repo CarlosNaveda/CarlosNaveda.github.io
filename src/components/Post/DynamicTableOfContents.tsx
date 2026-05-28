@@ -1,19 +1,15 @@
 'use client';
 
-import {
-  useEffect,
-  useState,
-  MouseEvent,
-} from 'react';
-
+import { useEffect, useState, MouseEvent} from 'react';
 import { ArrowRight } from 'lucide-react';
+import LikeButton from '../../../src/components/Button/LikeButton';
 
 interface Heading {  
   id: string;
   title: string;
 }
 
-export default function DynamicTableOfContents() {
+export default function DynamicTableOfContents({slug}: {slug: string}) {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState('');
 
@@ -136,36 +132,16 @@ export default function DynamicTableOfContents() {
           const isActive = activeId === heading.id;
 
           return (
-            <li
-              key={heading.id}
-              className={`index-content-text flex items-center justify-start gap-2 transition-all}`}
-            >
-              <ArrowRight
-                size={isActive ? 20 : 16}
-                className={`index-content-arrow
-                  ${isActive
-                    ? 'text-[#7E7ADE]'
-                    : ''
-                  }`}
-              />
-
-              <a
-                href={`#${heading.id}`}
-                onClick={(e) =>
-                  handleClick(e, heading.id)
-                }
-                className={`transition-colors hover:text-[#ffffff] ${
-                  isActive
-                    ? 'text-[#7E7ADE]' 
-                    : ''
-                }`}
-              >
+            <li key={heading.id} className={`index-content-text flex items-center justify-start gap-2 transition-all}`}>
+              <ArrowRight size={isActive ? 20 : 16} className={`index-content-arrow ${isActive ? 'text-[#7E7ADE]': ''}`}/>
+              <a href={`#${heading.id}`} onClick={(e) => handleClick(e, heading.id)}  className={`transition-colors hover:text-[#ffffff] ${isActive? 'text-[#7E7ADE]': ''}`}>
                 {heading.title}
-              </a>
+              </a>              
             </li>
           );
-        })}
+        })}        
       </ul>
+      <LikeButton postSlug={slug} />
     </div>
   );
 }
