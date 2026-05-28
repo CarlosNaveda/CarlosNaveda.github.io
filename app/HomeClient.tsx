@@ -6,6 +6,7 @@ import Title from '../src/components/Title/Title';
 import JobCard from '../src/components/Job/JobCard';
 import ToNextAxisButton from '../src/components/Button/ToNextAxisButton';
 import ToNextAxisIframeVideos from '../src/components/IFrame/ToNextAxisIframeVideos';
+import IframeVideos from '../src/components/IFrame/IframeVideosType';
 import Carousel from '../src/components/Carousel/Carousel';
 import mapSections from '../src/data/sections';
 import FooterBar from '@/src/components/FooterBar/FooterBar';
@@ -18,6 +19,7 @@ import Image from 'next/image';
 import {useSound} from '../src/hook/useSound';
 import postType from '@/src/components/Post/postType';
 import { useRouter } from 'next/navigation';
+import itemType from '@/src/components/Youtube/itemType';
 
 //VARIABLES
 const mapTitles = [
@@ -44,33 +46,20 @@ const mapTitles = [
 ];
 
 
-
+const icon_size = 20;   
 const lastJobIndex = mapJobs[mapJobs.length - 1].index;
 
-const mapVideos = [
-  {
-    index: 0,
-    source: "https://www.youtube.com/embed/XM-ZSlUM8tY",
-    title: "Proyecto Fansubpy | Tributo FC Barcelona"    
-  },
-  {
-    index: 1,
-    source: "https://www.youtube.com/embed/9PxTNr6rF9Y",
-    title: "La IA recuerda solo lo que cabe en su contexto — Serie IA #4"    
-  },
-  {
-    index: 2,
-    source: "https://www.youtube.com/embed/reugFL2iy2E",
-    title: "Cuando le escribes a la IA estás gastando tokens — Serie IA #3"    
-  },
-  {
-    index: 3,
-    source: "https://www.youtube.com/embed/4mJSiV53vfQ",
-    title: "Filtración de Claude Code"    
-  }
-];
+//Para traer la información del API de YouTube
+const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/youtube`, {
+  next: { revalidate: 3600 }
+});
+const data = await response.json();
 
-const icon_size = 20;   
+const mapVideos = data.items.map((item: itemType, index: number) => ({
+  index,
+  source: `https://www.youtube.com/embed/${item.id.videoId}`,
+  title: item.snippet.title
+}));
 
 
 //FUNCIONES
@@ -212,7 +201,7 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
               <ToNextAxisButton />             
           </div>
           <div className="toNextAxis-videos flex flex-col xl:grid xl:grid-cols-2 items-center justify-center gap-6 max-w-5xl">
-            {mapVideos.map((video) => (
+            {mapVideos.map((video: IframeVideos) => (
               <ToNextAxisIframeVideos key={video.index} video={video} />
             ))}                
           </div>              

@@ -2,14 +2,13 @@
 
 import { useEffect, useState, MouseEvent} from 'react';
 import { ArrowRight } from 'lucide-react';
-import LikeButton from '../../../src/components/Button/LikeButton';
 
 interface Heading {  
   id: string;
   title: string;
 }
 
-export default function DynamicTableOfContents({slug}: {slug: string}) {
+export default function DynamicTableOfContents() {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState('');
 
@@ -140,8 +139,7 @@ export default function DynamicTableOfContents({slug}: {slug: string}) {
             </li>
           );
         })}        
-      </ul>
-      <LikeButton postSlug={slug} />
+      </ul>      
     </div>
   );
 }

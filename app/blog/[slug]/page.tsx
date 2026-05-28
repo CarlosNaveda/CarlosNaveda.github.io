@@ -11,6 +11,7 @@ import mdxStyles from '../../../src/utils/mdxStyles';
 import { notFound } from 'next/navigation';
 import TopBarBlogNav from '../../../src/components/NavBar/TopBarBlogNav';
 import GiscusComments from '../../../src/components/Comments/GiscusComments';
+import LikeButton from '../../../src/components/Button/LikeButton';
 
 
 export async function generateStaticParams() {
@@ -53,10 +54,11 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                                             },
                                             }}
                                 />
-                            </div>                            
+                            </div>
+                            <LikeButton postSlug={slug}/>                            
                             <GiscusComments />    
                         </div>                                          
-                        <DynamicTableOfContents slug={slug}/>                       
+                        <DynamicTableOfContents/>                                               
                     </div>                    
                     <FooterBar />    
                   </main>          
