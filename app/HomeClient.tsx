@@ -143,7 +143,7 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
   return (    
     <main>
       {/* Hero */}
-      <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8">              
+      <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8 scroll-mt-14 md:scroll-mt-16">              
         <div className="text-2xl md:text-6xl font-bold font-outfit flex flex-row items-center justify-center gap-3" style={{color: 'var(--titles)'}}>
           <h1 className='saludo'>Hola soy</h1>           
           <h2 className='mi-nombre' onMouseEnter={() => {playShine();}} onMouseLeave={() => {stopShine();}}>Carlos Naveda</h2>             
@@ -168,7 +168,7 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
       </section> 
 
       {/* Sobre mí */}
-      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced">                  
+      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced scroll-mt-14 md:scroll-mt-16">                  
         <Title title={mapTitles[0]} />
         <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify font-dm-sans" style={{color: 'var(--paragraph)'}}> 
           
@@ -188,7 +188,7 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
 
       {/* Experiencia */} 
       <div className="job-page flex flex-col">        
-         <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-8 md:gap-20 p-8 text-balanced">                    
+         <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-8 md:gap-20 p-8 text-balanced scroll-mt-14 md:scroll-mt-16">                    
           <Title title={mapTitles[1]} />
           <div className='job-timeline flex flex-col gap-8 md:gap-14'>  
             {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} isLastJobExpanded={lastJobExpanded} onLastJobHover={job.index === lastJobIndex ? setLastJobExpanded : undefined}/>))}                 
@@ -199,7 +199,7 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
 
       {/* ToNextAxis */}        
       <div className="toNextAxis-page flex flex-col relative">                       
-        <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 p-8 text-balanced">                                
+        <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 p-8 text-balanced scroll-mt-14 md:scroll-mt-16">                                
           <Title title={mapTitles[2]}/> 
           <Image className="toNextAxis-logo absolute -top-15 -right-10 md:-top-30 md:-right-10 lg:-top-20 lg:right-200 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}} loading="eager" />
           <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 pb-5 font-dm-sans">               
@@ -221,7 +221,7 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
       </div>
         
       {/* Blog Preview*/}
-      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-4 md:gap-10 p-8 text-balanced">                  
+      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-4 md:gap-10 p-8 text-balanced scroll-mt-14 md:scroll-mt-16">                  
         <Title title={mapTitles[3]} />
         <div className="blog-preview-text-button flex flex-col items-center justify-center gap-1 font-dm-sans">              
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
