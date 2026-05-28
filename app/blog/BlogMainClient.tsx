@@ -42,10 +42,7 @@ export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
                         {allUniqueTags.map((tag, tagIndex) => (                    
                             <span key={tag} className={`tag-to-filter text-sm lg:text-base top-[55%] md:top-[50%] ${tagToFilter===tag ? 'tag-active' : ''}`}                             
                             onClick={() => {
-                            const newTag = tag === tagToFilter ? '' : tag;
-                            console.log('tag clicked:', tag);
-                            console.log('tagToFilter antes:', tagToFilter);
-                            console.log('nuevo tagToFilter:', newTag);
+                            const newTag = tag === tagToFilter ? '' : tag;                            
                             setTagToFilter(newTag);
                             playUiOrbit();
                             }}    
