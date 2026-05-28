@@ -49,7 +49,7 @@ const JobCard = ({job, lastJobIndex,isLastJobExpanded,onLastJobHover}: {job: job
             </div>
             <article 
                 id={`job-${job.index}`} 
-                className={`job-card hover:animate-breathe w-[300px] md:w-[350px] lg:w-[450px] p-[15px] md:p-[16px] flex flex-col gap-4 mt-8 row-start-1  
+                className={`job-card hover:animate-breathe w-[300px] md:w-[400px] lg:w-[450px] p-[15px] md:p-[16px] flex flex-col gap-4 mt-8 row-start-1  
                             ${moduleIndex === 'even' ? 'lg:col-start-3 lg:justify-self-start' : 'lg:col-start-1 lg:justify-self-end'} transition-all duration-1000 ease-in-out 
                             ${isJobCardVisible ? 'opacity-100 translate-y-0' : "opacity-0 translate-y-8"}`} 
                 onMouseEnter={() => {setState(true); onLastJobHover?.(true); playUiFocus();}}

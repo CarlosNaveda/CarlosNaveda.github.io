@@ -11,7 +11,7 @@ import { useState } from 'react';
 import {useIsDesktop} from '@/src/hook/useIsDesktop';
 import {useSound} from '@/src/hook/useSound';
 import postType from '@/src/components/Post/postType';
-import {ChevronLeft} from 'lucide-react';
+import TopBarBlogNav from '../../src/components/NavBar/TopBarBlogNav';
 
 export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
     
@@ -28,30 +28,19 @@ export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
   const { play: playUiOrbit} = useSound('ui-orbit', '/sounds/ui-orbit.mp3', 0.4);  
 
    
-  //Botón para regresar al blog preview.  
-  function buttonBlogPreview() { 
-  return (
-      <div className="blog-preview-link flex flex-start w-[100%] md:w-[70%] lg:w-[35%]"> 
-          <button className="mt-8 animate-bounce flex flex-row items-center gap-1 lg:gap-2 cursor-pointer text-[var(--paragraph)] hover:text-[var(--titles)] transition-colors" onClick={() => {window.location.href = './#blog';}}>
-              <ChevronLeft size={30} /> 
-              <span className="text-base md:text-lg lg:text-xl font-dm-sans">Volver</span> 
-          </button>        
-      </div>           
-  );
-  } 
+
 
   return (    
     <main>                
-        <div className="blog-main min-h-screen flex flex-col items-center gap-1 md:gap-4 p-8 pb-20 md:pb-0 text-balanced"> 
-            {buttonBlogPreview()}
+        <div className="blog-main min-h-screen flex flex-col items-center gap-1 md:gap-4 p-8 pb-20 md:pb-0 text-balanced">             
+            <TopBarBlogNav/>
             <div className="blog-tags flex flex-col items-center justify-center center gap-2 font-dm-sans">                
-                <h2 className='title-filter text-2xl md:text-4xl font-outfit'>Filtrar por tag</h2>             
+                <h2 className='title-filter text-xl md:text-3xl font-outfit'>Filtrar por tag</h2>             
                 <div className='wrapper-tags w-[300px] h-[200px] xs:w-[350px] xs:h-[250px] md:w-[500px] md:h-[300px] lg:w-[900px] lg:h-[500px]'>                                    
                     <small className='flex flex-row items-center justify-center center gap-2'> 
                         {/* Recorro el array de tags únicos     */}
                         {allUniqueTags.map((tag, tagIndex) => (                    
-                            <span key={tag} className={`tag-to-filter text-base top-[55%] md:top-[50%] ${tagToFilter===tag ? 'tag-active' : ''}`} 
-                            // onClick={() => {setTagToFilter(tag===tagToFilter ? "" : tag); playUiOrbit();}}  
+                            <span key={tag} className={`tag-to-filter text-sm lg:text-base top-[55%] md:top-[50%] ${tagToFilter===tag ? 'tag-active' : ''}`}                             
                             onClick={() => {
                             const newTag = tag === tagToFilter ? '' : tag;
                             console.log('tag clicked:', tag);
@@ -70,7 +59,7 @@ export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
                     </small>                    
                 </div>
             </div>
-            <h2 className='title-posts text-2xl md:text-4xl font-outfit'>Posts</h2> 
+            <h2 className='title-posts text-xl md:text-3xl font-outfit'>Posts</h2> 
             <div className={`blog-main-posts-preview flex flex-col md:pb-20 lg:pb-auto xl:grid ${tagToFilter!="" && filterPostsByTag(tagToFilter).length===1 ? "xl:grid-cols-1" : "xl:grid-cols-2"} items-center justify-center gap-2 md:gap-4`}>                 
                 {/* Si no se filtra por tag, se muestran todos los posts */}
                 <PostPreview mapPosts={tagToFilter==="" ? mapPosts : filterPostsByTag(tagToFilter)}/>

@@ -2,8 +2,7 @@
 import { usePathname } from 'next/navigation';
 import LeftBarNav from './LeftBarNav';
 import { useIsDesktop } from '../../hook/useIsDesktop';
-import TypingKeyboard from '../Animations/TypingKeyboard';
-import SwitchSound from '../NavBar/SwitchSound';
+import TopBarDesktopNav from './TopBarDesktopNav';
 import { useEffect, useState } from 'react';
 import TopBarNav from './TopBarNav';
 
@@ -24,17 +23,14 @@ export default function NavWrapper() {
 
   return (
     <>
+      {/* Para mobile,Tablet */}
       {!isDesktop && !isNotFound && !pathname.startsWith('/blog') && <TopBarNav />}      
-      {isDesktop && !isNotFound && (
+      {/* Para Desktop */}
+      {isDesktop && !isNotFound && !pathname.startsWith('/blog') && (
         <>
-          <TypingKeyboard className="animate-keyboard left-10 top-10 w-[80px] h-[80px] rounded-lg p-1 bg-[rgba(126,122,222,0.15)] border border-[rgba(126,122,222,0.2)]"/>
-          <SwitchSound />
-          {!pathname.startsWith('/blog') && <LeftBarNav />}
-        </>
-        )
-      }      
+        <TopBarDesktopNav /> 
+        <LeftBarNav /> 
+        </>)}
     </>
-  ); 
-
-  
+  );   
 }

@@ -9,7 +9,7 @@ export default function SwitchSound() {
   
 
     return (        
-        <div  className="switcher-sound top-7 right-3 md:right-15 lg:top-10 lg:right-20 static lg:fixed z-999">
+        <div  className="switcher-sound top-7 right-3 md:right-15 lg:top-10 lg:right-20 static z-999">
         <button onClick={toggleSound} className="cursor-pointer">
             {soundEnabled 
             ? <Volume2 className="text-[var(--paragraph)] hover:text-[var(--titles)] transition-colors w-[20px] h-[20px] md:w-[24px] md:h-[24px]"/>

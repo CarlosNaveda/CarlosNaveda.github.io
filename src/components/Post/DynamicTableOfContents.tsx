@@ -126,7 +126,7 @@ export default function DynamicTableOfContents() {
   if (headings.length === 0) return null;
 
   return (          
-    <div className="index-content hidden lg:block self-start sticky top-20 md:p-5 text-sm">
+    <div className="index-content hidden lg:block self-start sticky top-20 md:p-5 text-sm w-[500px] shrink-0">
       <h2 className="index-content-title font-outfit">
         ÍNDICE DE CONTENIDOS
       </h2>

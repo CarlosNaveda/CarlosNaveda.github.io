@@ -30,7 +30,7 @@ export default function TopBarNav() {
                 <nav className='font-dm-sans'> 
                 <ul className='flex flex-row items-center justify-center gap-1 text-xs md:text-base'>  
                     {navItems.map((item) => (
-                        <li key={item.id} className={activeSection === item.id ? "active-top-nav" : "inactive-top-nav"} onClick={() => {playSoftGlass();}}>
+                        <li key={item.id} className={activeSection === item.id ? "active-top-nav" : "inactive-top-nav"} onClick={() => {window.location.href = `#${item.id}`; playSoftGlass();}}>
                             {item.icon}
                             <Link className={`${item.id === "inicio" ? "transition-all" : ""}`} href={`#${item.id}`}>{activeSection === item.id ? item.label : ""}</Link>                        
                         </li>
