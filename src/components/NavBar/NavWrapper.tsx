@@ -24,7 +24,7 @@ export default function NavWrapper() {
 
   return (
     <>
-      {!isDesktop && !isNotFound && <TopBarNav />}      
+      {!isDesktop && !isNotFound && !pathname.startsWith('/blog') && <TopBarNav />}      
       {isDesktop && !isNotFound && (
         <>
           <TypingKeyboard className="animate-keyboard left-10 top-10 w-[80px] h-[80px] rounded-lg p-1 bg-[rgba(126,122,222,0.15)] border border-[rgba(126,122,222,0.2)]"/>

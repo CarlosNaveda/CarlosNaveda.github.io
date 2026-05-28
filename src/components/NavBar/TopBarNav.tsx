@@ -10,7 +10,7 @@ import { useSound } from '../../hook/useSound';
 
 export default function TopBarNav() {    
     
-    const classConfigMobileTablet = `top-bar-nav fixed top-0 w-[100%] flex flex-row transition-all duration-500 gap-1 items-center justify-center pt-1`;        
+    const classConfigMobileTablet = `top-bar-nav fixed top-0 left-0 w-[100%] flex flex-row transition-all duration-500 gap-1 items-center justify-between pt-1 z-999`;        
     const { activeSection } = useSection();    
 
     //Para manejar las animaciones del NavBar
@@ -26,7 +26,8 @@ export default function TopBarNav() {
     return (
         <aside className={classConfigMobileTablet}>
             <TypingKeyboard className="animate-keyboard-MobileTablet w-[50px] h-[50px] rounded-lg p-1 bg-[rgba(126,122,222,0.15)] border border-[rgba(126,122,222,0.2)]"/>           
-            <nav className='font-dm-sans'> 
+            <div className="flex-1 flex justify-center">
+                <nav className='font-dm-sans'> 
                 <ul className='flex flex-row items-center justify-center gap-1 text-xs'>  
                     {navItems.map((item) => (
                         <li key={item.id} className={activeSection === item.id ? "active-top-nav" : "inactive-top-nav"} onClick={() => {playSoftGlass();}}>
@@ -36,6 +37,8 @@ export default function TopBarNav() {
                     ))}                                               
                 </ul>                                       
             </nav>
+            </div>
+            
             <SwitchSound />       
         </aside>   
     );
