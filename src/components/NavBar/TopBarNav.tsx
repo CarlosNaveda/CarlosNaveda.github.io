@@ -7,11 +7,13 @@ import {useSection} from '../../hook/useSection';
 import navItems from '../../data/navItems';
 import Link from 'next/link'
 import { useSound } from '../../hook/useSound';
+import {useRouter} from 'next/navigation';
 
 export default function TopBarNav() {    
     
     const classConfigMobileTablet = `top-bar-nav fixed top-0 left-0 w-[100%] flex flex-row transition-all duration-500 gap-1 items-center justify-between pt-1 px-5 z-999`;        
-    const { activeSection } = useSection();    
+    const { activeSection } = useSection();   
+    const router = useRouter(); 
 
     //Para manejar las animaciones del NavBar
     const activeSectionRef = useRef(activeSection);
@@ -30,7 +32,9 @@ export default function TopBarNav() {
                 <nav className='font-dm-sans'> 
                 <ul className='flex flex-row items-center justify-center gap-1 text-xs md:text-base'>  
                     {navItems.map((item) => (
-                        <li key={item.id} className={activeSection === item.id ? "active-top-nav" : "inactive-top-nav"} onClick={() => {window.location.href = `#${item.id}`; playSoftGlass();}}>
+                        <li key={item.id} 
+                            className={activeSection === item.id ? "active-top-nav" : "inactive-top-nav"} 
+                            onClick={() => {router.push(`#${item.id}`); playSoftGlass();}}>
                             {item.icon}
                             <Link className={`${item.id === "inicio" ? "transition-all" : ""}`} href={`#${item.id}`}>{activeSection === item.id ? item.label : ""}</Link>                        
                         </li>

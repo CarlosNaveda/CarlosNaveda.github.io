@@ -17,6 +17,7 @@ import FloatingEmojis from '../src/components/Animations/FloatingEmojis';
 import Image from 'next/image';
 import {useSound} from '../src/hook/useSound';
 import postType from '@/src/components/Post/postType';
+import { useRouter } from 'next/navigation';
 
 //VARIABLES
 const mapTitles = [
@@ -98,6 +99,7 @@ export function buttonChevronDown(sectionID: string) {
 export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) { 
   
   const { setActiveSection } = useSection();
+  const router = useRouter();
 
   //OBSERVER - Para mapear las secciones mientras se hace el scroll
   useEffect(() => {   
@@ -227,8 +229,10 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
                 Aquí encontrarás contenido técnico, proyectos personales y también cosas que para mi son interesantes de hacer o conversar.<br /><br />
                 No será un espacio de un solo tema, sino un lugar para compartir todo lo que me inspira e interesa. Estos son los últimos posts 👇🏻
               </p><br />
-              <button className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit" onClick={(e) => {playUiButtonPressed(); setTimeout(() => { window.location.href = '/blog'; }, 300);}}> 
-              Ir al blog <NotebookPen size={icon_size}/>
+              <button 
+                className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit" 
+                onClick={(e) => {playUiButtonPressed(); setTimeout(() => { router.push('/blog');}, 300);}}> 
+                Ir al blog <NotebookPen size={icon_size}/>
               </button>
           </div>
         {<Carousel posts={mapPosts} />} 
