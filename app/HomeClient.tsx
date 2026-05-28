@@ -224,8 +224,7 @@ export default function HomeClient({ mapPosts }: { mapPosts: postType[] }) {
                 Ir al blog <NotebookPen size={icon_size}/>
               </button>
           </div>
-        {<Carousel posts={mapPosts} />} 
-        
+        {<Carousel posts={mapPosts.slice(0, 3)} />}         
       </section>
 
       <FooterBar />
