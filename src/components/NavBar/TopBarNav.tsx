@@ -37,8 +37,7 @@ export default function TopBarNav() {
                     ))}                                               
                 </ul>                                       
             </nav>
-            </div>
-            
+            </div>            
             <SwitchSound />       
         </aside>   
     );
