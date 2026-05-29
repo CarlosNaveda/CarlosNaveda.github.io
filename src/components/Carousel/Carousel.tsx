@@ -116,7 +116,7 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
                         ? "scale(1) translateX(0)" //Si estamos en el post actual, no aplicamos ninguna transformación                        
                         :`scale(${isMobile || isTablet ? 1 - Math.abs(index - currentIndex) * 0.02: 1 - Math.abs(index - currentIndex) * 0.05})` //Si no, aplicamos una transformación basada en la distancia al post actual
                     }}>       
-                    <div className="carousel-content w-[245px] h-[245px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px] font-dm-sans" style={{position: "relative"}}>
+                    <div className="carousel-content w-[245px] h-[245px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px] font-dm-sans" style={{position: "relative", cursor: "pointer"}}>
                         <Image src={post.imageSource} alt={post.title} className={index === currentIndex ? "carousel-image": "carousel-image-off"} width={500} height={500} loading="eager"/> 
                         <div className={index === currentIndex ? "carousel-info flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5": "carousel-info-off flex flex-col gap-1 px-4 py-2 md:gap-2 md:p-5"}>
                             <div className="date-separator-tag flex flex-row gap-4 items-center justify-center">

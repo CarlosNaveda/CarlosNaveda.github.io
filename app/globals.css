@@ -590,9 +590,8 @@ html, body {
 } 
 
 /* BLOG SLUG */
-.blog-slug-content{ 
-  width: 600px;  
-  height: auto;  
+.blog-slug-content{    
+  height: auto;   
 }
 
 .blog-slug-title{  

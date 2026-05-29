@@ -5,7 +5,7 @@
  * @returns {string} La fecha formateada en formato "Month Day, Year".
  */
 function formatDateToString(date: Date): string {
-  const formato = new Intl.DateTimeFormat('es-ES', { month: 'long', day: 'numeric', year: 'numeric' }); 
+  const formato = new Intl.DateTimeFormat('es-ES', { month: 'long', day: 'numeric', year: 'numeric',timeZone: 'UTC' }); 
   return formato.format(date);
 }
 

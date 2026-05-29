@@ -44,9 +44,8 @@ const mdxStyles = `
 
   prose-strong:text-white
 
-  prose-a:text-[#8F87FF]
+  prose-a:text-[#7aa2f7]
   prose-a:no-underline
-  hover:prose-a:text-[#C6D629]
 
   prose-code:text-[#9fc2ff]
   prose-code:bg-white/5
@@ -76,15 +75,19 @@ const mdxStyles = `
   prose-td:p-3
 
   prose-blockquote:border-l-[#8F87FF]
-  prose-blockquote:text-white/80
-
-  prose-img:rounded-2xl
-  prose-img:shadow-lg
-
+  prose-blockquote:text-white/80 
+  
   prose-hr:border-white/10
 
   pb-20 
   lg:pb-140
+
+  [&_table]:block
+  [&_table]:overflow-x-auto
+  [&_table]:whitespace-nowrap
+
+  w-full
+
 `;
 
 export default mdxStyles;
