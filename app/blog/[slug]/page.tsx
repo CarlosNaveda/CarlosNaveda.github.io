@@ -13,6 +13,11 @@ import TopBarBlogNav from '../../../src/components/NavBar/TopBarBlogNav';
 import GiscusComments from '../../../src/components/Comments/GiscusComments';
 import LikeButton from '../../../src/components/Button/LikeButton';
 import { BlogImage } from '../../../src/components/Mdx/BlogImage';
+import { Highlight } from '../../../src/components/Mdx/Hightlight';
+import { Callout } from '../../../src/components/Mdx/Callout';
+
+
+
 
 
 export async function generateStaticParams() {
@@ -56,7 +61,7 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                             <Image src={post.imageSource} alt={post.title} className="post-image object-cover w-[100%] h-[200px] md:w-[100%] md:h-[300px]" width={image_width} height={image_height} loading="eager"/>                                                        
                             <div className={`mdx-content prose prose-invert max-w-none font-dm-sans ${mdxStyles}`}>  
                               <MDXRemote source={post.content}
-                                         components={{ BlogImage }} //Para ir agregando componentes y utilizarlos en el blog.
+                                         components={{ BlogImage, Highlight, Callout }} //Para ir agregando componentes y utilizarlos en el blog.
                                          options={{
                                           mdxOptions: 
                                             {remarkPlugins: [remarkGfm],                                               

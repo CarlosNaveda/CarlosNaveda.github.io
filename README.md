@@ -19,5 +19,4 @@ Después de varios años renuevo mi página web, intentando aprender nuevas tecn
 - Responsive (mobile, tablet, desktop)
 
 ## Sitio
-Próximamente en dominio propio, paso a paso...
-[carlosnaveda](https://carlosnaveda-github-io.vercel.app/)
+[www.carlosnavedam.com](www.carlosnavedam.com)
