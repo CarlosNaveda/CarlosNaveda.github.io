@@ -15,6 +15,7 @@ import LikeButton from '../../../src/components/Button/LikeButton';
 import { BlogImage } from '../../../src/components/Mdx/BlogImage';
 import { Highlight } from '../../../src/components/Mdx/Hightlight';
 import { Callout } from '../../../src/components/Mdx/Callout';
+import ShareButtons from '../../../src/components/Button/ShareButtons';
 
 
 
@@ -40,6 +41,7 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
   const postDetails = `Autor: ${post.author} | Fecha: ${formatDateToString(post.publishDate)}`;      
   const image_width = 500;
   const image_height = 300;
+  const postUrl = `https://carlosnavedam.com/blog/${slug}`;
 
 
     return (    
@@ -69,7 +71,10 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                                             }}
                                 />
                             </div>
-                            <LikeButton postSlug={slug}/>                            
+                            <div className='flex flex-col items-center justify-center gap-4'>
+                              <ShareButtons postUrl={postUrl} postTitle={post.title}/>                 
+                              <LikeButton postSlug={slug}/>
+                            </div>                            
                             <GiscusComments />    
                         </article >
                         {/* Columna 3 - Derecha*/}       

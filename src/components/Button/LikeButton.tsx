@@ -93,7 +93,7 @@ export default function LikeButton({ postSlug }: LikeButtonProps) {
     <button
       onClick={handleLike}
       disabled={loading}
-      className={`pt-5 flex items-center gap-2 transition-all duration-200 cursor-pointer ${liked ? 'text-pink-500' : 'text-[var(--paragraph)]'} hover:text-pink-400`}>
+      className={`pt-5 flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer ${liked ? 'text-pink-500' : 'text-[var(--paragraph)]'} hover:text-pink-400`}>
       <Heart
         size={24}
         className={`transition-all duration-200 ${liked ? 'fill-pink-500' : ''}`}
