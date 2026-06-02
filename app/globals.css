@@ -42,7 +42,7 @@
   radial-gradient(circle 1500px at bottom right, var(--bg-gradient-color-five) 0%, transparent 100%), 
   radial-gradient(circle 500px at bottom, var(--bg-gradient-color-six) 0%, transparent 100%),
   var(--background); 
-  --notFound: #6B8CAE;
+  --notFound: #6B8CAE;  
   
 }
 
@@ -250,6 +250,9 @@ html, body {
   font-weight: bold; 
 }
 
+
+/* HERO */
+
 .mi-nombre:hover,
 .mi-nombre:active,
 .mi-nombre:focus {
@@ -268,7 +271,18 @@ html, body {
   animation: rubberBand 1s;         
 }
 
+.highlight-words{
+  position: relative;
+  animation: shimmer 3s linear infinite;            
+  background: linear-gradient(45deg,white 40%, rgba(100, 57, 228, 0.6) 50%, white 60%);  
+  
+  background-size: 200% 100%;       
+  background-clip: text; 
+  -webkit-background-clip: text;      
+  color: transparent;
+  transition: all 0.3s linear;    
 
+}
 
 .floating-emoji{
    animation: floatingEmoji 1s linear infinite;    
@@ -277,6 +291,15 @@ html, body {
    backdrop-filter: blur(0.5px);      
 }
 
+
+
+ 
+ 
+@keyframes shimmer {
+  0%   { background-position: -100% 0; }
+  50%   { background-position: 50% 0; }  
+  100% { background-position:  100% 0; }
+}
 
 /* SOBRE MÍ */
 

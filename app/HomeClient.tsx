@@ -130,7 +130,7 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
         </div>
         <div className="text-lg md:text-3xl leading-relaxed font-dm-sans" style={{color: 'var(--paragraph)'}}>          
           <p className="flex flex-row items-center justify-center gap-2">
-            <span id="aprendo" className="relative highlight-words " onMouseEnter={() => {setTimeout(() => playUiPop(), 200); setHoverWord('aprendo');}} onMouseLeave={() => {stopUiPop(); setHoverWord('');}}>Aprendo{hoverWord === 'aprendo' && <FloatingEmojis word='aprendo'/>}</span>          
+            <span id="aprendo" className="relative highlight-words" onMouseEnter={() => {setTimeout(() => playUiPop(), 200); setHoverWord('aprendo');}} onMouseLeave={() => {stopUiPop(); setHoverWord('');}}>Aprendo{hoverWord === 'aprendo' && <FloatingEmojis word='aprendo'/>}</span>          
             <span id="construyo" className="relative highlight-words" onMouseEnter={() => {setTimeout(() => playUiPop(), 200);setHoverWord('construyo');}} onMouseLeave={() => {stopUiPop();setHoverWord('');}}>construyo{hoverWord === 'construyo' && <FloatingEmojis word='construyo'/>}</span>          
             <span>...</span><br />
           </p>
