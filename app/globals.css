@@ -273,15 +273,13 @@ html, body {
 
 .highlight-words{
   position: relative;
-  animation: shimmer 3s linear infinite;            
-  background: linear-gradient(45deg,white 40%, rgba(100, 57, 228, 0.6) 50%, white 60%);  
-  
-  background-size: 200% 100%;       
+  animation: shimmer 15s linear infinite;               
+  background: linear-gradient(45deg,white 40%, rgba(100, 57, 228, 0.1) 50%, white 60%);    
+  background-size: 1000% 100%;              
   background-clip: text; 
-  -webkit-background-clip: text;      
+  -webkit-background-clip: text;       
   color: transparent;
   transition: all 0.3s linear;    
-
 }
 
 .floating-emoji{
