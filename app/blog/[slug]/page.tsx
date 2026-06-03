@@ -13,7 +13,7 @@ import TopBarBlogNav from '../../../src/components/NavBar/TopBarBlogNav';
 import GiscusComments from '../../../src/components/Comments/GiscusComments';
 import LikeButton from '../../../src/components/Button/LikeButton';
 import { BlogImage } from '../../../src/components/Mdx/BlogImage';
-import { Highlight } from '../../../src/components/Mdx/Hightlight';
+import { Highlight } from '../../../src/components/Mdx/Highlight';
 import { Callout } from '../../../src/components/Mdx/Callout';
 import ShareButtons from '../../../src/components/Button/ShareButtons';
 
