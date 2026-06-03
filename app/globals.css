@@ -669,17 +669,6 @@ html, body {
   cursor: pointer;  
 } 
 
-.mdx-content h1 {
-  margin-bottom: 2rem;
-  color: var(--titles); 
-}
-
-.mdx-content h2 {
-  margin-top: 1rem; 
-  margin-bottom: 1rem;
-  color: var(--titles); 
-}
-
 .giscus-frame {
   min-height: 500px !important;  
 }
