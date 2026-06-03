@@ -271,7 +271,7 @@ html, body {
   animation: rubberBand 1s;         
 }
 
-.highlight-words{
+/* .highlight-words{
   position: relative;
   animation: shimmer 15s linear infinite;               
   background: linear-gradient(45deg,white 40%, rgba(100, 57, 228, 0.1) 50%, white 60%);    
@@ -280,7 +280,7 @@ html, body {
   -webkit-background-clip: text;       
   color: transparent;
   transition: all 0.3s linear;    
-}
+} */
 
 .floating-emoji{
    animation: floatingEmoji 1s linear infinite;    
