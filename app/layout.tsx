@@ -4,6 +4,7 @@ import "./globals.css";
 import { SectionProvider } from '../src/context/SectionContext';
 import NavWrapper from '../src/components/NavBar/NavWrapper';
 import { SoundProvider } from '@/src/context/SoundContext';
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,6 +55,7 @@ export default function RootLayout({
           <SectionProvider> {/* Agregamos el provider de secciones */}        
             <NavWrapper /> {/* Aquí llamamos a LeftBarNav solo si no estamos en el blog */}
             {children}
+            <Analytics />
           </SectionProvider> 
         </SoundProvider>      
       </body> 
