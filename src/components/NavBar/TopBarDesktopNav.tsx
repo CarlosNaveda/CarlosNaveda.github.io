@@ -1,7 +1,7 @@
 'use client';
 
-import SwitchSound from './SwitchSound';
-import TypingKeyboard from '../Animations/TypingKeyboard';
+import SwitchSound from '@/src/components/NavBar/SwitchSound';
+import TypingKeyboard from '@/src/components/Animations/TypingKeyboard';
 
 export default function TopBarDesktopNav() {    
 

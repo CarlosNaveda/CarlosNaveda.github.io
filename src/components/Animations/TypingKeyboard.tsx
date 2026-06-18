@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import {useSound} from '../../hook/useSound';
+import {useSound} from '@/src/hook/useSound';
   
 
 const frames = Array.from({ length: 14 }, (_, i) =>

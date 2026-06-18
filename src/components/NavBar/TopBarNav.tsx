@@ -1,12 +1,12 @@
 'use client';
 
-import TypingKeyboard from '../Animations/TypingKeyboard';
-import SwitchSound from '../NavBar/SwitchSound';
+import TypingKeyboard from '@/src/components/Animations/TypingKeyboard';
+import SwitchSound from '@/src/components/NavBar/SwitchSound';
 import {useEffect,useRef } from 'react';
-import {useSection} from '../../hook/useSection';
-import navItems from '../../data/navItems';
+import {useSection} from '@/src/hook/useSection';
+import navItems from '@/src/data/navItems';
 import Link from 'next/link'
-import { useSound } from '../../hook/useSound';
+import { useSound } from '@/src/hook/useSound';
 import {useRouter} from 'next/navigation';
 
 export default function TopBarNav() {    

@@ -1,7 +1,7 @@
 'use client';
 
 import SwitchSound from './SwitchSound';
-import { useIsDesktop } from '../../hook/useIsDesktop';
+import { useIsDesktop } from '@/src/hook/useIsDesktop';
 import {ChevronLeft} from 'lucide-react';
 import {useRouter} from 'next/navigation';
 

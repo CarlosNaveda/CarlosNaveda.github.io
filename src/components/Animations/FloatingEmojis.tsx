@@ -1,8 +1,8 @@
-import wordEmojis from '../../data/wordEmojis';
+import wordEmojis from '@/src/data/wordEmojis';
 import generateDelay  from '@/src/utils/generateDelay';
 import generateDistance from '@/src/utils/generateDistance';
 import Image from 'next/image';
-import {useIsDesktop} from '../../hook/useIsDesktop';
+import {useIsDesktop} from '@/src/hook/useIsDesktop';
 const FloatingEmojis = ({word}: {word: string}) =>{
 
     const icon_size = 20;

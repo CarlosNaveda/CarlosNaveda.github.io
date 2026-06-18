@@ -1,5 +1,5 @@
 import {CirclePlay} from 'lucide-react';
-import { useSound } from '../../hook/useSound';
+import { useSound } from '@/src/hook/useSound';
 
 const ToNextAxisButton = () => {
 

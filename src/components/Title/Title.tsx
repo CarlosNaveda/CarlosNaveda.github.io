@@ -1,4 +1,4 @@
-import titleType from './titleType';
+import titleType from '@/src/components/Title/titleType';
 
 
 const Title = ({title}: {title: titleType}) =>{

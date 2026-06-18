@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import options from './mdx-config';
-import PostType from '../src/components/Post/postType';
+import PostType from '@/src/components/Post/postType';
 
 const POSTS_DIR = path.join(process.cwd(), 'content/blog');
 

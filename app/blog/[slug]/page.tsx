@@ -1,20 +1,20 @@
 
-import {getMapPosts} from '../../../src/data/posts';
-import formatTitleToKebabCase from '../../../src/utils/formatTitle';
-import formatDateToString from '../../../src/utils/formatDate';
+import {getMapPosts} from '@/src/data/posts';
+import formatTitleToKebabCase from '@/src/utils/formatTitle';
+import formatDateToString from '@/src/utils/formatDate';
 import Image from "next/image";
 import FooterBar from '@/src/components/FooterBar/FooterBar';
-import DynamicTableOfContents from '../../../src/components/Post/DynamicTableOfContents';
+import DynamicTableOfContents from '@/src/components/Post/DynamicTableOfContents';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
-import mdxStyles from '../../../src/utils/mdxStyles';
+import mdxStyles from '@/src/utils/mdxStyles';
 import { notFound } from 'next/navigation';
-import TopBarBlogNav from '../../../src/components/NavBar/TopBarBlogNav';
-import GiscusComments from '../../../src/components/Comments/GiscusComments';
-import { BlogImage } from '../../../src/components/Mdx/BlogImage';
-import { Highlight } from '../../../src/components/Mdx/Highlight';
-import { Callout } from '../../../src/components/Mdx/Callout';
-import ShareButtons from '../../../src/components/Button/ShareButtons';
+import TopBarBlogNav from '@/src/components/NavBar/TopBarBlogNav';
+import GiscusComments from '@/src/components/Comments/GiscusComments';
+import { BlogImage } from '@/src/components/Mdx/BlogImage';
+import { Highlight } from '@/src/components/Mdx/Highlight';
+import { Callout } from '@/src/components/Mdx/Callout';
+import ShareButtons from '@/src/components/Button/ShareButtons';
 
 /**
  * Genera parámetros estáticos para las rutas de los posts.

@@ -11,7 +11,7 @@ import { useState } from 'react';
 import {useIsDesktop} from '@/src/hook/useIsDesktop';
 import {useSound} from '@/src/hook/useSound';
 import postType from '@/src/components/Post/postType';
-import TopBarBlogNav from '../../src/components/NavBar/TopBarBlogNav';
+import TopBarBlogNav from '@/src/components/NavBar/TopBarBlogNav';
 
 export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
     

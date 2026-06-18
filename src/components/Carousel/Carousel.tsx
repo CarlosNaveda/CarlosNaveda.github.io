@@ -1,11 +1,11 @@
 'use client';
 
 import { useState,useEffect } from 'react';
-import postType from "../Post/postType";
+import postType from "@/src/components/Post/postType";
 import Image from 'next/image';
 import formatDateToString from '@/src/utils/formatDate';
 import {ChevronLeft, ChevronRight } from 'lucide-react';
-import formatTitleToKebabCase from '../../../src/utils/formatTitle';
+import formatTitleToKebabCase from '@/src/utils/formatTitle';
 import { useRouter } from 'next/navigation';
 
 

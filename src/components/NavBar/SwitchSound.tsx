@@ -1,6 +1,6 @@
 'use client';
 
-import { useSoundContext } from '../../context/SoundContext';
+import { useSoundContext } from '@/src/context/SoundContext';
 import {Volume2, VolumeOff} from 'lucide-react';
 
 export default function SwitchSound() {

@@ -1,10 +1,10 @@
 'use client';
 
-import navItems from '../../data/navItems';
-import {useSection} from '../../hook/useSection';
+import navItems from '@/src/data/navItems';
+import {useSection} from '@/src/hook/useSection';
 import { useState,useEffect,useRef } from 'react';
 import Link from 'next/link'
-import { useSound } from '../../hook/useSound';
+import { useSound } from '@/src/hook/useSound';
 
 const sectionsToShowNav = ["sobreMi", "experiencia","tonextaxis","blog"]; //Secciones que se muestran en la barra lateral
 

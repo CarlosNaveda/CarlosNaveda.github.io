@@ -1,5 +1,5 @@
 import itemType from "@/src/components/Youtube/itemType";
-import IframeVideos from "../src/components/IFrame/IframeVideosType";
+import IframeVideos from "@/src/components/IFrame/IframeVideosType";
 
 /**
 * Función que obtiene los videos de youtube de un canal específico y devuelve una lista de objetos con la información necesaria para mostrarlos en una página web.

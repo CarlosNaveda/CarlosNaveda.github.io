@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getYoutubeVideos } from "../../../lib/youtube";
+import { getYoutubeVideos } from "@/lib/youtube";
 
 
 

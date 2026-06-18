@@ -1,6 +1,6 @@
 import { Howl } from 'howler';
 import { useCallback, useEffect, useRef } from 'react';
-import { useSoundContext } from '../context/SoundContext';
+import { useSoundContext } from '@/src/context/SoundContext';
 
 export function useSound(name: string, src: string, volume = 0.5) {
   const soundRef = useRef<Howl | null>(null);

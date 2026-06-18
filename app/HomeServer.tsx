@@ -1,6 +1,6 @@
 import { getMapPosts } from '@/src/data/posts';
-import { getYoutubeVideos } from '../lib/youtube';
-import HomeClient from './HomeClient';
+import { getYoutubeVideos } from '@/lib/youtube';
+import HomeClient from '@/app/HomeClient';
 
 export default async function HomeServer() {
 

@@ -1,10 +1,10 @@
-import PostType from "./postType";
+import PostType from "@/src/components/Post/postType";
 import Image from "next/image";
 import formatDateToString from '@/src/utils/formatDate';
 import Link from 'next/link'
-import formatTitleToKebabCase from '../../../src/utils/formatTitle';
+import formatTitleToKebabCase from '@/src/utils/formatTitle';
 import { AnimatePresence, motion } from "framer-motion";
-import {useSound} from '../../hook/useSound';
+import {useSound} from '@/src/hook/useSound';
 
 const PostPreview = ({mapPosts}: {mapPosts: PostType[]}) =>{
 

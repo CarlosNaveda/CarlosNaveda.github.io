@@ -1,10 +1,10 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import LeftBarNav from './LeftBarNav';
-import { useIsDesktop } from '../../hook/useIsDesktop';
-import TopBarDesktopNav from './TopBarDesktopNav';
+import LeftBarNav from '@/src/components/NavBar/LeftBarNav';
+import { useIsDesktop } from '@/src/hook/useIsDesktop';
+import TopBarDesktopNav from '@/src/components/NavBar/TopBarDesktopNav';
 import { useEffect, useState } from 'react';
-import TopBarNav from './TopBarNav';
+import TopBarNav from '@/src/components/NavBar/TopBarNav';
 
 
 export default function NavWrapper() {

@@ -2,21 +2,21 @@
 
 import {ChevronDown} from 'lucide-react';
 import {NotebookPen} from 'lucide-react';
-import Title from '../src/components/Title/Title';
-import JobCard from '../src/components/Job/JobCard';
-import ToNextAxisButton from '../src/components/Button/ToNextAxisButton';
-import ToNextAxisIframeVideos from '../src/components/IFrame/ToNextAxisIframeVideos';
-import IframeVideos from '../src/components/IFrame/IframeVideosType';
-import Carousel from '../src/components/Carousel/Carousel';
-import mapSections from '../src/data/sections';
+import Title from '@/src/components/Title/Title';
+import JobCard from '@/src/components/Job/JobCard';
+import ToNextAxisButton from '@/src/components/Button/ToNextAxisButton';
+import ToNextAxisIframeVideos from '@/src/components/IFrame/ToNextAxisIframeVideos';
+import IframeVideos from '@/src/components/IFrame/IframeVideosType';
+import Carousel from '@/src/components/Carousel/Carousel';
+import mapSections from '@/src/data/sections';
 import FooterBar from '@/src/components/FooterBar/FooterBar';
 import {useEffect } from 'react';
-import {useSection} from '../src/hook/useSection';
-import mapJobs from '../src/data/jobs';
+import {useSection} from '@/src/hook/useSection';
+import mapJobs from '@/src/data/jobs';
 import {useState} from 'react';
-import FloatingEmojis from '../src/components/Animations/FloatingEmojis';
+import FloatingEmojis from '@/src/components/Animations/FloatingEmojis';
 import Image from 'next/image';
-import {useSound} from '../src/hook/useSound';
+import {useSound} from '@/src/hook/useSound';
 import postType from '@/src/components/Post/postType';
 import { useRouter } from 'next/navigation';
 

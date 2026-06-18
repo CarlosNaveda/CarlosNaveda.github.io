@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit, DM_Sans} from "next/font/google";
 import "./globals.css";
-import { SectionProvider } from '../src/context/SectionContext';
-import NavWrapper from '../src/components/NavBar/NavWrapper';
+import { SectionProvider } from '@/src/context/SectionContext';
+import NavWrapper from '@/src/components/NavBar/NavWrapper';
 import { SoundProvider } from '@/src/context/SoundContext';
 import { Analytics } from '@vercel/analytics/next';
 
