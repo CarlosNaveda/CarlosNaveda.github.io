@@ -23,6 +23,11 @@ export interface Post {
   source: Record<string, unknown>;
 }
 
+
+/**
+ * Retorna los posts en formato de tipo PostType desde el directorio de contenido.
+ * @returns {PostType[]} Los posts en forma de arreglo de objetos PostType.
+ */
 export function getMDXPostsAsPostType(): PostType[] {
   const files = fs.readdirSync(POSTS_DIR)
     .filter((f) => f.endsWith('.mdx'));
@@ -48,6 +53,11 @@ export function getMDXPostsAsPostType(): PostType[] {
     .sort((a, b) => b.publishDate.getTime() - a.publishDate.getTime());
 }
 
+/**
+ * Retorna el post con la ruta de acción especificada.
+ * @param {string} slug La ruta del archivo markdown.
+ * @returns {Post | null} El post correspondiente, o null si no se encontró ninguno.
+ */
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   try {
     const filePath = path.join(POSTS_DIR, `${slug}.mdx`);
@@ -76,6 +86,11 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   }
 }
 
+/**
+ * Calcula el tiempo de lectura del contenido en minutos.
+ * @param {string} content El contenido a medir.
+ * @returns {number} La cantidad de minutos que se tarda leer el contenido.
+ */
 function calculateReadingTime(content: string): number {
   const wordsPerMinute = 200;
   const words = content.split(/\s+/).length;

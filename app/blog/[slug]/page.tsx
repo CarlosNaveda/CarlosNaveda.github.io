@@ -11,16 +11,19 @@ import mdxStyles from '../../../src/utils/mdxStyles';
 import { notFound } from 'next/navigation';
 import TopBarBlogNav from '../../../src/components/NavBar/TopBarBlogNav';
 import GiscusComments from '../../../src/components/Comments/GiscusComments';
-import LikeButton from '../../../src/components/Button/LikeButton';
 import { BlogImage } from '../../../src/components/Mdx/BlogImage';
 import { Highlight } from '../../../src/components/Mdx/Highlight';
 import { Callout } from '../../../src/components/Mdx/Callout';
 import ShareButtons from '../../../src/components/Button/ShareButtons';
 
-
-
-
-
+/**
+ * Genera parámetros estáticos para las rutas de los posts.
+ * Esta función se utiliza en Next.js para pre-renderizar las rutas de los posts
+ * durante el proceso de construcción del sitio.
+ *
+ * @returns {Promise<{slug: string}[]>} Una promesa que resuelve en un array de objetos
+ * con el slug de cada post, utilizado para generar las rutas estáticas.
+ */
 export async function generateStaticParams() {
   const mapPosts = await getMapPosts();
 
@@ -28,6 +31,7 @@ export async function generateStaticParams() {
     slug: formatTitleToKebabCase(post.title),
   }));
 }
+
 export default async function BlogSlug({params}:{params: {slug: string}}) {
   
   const { slug } = await params;  
@@ -72,8 +76,7 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                                 />
                             </div>
                             <div className='flex flex-col items-center justify-center gap-4'>
-                              <ShareButtons postUrl={postUrl} postTitle={post.title}/>                 
-                              <LikeButton postSlug={slug}/>
+                              <ShareButtons postUrl={postUrl} postTitle={post.title}/>                                               
                             </div>                            
                             <GiscusComments />    
                         </article >

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useSound } from '../../hook/useSound';
 
 const sectionsToShowNav = ["sobreMi", "experiencia","tonextaxis","blog"]; //Secciones que se muestran en la barra lateral
+
 export default function LeftBarNav() {
     
  

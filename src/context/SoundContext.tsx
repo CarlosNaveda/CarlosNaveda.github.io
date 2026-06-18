@@ -12,6 +12,10 @@ const SoundContext = createContext<SoundContextType>({
   toggleSound: () => {},
 });
 
+
+/**
+ * Contexto para gestionar el estado de la música.
+ */
 export function SoundProvider({ children }: { children: React.ReactNode }) {
   const [soundEnabled, setSoundEnabled] = useState(false);  
 
@@ -24,6 +28,11 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+
+
+/**
+ * Función de utilidad para acceder al contexto de la música.
+ */
 export function useSoundContext() {
   return useContext(SoundContext);
 }

@@ -7,6 +7,10 @@ import postType from '@/src/components/Post/postType';
 
 const POSTS_DIR = path.join(process.cwd(), 'content/blog');
 
+/**
+ * Obtiene todos los posts en formato MDX y los ordena por fecha de publicación.
+ * @returns Una promesa que resuelve con una lista de objetos `postType` ordenados por fecha de publicación.
+ */
 export async function getMDXPosts(): Promise<postType[]> {  
 
   const files = fs.readdirSync(POSTS_DIR)

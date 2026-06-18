@@ -9,7 +9,14 @@ const frames = Array.from({ length: 14 }, (_, i) =>
     : `/images/animate/logoTeclado/LogoTeclado-${i}.png`
   );
 
-
+  
+  /**
+   * Función que muestra un logo teclado animado y reproduce un sonido al hacer clic en él.
+   *
+   * @param {Object} props - Props de la función
+   * @param {Function} onClick - Callback para el evento de clic del botón.
+   * @param {String} className - Nombre de la clase CSS para el elemento de imagen.
+   */
   function TypingKeyboard({ onClick, className }: { onClick?: () => void; className?: string }) {
 
     const [currentFrame, setCurrentFrame] = useState(0);
@@ -35,5 +42,6 @@ const frames = Array.from({ length: 14 }, (_, i) =>
             />
         ); 
 } 
+
 
 export default TypingKeyboard;

@@ -1,6 +1,11 @@
 import itemType from "@/src/components/Youtube/itemType";
 import IframeVideos from "../src/components/IFrame/IframeVideosType";
 
+/**
+* Función que obtiene los videos de youtube de un canal específico y devuelve una lista de objetos con la información necesaria para mostrarlos en una página web.
+* @param {Promise<IframeVideos[]>} getYoutubeVideos Obtiene los videos de youtube de un canal específico y devuelve una lista de objetos con la información necesaria para mostrarlos en una página web.
+* @returns {Promise<IframeVideos[]>} Una promesa que devuelve una lista de objetos con la información necesaria para mostrar los videos de youtube en una página web.
+*/
 export async function getYoutubeVideos(): Promise<IframeVideos[]> {
 
     const apiKey = process.env.YOUTUBE_API_KEY;

@@ -4,10 +4,17 @@ import {useState,useEffect} from 'react';
 
 const ScrambleText = ({textToScramble}: {textToScramble: string}) => {
     
+    
+    
+    /**
+     * Genera un caracter al azar para el texto scramblado.
+     * @returns Un caracter al azar de la cadena "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".
+     */
     function generateRandomChar(): string {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        return characters.charAt(Math.floor(Math.random() * characters.length));
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    return characters.charAt(Math.floor(Math.random() * characters.length));
     }
+    
     
     const [showText, setShowText] = useState('');
 
