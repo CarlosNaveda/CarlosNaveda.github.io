@@ -1,4 +1,4 @@
-import PlaylistItemType from "@/src/components/Youtube/PlaylistItemType";
+import PlaylistItemType from "@/src/components/Youtube/playlistItemType";
 import IframeVideos from "@/src/components/IFrame/IframeVideosType";
 import { unstable_cache } from 'next/cache'; 
 
