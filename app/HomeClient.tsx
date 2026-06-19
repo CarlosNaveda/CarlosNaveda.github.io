@@ -47,7 +47,7 @@ const mapTitles = [
 
 const icon_size = 20;   
 const lastJobIndex = mapJobs[mapJobs.length - 1].index;
-
+const sectionConfig = "min-h-screen flex flex-col items-center justify-center gap-4 px-8 scroll-mt-[35px] md:scroll-mt-[56px] lg:scroll-mt-0"; 
 
 //FUNCIONES
 
@@ -123,12 +123,12 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
   return (    
     <main>
       {/* Hero */}
-      <section id={mapSections['inicio']} className="hero-page min-h-screen flex flex-col items-center justify-center gap-4 text-center px-8 scroll-mt-[35px] md:scroll-mt-[56px] lg:scroll-mt-0">              
-        <div className="text-2xl md:text-6xl font-bold font-outfit flex flex-row items-center justify-center gap-3" style={{color: 'var(--titles)'}}>
+      <section id={mapSections['inicio']} className={`hero-page text-center ${sectionConfig}`}>              
+        <div className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold font-outfit flex flex-row items-center justify-center gap-3" style={{color: 'var(--titles)'}}>
           <h1 className='saludo'>Hola soy</h1>           
           <h2 className='mi-nombre' onMouseEnter={() => {playShine();}} onMouseLeave={() => {stopShine();}}>Carlos Naveda</h2>             
         </div>
-        <div className="text-lg md:text-3xl leading-relaxed font-dm-sans" style={{color: 'var(--paragraph)'}}>          
+        <div className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl leading-relaxed font-dm-sans" style={{color: 'var(--paragraph)'}}>          
           <p className="flex flex-row items-center justify-center gap-2">
             <span id="aprendo" className="relative highlight-words" onMouseEnter={() => {setTimeout(() => playUiPop(), 200); setHoverWord('aprendo');}} onMouseLeave={() => {stopUiPop(); setHoverWord('');}}>Aprendo{hoverWord === 'aprendo' && <FloatingEmojis word='aprendo'/>}</span>          
             <span id="construyo" className="relative highlight-words" onMouseEnter={() => {setTimeout(() => playUiPop(), 200);setHoverWord('construyo');}} onMouseLeave={() => {stopUiPop();setHoverWord('');}}>construyo{hoverWord === 'construyo' && <FloatingEmojis word='construyo'/>}</span>          
@@ -148,7 +148,7 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
       </section> 
 
       {/* Sobre mí */}
-      <section id={mapSections['sobreMi']} className="about-me-page min-h-screen flex flex-col items-center justify-center gap-10 px-8 text-balanced scroll-mt-[35px] md:scroll-mt-[56px] lg:scroll-mt-0">                  
+      <section id={mapSections['sobreMi']} className={`about-me-page text-balanced ${sectionConfig}`}>                  
         <Title title={mapTitles[0]} />
         <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify font-dm-sans" style={{color: 'var(--paragraph)'}}> 
           
@@ -168,7 +168,7 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
 
       {/* Experiencia */} 
       <div className="job-page flex flex-col">        
-         <section id={mapSections['experiencia']} className="min-h-screen flex flex-col items-center justify-center gap-8 md:gap-20 p-8 text-balanced scroll-mt-[35px] md:scroll-mt-[56px] lg:scroll-mt-0">                    
+         <section id={mapSections['experiencia']} className={`experience text-balanced ${sectionConfig}`}>                    
           <Title title={mapTitles[1]} />
           <div className='job-timeline flex flex-col gap-8 md:gap-14'>  
             {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} isLastJobExpanded={lastJobExpanded} onLastJobHover={job.index === lastJobIndex ? setLastJobExpanded : undefined}/>))}                 
@@ -179,7 +179,7 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
 
       {/* ToNextAxis */}        
       <div className="toNextAxis-page flex flex-col relative">                       
-        <section id={mapSections['tonextaxis']} className="min-h-screen flex flex-col items-center justify-center gap-2 md:gap-10 p-8 text-balanced scroll-mt-[35px] md:scroll-mt-[56px] lg:scroll-mt-0">                                
+        <section id={mapSections['tonextaxis']} className={`tonextaxis text-balanced ${sectionConfig}`}>                                
           <Title title={mapTitles[2]}/> 
           <Image className="toNextAxis-logo absolute -top-15 -right-10 md:-top-30 md:-right-10 lg:-top-20 lg:right-200 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}} loading="eager" />
           <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 pb-5 font-dm-sans">               
@@ -201,7 +201,7 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
       </div>
         
       {/* Blog Preview*/}
-      <section id={mapSections['blog']} className="blog-page min-h-screen flex flex-col items-center justify-center gap-4 md:gap-10 p-8 text-balanced scroll-mt-[35px] md:scroll-mt-[56px] lg:scroll-mt-0">                  
+      <section id={mapSections['blog']} className={`blog-page text-balanced ${sectionConfig}`}>                  
         <Title title={mapTitles[3]} />
         <div className="blog-preview-text-button flex flex-col items-center justify-center gap-1 font-dm-sans">              
               <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
@@ -211,15 +211,13 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
               </p><br />
               <button 
                 className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit" 
-                onClick={(e) => {playUiButtonPressed(); setTimeout(() => { router.push('/blog');}, 300);}}> 
+                onClick={() => {playUiButtonPressed(); setTimeout(() => { router.push('/blog');}, 300);}}> 
                 Ir al blog <NotebookPen size={icon_size}/>
               </button>
           </div>          
         {<Carousel posts={latestPosts} />}           
       </section>
-
       <FooterBar />
-
     </main>    
   );
 }

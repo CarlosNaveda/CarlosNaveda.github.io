@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getYoutubeVideos } from "@/lib/youtube";
+import { getYoutubeVideosCache } from "@/lib/youtube";
 
 
 
@@ -8,7 +8,7 @@ import { getYoutubeVideos } from "@/lib/youtube";
  * @returns una respuesta JSON con los videos de YouTube cargados en la aplicación
  */
 export async function GET(): Promise<NextResponse> {
-    const data = await getYoutubeVideos();
+    const data = await getYoutubeVideosCache();
 
     return NextResponse.json(data);
 }

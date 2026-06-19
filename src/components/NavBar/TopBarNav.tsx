@@ -1,47 +1,15 @@
 'use client';
 
-import TypingKeyboard from '@/src/components/Animations/TypingKeyboard';
 import SwitchSound from '@/src/components/NavBar/SwitchSound';
-import {useEffect,useRef } from 'react';
-import {useSection} from '@/src/hook/useSection';
-import navItems from '@/src/data/navItems';
-import Link from 'next/link'
-import { useSound } from '@/src/hook/useSound';
-import {useRouter} from 'next/navigation';
+import Accordion from '@/src/components/Accordion/Accordion';
 
 export default function TopBarNav() {    
     
-    const classConfigMobileTablet = `top-bar-nav fixed top-0 left-0 w-[100%] flex flex-row transition-all duration-500 gap-1 items-center justify-between pt-1 px-5 z-999`;        
-    const { activeSection } = useSection();   
-    const router = useRouter(); 
-
-    //Para manejar las animaciones del NavBar
-    const activeSectionRef = useRef(activeSection);
-
-    useEffect(() => {
-        activeSectionRef.current = activeSection;
-        }, [activeSection]);
-
-    //Para el sonido cuando se selecciona una sección
-    const { play: playSoftGlass} = useSound('ui-soft-glass', '/sounds/ui-soft-glass.mp3', 0.4);   
+    const classConfigMobileTablet = `top-bar-nav fixed top-0 left-0 w-screen flex flex-row transition-all duration-500 gap-1 items-center justify-between p-2 z-999`;        
 
     return (
         <aside className={classConfigMobileTablet}>
-            <TypingKeyboard className="animate-keyboard-MobileTablet w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-lg p-1"/>           
-            <div className="flex-1 flex justify-center">
-                <nav className='font-dm-sans'> 
-                <ul className='flex flex-row items-center justify-center gap-1 text-xs md:text-base'>  
-                    {navItems.map((item) => (
-                        <li key={item.id} 
-                            className={activeSection === item.id ? "active-top-nav" : "inactive-top-nav"} 
-                            onClick={() => {router.push(`#${item.id}`); playSoftGlass();}}>
-                            {item.icon}
-                            <Link className={`${item.id === "inicio" ? "transition-all" : ""}`} href={`#${item.id}`}>{activeSection === item.id ? item.label : ""}</Link>                        
-                        </li>
-                    ))}                                               
-                </ul>                                       
-            </nav>
-            </div>            
+            <Accordion />   
             <SwitchSound />       
         </aside>   
     );

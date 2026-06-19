@@ -1,28 +1,52 @@
-import itemType from "@/src/components/Youtube/itemType";
+import PlaylistItemType from "@/src/components/Youtube/PlaylistItemType";
 import IframeVideos from "@/src/components/IFrame/IframeVideosType";
+import { unstable_cache } from 'next/cache'; 
 
-/**
-* Función que obtiene los videos de youtube de un canal específico y devuelve una lista de objetos con la información necesaria para mostrarlos en una página web.
-* @param {Promise<IframeVideos[]>} getYoutubeVideos Obtiene los videos de youtube de un canal específico y devuelve una lista de objetos con la información necesaria para mostrarlos en una página web.
-* @returns {Promise<IframeVideos[]>} Una promesa que devuelve una lista de objetos con la información necesaria para mostrar los videos de youtube en una página web.
-*/
-export async function getYoutubeVideos(): Promise<IframeVideos[]> {
-
+async function getYoutubeVideos(): Promise<IframeVideos[]> {
     const apiKey = process.env.YOUTUBE_API_KEY;
     const channelId = process.env.YOUTUBE_CHANNEL_ID;
 
-    const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=4`,
-        {
-            next: { revalidate: 3600 }
+    try {
+        // Paso 1: Obtener el playlist ID de uploads (1 unidad)
+        const channelRes = await fetch(
+            `https://www.googleapis.com/youtube/v3/channels?key=${apiKey}&id=${channelId}&part=contentDetails`,
+            { next: { revalidate: 86400 } }
+        );
+        
+        const channelData = await channelRes.json();
+        if (!channelData.items?.[0]) {
+            console.error('Canal no encontrado');
+            return [];
         }
-    );
 
-    const data = await response.json();
+        const uploadPlaylistId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
 
-    return data.items.map((item: itemType, index: number) => ({
-        index,
-        source: `https://www.youtube.com/embed/${item.id.videoId}`,
-        title: item.snippet.title
-    }));
+        // Paso 2: Obtener videos del playlist (1 unidad)
+        const videosRes = await fetch(
+            `https://www.googleapis.com/youtube/v3/playlistItems?key=${apiKey}&playlistId=${uploadPlaylistId}&part=snippet&maxResults=4&order=date`,
+            { next: { revalidate: 86400 } }
+        );
+
+        const data = await videosRes.json();
+
+        if (!data.items || !Array.isArray(data.items)) {
+            console.error('Error en YouTube API:', data);
+            return [];
+        }
+
+       return data.items.map((item: PlaylistItemType, index: number) => ({
+            index,
+            source: `https://www.youtube.com/embed/${item.snippet.resourceId.videoId}`,
+            title: item.snippet.title
+        }));
+    } catch (error) {
+        console.error('Error YouTube API:', error);
+        return [];
+    }
 }
+
+export const getYoutubeVideosCache = unstable_cache(
+    () => getYoutubeVideos(),
+    ['youtube-videos'],
+    { revalidate: 86400 }
+);

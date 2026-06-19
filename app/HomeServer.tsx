@@ -1,11 +1,11 @@
 import { getMapPosts } from '@/src/data/posts';
-import { getYoutubeVideos } from '@/lib/youtube';
+import { getYoutubeVideosCache } from '@/lib/youtube';
 import HomeClient from '@/app/HomeClient';
 
 export default async function HomeServer() {
 
   const mapPosts = await getMapPosts();
-  const mapVideos = await getYoutubeVideos();
+  const mapVideos = await getYoutubeVideosCache();
 
   return (
     <HomeClient 

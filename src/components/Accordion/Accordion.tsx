@@ -1,7 +1,10 @@
 import { useState,useEffect, useRef } from "react"
-import mapSections from '@/src/data/sections';
-import {HouseHeart, UserStar, BriefcaseBusiness, CirclePlay, NotebookPen} from 'lucide-react';
-import { ListCollapse } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import navItems from "@/src/data/navItems";
+import Link from 'next/link'
+import {useRouter} from 'next/navigation';
+import { useSound } from '@/src/hook/useSound';
 
 /**
  * Función para invertir el estado del accordion.
@@ -14,15 +17,19 @@ function invertedState(state: boolean): boolean {
 
 
 const Accordion = () => {
-
-    const icon_size = 20;    
+     
+    const router = useRouter(); 
+    const logo_size = 200;    
     const [currentState, setCurrentState] = useState(false);
     const accordionRef = useRef<HTMLDivElement | null>(null);
+
+    //Para el sonido cuando se selecciona una sección
+    const { play: playSoftGlass} = useSound('ui-soft-glass', '/sounds/ui-soft-glass.mp3', 0.4);   
     
     useEffect(() => {
         const handleClickOutside = (event: Event) => {            
             // Si el acordeón está abierto y el clic fue fuera del elemento referenciado
-            if (accordionRef.current && event.target instanceof Node && !accordionRef.current.contains(event.target)) { 
+            if (accordionRef.current && event.target instanceof Node && !accordionRef.current.contains(event.target)) {                 
                 setCurrentState(false);
             }
         };
@@ -32,44 +39,83 @@ const Accordion = () => {
 
         return () => {
             document.removeEventListener('click', handleClickOutside);
-            document.removeEventListener('touchend', handleClickOutside);        
+            document.removeEventListener('touchend', handleClickOutside);                
         };
     }, []);
 
 
     //Lo muestro solo en mobile
     return (
-        <div ref={accordionRef} className="accordion md:hidden">  
-            <ListCollapse className="accordion-icon relative" onClick={() => setCurrentState(invertedState(currentState))}/>
-            {currentState && ( //Si se hizo click en el icono, se muestra el menu
-                <nav className="accordion-options w-auto h-auto bg-[var(--white)] absolute left-[5px] top-[25px] z-10">
-                    <ul className='top-bar-nav flex flex-col'>  
-                        <li className={`${mapSections['inicio']} text-xs flex flex-row items-center justify-left gap-1`} onClick={() => setCurrentState(false)}> 
-                            <a href="#"><HouseHeart size={icon_size}/>
-                            </a>{mapSections['inicio'].toUpperCase()}    
-                        </li>
-                        <li className={`${mapSections['sobreMi']} text-xs flex flex-row items-center justify-left gap-1`} onClick={() => setCurrentState(false)}> 
-                            <a href="#"><UserStar size={icon_size}/>
-                            </a>{mapSections['sobreMi'].toUpperCase()}  
-                        </li>
-                        <li className={`${mapSections['experiencia']} text-xs flex flex-row items-center justify-left gap-1`} onClick={() => setCurrentState(false)}> 
-                            <a href="#"><BriefcaseBusiness size={icon_size}/>
-                            </a>{mapSections['experiencia'].toUpperCase()}  
-                        </li>                    
-                        <li className={`${mapSections['tonextaxis']} text-xs flex flex-row items-center justify-left gap-1`} onClick={() => setCurrentState(false)}> 
-                            <a href="#"><CirclePlay size={icon_size}/>
-                            </a>{mapSections['tonextaxis'].toUpperCase()}  
-                        </li>
-                        <li className={`${mapSections['blog']} text-xs flex flex-row items-center justify-left gap-1`} onClick={() => setCurrentState(false)}> 
-                            <a href="#"><NotebookPen size={icon_size}/>
-                            </a>{mapSections['blog'].toUpperCase()}  
-                        </li>                    
-                    </ul>
-                </nav>    
-            )}
-            
+        <div ref={accordionRef} className="accordion sticky top-0 z-50 px-4 py-3" >              
+            <div style={{width: 24,height: 24,position: "relative"}}>
+                <AnimatePresence mode="sync">
+                    {currentState ? (
+                        <motion.div
+                            key="minus"
+                            className="absolute inset-0"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                        >                            
+                            <Image className="accordion-icon sticky top-0 z-50" src="/images/logos/Carlos-Naveda-CN-02.png" alt="Tecla presionada" width = {logo_size} height= {logo_size} onClick={() => {playSoftGlass(); setCurrentState(invertedState(currentState))} }/>
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="plus"
+                            className="absolute inset-0"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                        >
+                            <Image className="accordion-icon sticky top-0 z-50" src="/images/logos/Carlos-Naveda-CN-01.png" alt="Tecla sin presionar" width = {logo_size} height= {logo_size} onClick={() =>{playSoftGlass(); setCurrentState(invertedState(currentState))}}/>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>            
+            <AnimatePresence>
+                {currentState && (
+                    <>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+                            onClick={() => setCurrentState(false)}
+                        />
+                        <motion.aside
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.25 }}
+                        className="fixed top-14 left-0 w-full z-50 text-lg text-white accordion-menu"
+                        >
+                        <nav className="w-auto h-auto left-[5px] top-[25px]">
+                            <ul className="accordion-options flex flex-col items-center justify-center gap-4">                              
+                            {navItems.map((item, index) => (
+                                <motion.li
+                                key={item.id}
+                                initial={{opacity: 0, y: -10}}
+                                animate={{opacity: 1, y: 0}}
+                                exit={{opacity: 0, y: -10}}
+                                transition={{
+                                    duration: 0.2,
+                                    delay: index * 0.05
+                                }}
+                                className="text-xl item flex flex-row items-center justify-center gap-1"
+                                >
+                                {item.icon}
+                                <Link href={`/#${item.id}`} onClick={() => {router.push(`#${item.id}`); setCurrentState(false)}}>{item.label}</Link>                              
+                                </motion.li>
+                            ))}
+                            </ul>
+                        </nav>
+                        </motion.aside>
+                    </>  
+                )}
+            </AnimatePresence>
         </div>
     )
-}
+    }
+
 
 export default Accordion
