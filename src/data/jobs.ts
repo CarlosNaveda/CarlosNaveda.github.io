@@ -7,7 +7,8 @@ const mapJobs = [
     company: "ToNextAxis",
     role: "Content Creator",
     description: "Canal de YouTube donde documento y explico lo aprendido sobre tecnología y sistemas de forma simple para hispanohablantes.",
-    tags: ["YouTube", "Davinci Resolve", "StoryTelling", "Edición Narrativa", "Comunicación técnica"]
+    tags: ["YouTube", "Davinci Resolve", "StoryTelling", "Edición Narrativa", "Comunicación técnica"],
+    current: true
   },
   {
     index: 1,

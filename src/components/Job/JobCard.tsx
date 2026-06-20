@@ -1,100 +1,89 @@
-import { useState,useEffect } from 'react';
-import { Calendar} from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Calendar } from 'lucide-react';
 import Image from 'next/image';
 import jobType from '@/src/components/Job/jobType';
-import {useSound} from '@/src/hook/useSound';
+import { useSound } from '@/src/hook/useSound';
 
-const JobCard = ({job, lastJobIndex,isLastJobExpanded,onLastJobHover}: {job: jobType, lastJobIndex: number, isLastJobExpanded: boolean, onLastJobHover?: (value: boolean) => void}) =>{
-       
-   const image_width = 50;
-   const image_height = 50;
-   const [state, setState] = useState(false);  //Manejo de estado para el hover 
-   const moduleIndex = job.index % 2 === 0 ? 'even' : 'odd';  // Determina si el índice es par o impar   
-   
-    //Para manejar la visibilidad de los cards    
+const JobCard = ({ job }: { job: jobType }) => {
+
+    const image_width = 50;
+    const image_height = 50;
+    const moduleIndex = job.index % 2 === 0 ? 'even' : 'odd'; // Determina si el índice es par o impar
+
+    //Para manejar la visibilidad de los cards
     const [isJobCardVisible, setIsJobCardVisible] = useState(false);
 
     useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-        setIsJobCardVisible(entries[0].isIntersecting);
-    }, { threshold: 0.1 });
+        const observer = new IntersectionObserver((entries) => {
+            setIsJobCardVisible(entries[0].isIntersecting);
+        }, { threshold: 0.1 });
 
-    const article = document.querySelector(`#job-${job.index}`);
-    if (article) observer.observe(article); 
+        const article = document.querySelector(`#job-${job.index}`);
+        if (article) observer.observe(article);
 
-    return () => observer.disconnect();
+        return () => observer.disconnect();
     }, [job.index]);
 
     //Para sonido cuando se entra y sale del job card
-    const { play: playUiFocus, stop: stopUiFocus } = useSound('ui-focus', '/sounds/ui-focus.mp3', 0.4);    
-    
+    const { play: playUiFocus, stop: stopUiFocus } = useSound('ui-focus', '/sounds/ui-focus.mp3', 0.4);
+
+    // El trabajo actual (job.current) lleva siempre el acento más brillante, con o sin hover
+    const accentColor = job.current ? '#8B5CF6' : '#4A4789';
 
     return (
-        <div className="node-job-card grid grid-cols-[1fr_auto_1fr] gap-4 items-start w-[300px] md:w-[350px] lg:w-[1000px] font-dm-sans">    
-            <div className="node row-start-1 col-start-2 hidden lg:block lg:w-[20px] lg:h-[20px] transition-all duration-100 ease-in-out" style={{marginTop: !state ? '280%' : '560%' , backgroundColor: state ? 'var(--nodes_active)' : 'var(--nodes_inactive)'}}>
-                <hr className={`timeline hidden lg:block max-h-[550px] transition-all duration-120 ease-in-out
-                    ${lastJobIndex === job.index // Si es el último card, sin línea
-                        ? "lg:h-0"  
-                        : lastJobIndex-1 === job.index && isLastJobExpanded // Si es el penúltimo y el último card está expandido 
-                            ? "lg:h-[230px]"  
-                            : lastJobIndex-1 === job.index && state // Si es el penúltimo y está expandido
-                                ? "lg:h-[210px]"
-                                : lastJobIndex-1 === job.index && state // Si es el penúltimo y está contraído
-                                    ? "lg:h-[180px]"
-                                    : lastJobIndex-1 === job.index && !isLastJobExpanded // Si es el penúltimo y el último card está contraído 
-                                        ? "lg:h-[180px]"     
-                                        : "lg:h-[270px]"  // Para los demás cards
-                    }`} style={{opacity: lastJobIndex === job.index ? 0 : 1}}>  
-                </hr>
-            </div>
-            <article 
-                id={`job-${job.index}`} 
-                className={`job-card hover:animate-breathe w-[300px] md:w-[400px] lg:w-[450px] p-[15px] md:p-[16px] flex flex-col gap-4 mt-8 row-start-1  
-                            ${moduleIndex === 'even' ? 'lg:col-start-3 lg:justify-self-start' : 'lg:col-start-1 lg:justify-self-end'} transition-all duration-1000 ease-in-out 
-                            ${isJobCardVisible ? 'opacity-100 translate-y-0' : "opacity-0 translate-y-8"}`} 
-                onMouseEnter={() => {setState(true); onLastJobHover?.(true); playUiFocus();}}
-                onMouseLeave={() => {setState(false); onLastJobHover?.(false); stopUiFocus();}}>                    
-                <div className="job-card-base flex flex-col gap-2"> 
-                    <time className="dateRange text-xs md:text-base flex flex-row items-center gap-2" style={{color: 'var(--paragraph)',fontWeight: 'bold'}}>  
-                        <Calendar />              
+        <div className="node-job-card relative grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 items-center w-full font-dm-sans">
+            <div
+                className={`node row-start-1 col-start-2 hidden lg:block lg:w-[16px] lg:h-[16px] ${job.current ? 'node-current animate-breathe' : ''}`}
+                style={{ backgroundColor: accentColor }}
+            />
+            <article
+                id={`job-${job.index}`}
+                className={`job-card border-l-4 lg:border-l-0 w-full sm:max-w-[440px] md:max-w-[480px] lg:max-w-[280px] xl:max-w-[400px] 2xl:max-w-[520px] sm:justify-self-center p-3 md:p-4 flex flex-col gap-3 row-start-1
+                            ${moduleIndex === 'even' ? 'lg:col-start-3 lg:justify-self-start' : 'lg:col-start-1 lg:justify-self-end'}
+                            ${job.current ? 'job-card-current animate-breathe' : ''}
+                            transition-opacity duration-1000 ease-in-out
+                            ${isJobCardVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ borderColor: accentColor }}
+                onMouseEnter={() => playUiFocus()}
+                onMouseLeave={() => stopUiFocus()}>
+                <div className="job-card-base flex flex-col gap-2">
+                    <time className="dateRange text-[11px] md:text-xs flex flex-row items-center gap-2" style={{ color: 'var(--paragraph)', fontWeight: 'bold' }}>
+                        <Calendar className="w-3 h-3 md:w-3.5 md:h-3.5" />
                         {job.start} - {job.end}
-                    </time>   
-                    <div className="logoCompany-role flex flex-row items-center justify-content gap-4 gap-y-4">    
-                        <h4 className="logoCompany text-base md:text-sm lg:text-lg flex flex-row items-center gap-2 font-outfit" style={{color: 'var(--paragraph)', fontWeight: 'bold'}}>              
-                            <Image 
-                                className="jobs-logo  w-[25] h-[25] md:w-[50] md:h-[50]"  
-                                src={job.logo} 
-                                alt={job.company}  
-                                width = {image_width}      
-                                height= {image_height}                                         
+                    </time>
+                    <div className="logoCompany-role flex flex-row items-center gap-3 flex-wrap">
+                        <h4 className="logoCompany text-xs md:text-sm flex flex-row items-center gap-2 font-outfit" style={{ color: 'var(--paragraph)', fontWeight: 'bold' }}>
+                            <Image
+                                className="jobs-logo w-[20px] h-[20px] md:w-[28px] md:h-[28px]"
+                                src={job.logo}
+                                alt={job.company}
+                                width={image_width}
+                                height={image_height}
                             />
                             {job.company}
-                        </h4>             
-                        <h4 className="role text-[8px] md:text-xs lg:text-lg font-outfit" style={{color: 'var(--position)',fontWeight: 'bold'}}>
-                        {job.role}
-                        </h4> 
-                    </div>   
-                </div>                     
-                <div className={`job-card-expanded flex flex-col gap-4 mt-8 transition-all duration-700 ease-in-out ${state ? 'lg:opacity-[100] lg:max-h-[500px]' : 'lg:opacity-[0] lg:h-0'}`}>
-                    <h4 className="job-description text-xs md:text-sm" style={{color: 'var(--paragraph)'}}>
-                    {job.description}
-                    </h4>
-                    <h4 className="text-[10px] md:text-xs flex flex-wrap gap-1">
+                        </h4>
+                        <h4 className="role text-[10px] md:text-[11px] font-outfit" style={{ color: 'var(--position)', fontWeight: 'bold' }}>
+                            {job.role}
+                        </h4>
+                    </div>
+                </div>
+                <div className="job-card-body flex flex-col gap-3">
+                    <p className="job-description text-[11px] md:text-xs" style={{ color: 'var(--paragraph)' }}>
+                        {job.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1">
                         {job.tags.map((tag, index) => (
-                        <span key={index} className="job-tags" style={{color: 'var(--titles)'}}>
-                            {tag}
-                        </span>
+                            <span key={index} className="job-tags text-[10px]" style={{ color: 'var(--titles)' }}>
+                                {tag}
+                            </span>
                         ))}
-                    </h4>       
-                </div>                            
+                    </div>
+                </div>
             </article>
-            <div className={`empty-space row-start-1 ${moduleIndex === 'even' ? 'lg:col-start-1' : 'lg:col-start-3'}`}>
+            <div className={`empty-space row-start-1 hidden lg:block ${moduleIndex === 'even' ? 'lg:col-start-1' : 'lg:col-start-3'}`}>
             </div>
-        </div>    
-    );   
+        </div>
+    );
 }
-
-
-
 
 export default JobCard;

@@ -6,40 +6,45 @@ const mdxStyles = `
   prose-h1:text-2xl
   md:prose-h1:text-3xl
   lg:prose-h1:text-4xl
+  2xl:prose-h1:text-5xl
   prose-h1:font-bold
-  prose-h1:mt-4
-  prose-h1:mb-4
+  prose-h1:mt-6
+  prose-h1:mb-5
 
   prose-h2:text-xl
   md:prose-h2:text-2xl
   lg:prose-h2:text-3xl
+  2xl:prose-h2:text-4xl
   prose-h2:font-semibold
-  prose-h2:mt-2
-  prose-h2:mb-2
+  prose-h2:mt-10
+  prose-h2:mb-4
 
   prose-h3:text-lg
   md:prose-h3:text-xl
   lg:prose-h3:text-2xl
+  2xl:prose-h3:text-3xl
   prose-h3:font-medium
-  prose-h3:mt-1
-  prose-h3:mb-1
+  prose-h3:mt-8
+  prose-h3:mb-3
 
   prose-p:text-xs
   md:prose-p:text-sm
   lg:prose-p:text-base
-  prose-p:leading-5
-  prose-p:mb-2
+  2xl:prose-p:text-lg
+  prose-p:leading-6
+  prose-p:mb-4
   prose-p:text-justify
 
   prose-li:text-xs
   md:prose-li:text-sm
-  lg:prose-li:text-base  
+  lg:prose-li:text-base
+  2xl:prose-li:text-lg
   prose-li:text-justify
-  prose-ul:mb-2
-  prose-ol:mb-2
+  prose-ul:mb-4
+  prose-ol:mb-4
   prose-li:my-2
-  prose-ul:mt-2
-  prose-ol:mt-2
+  prose-ul:mt-3
+  prose-ol:mt-3
   prose-li:my-2
 
   prose-strong:text-white
@@ -75,8 +80,9 @@ const mdxStyles = `
   prose-td:p-3
 
   prose-blockquote:border-l-[#8F87FF]
-  prose-blockquote:text-white/80 
-  
+  prose-blockquote:text-white/80
+  prose-blockquote:my-4
+
   prose-hr:border-white/10
 
   pb-20 

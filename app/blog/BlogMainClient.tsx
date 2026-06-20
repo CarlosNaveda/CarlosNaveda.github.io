@@ -34,7 +34,8 @@ export default function BlogMain({ mapPosts }: { mapPosts: postType[] }) {
     <main>                
         <div className="blog-main min-h-screen flex flex-col items-center gap-1 md:gap-4 p-8 pb-20 md:pb-0 text-balanced">             
             <TopBarBlogNav/>
-            <div className="blog-tags flex flex-col items-center justify-center center gap-2 font-dm-sans">                
+            <h1 className="title-blog-main text-3xl md:text-4xl lg:text-5xl font-outfit" style={{color: 'var(--titles)'}}>Blog</h1>
+            <div className="blog-tags flex flex-col items-center justify-center center gap-2 font-dm-sans">              
                 <h2 className='title-filter text-xl md:text-3xl font-outfit'>Filtrar por tag</h2>             
                 <div className='wrapper-tags w-[300px] h-[200px] xs:w-[350px] xs:h-[250px] md:w-[500px] md:h-[300px] lg:w-[900px] lg:h-[500px]'>                                    
                     <small className='flex flex-row items-center justify-center center gap-2'> 

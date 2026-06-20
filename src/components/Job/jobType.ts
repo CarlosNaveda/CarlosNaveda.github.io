@@ -7,6 +7,7 @@ interface jobType {
     role: string;
     description: string;
     tags: string[];
+    current?: boolean;
 }
 
 export default jobType;

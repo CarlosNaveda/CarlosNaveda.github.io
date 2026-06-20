@@ -5,6 +5,8 @@ import navItems from "@/src/data/navItems";
 import Link from 'next/link'
 import {useRouter} from 'next/navigation';
 import { useSound } from '@/src/hook/useSound';
+import { createPortal } from 'react-dom';
+
 
 /**
  * Función para invertir el estado del accordion.
@@ -19,7 +21,7 @@ function invertedState(state: boolean): boolean {
 const Accordion = () => {
      
     const router = useRouter(); 
-    const logo_size = 200;    
+    const logo_size = 48;
     const [currentState, setCurrentState] = useState(false);
     const accordionRef = useRef<HTMLDivElement | null>(null);
 
@@ -46,8 +48,8 @@ const Accordion = () => {
 
     //Lo muestro solo en mobile
     return (
-        <div ref={accordionRef} className="accordion sticky top-0 z-50 px-4 py-3" >              
-            <div style={{width: 24,height: 24,position: "relative"}}>
+        <div ref={accordionRef} className="accordion sticky top-0 z-[1001] px-4 py-3" >
+            <div className="relative w-10 h-10 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12">
                 <AnimatePresence mode="sync">
                     {currentState ? (
                         <motion.div
@@ -56,8 +58,8 @@ const Accordion = () => {
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
-                        >                            
-                            <Image className="accordion-icon sticky top-0 z-50" src="/images/logos/Carlos-Naveda-CN-02.png" alt="Tecla presionada" width = {logo_size} height= {logo_size} onClick={() => {playSoftGlass(); setCurrentState(invertedState(currentState))} }/>
+                        >
+                            <Image className="accordion-icon w-full h-full object-contain" src="/images/logos/Carlos-Naveda-CN-02.png" alt="Tecla presionada" width = {logo_size} height= {logo_size} onClick={() => {playSoftGlass(); setCurrentState(invertedState(currentState))} }/>
                         </motion.div>
                     ) : (
                         <motion.div
@@ -67,30 +69,33 @@ const Accordion = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
                         >
-                            <Image className="accordion-icon sticky top-0 z-50" src="/images/logos/Carlos-Naveda-CN-01.png" alt="Tecla sin presionar" width = {logo_size} height= {logo_size} onClick={() =>{playSoftGlass(); setCurrentState(invertedState(currentState))}}/>
+                            <Image className="accordion-icon w-full h-full object-contain" src="/images/logos/Carlos-Naveda-CN-01.png" alt="Tecla sin presionar" width = {logo_size} height= {logo_size} onClick={() =>{playSoftGlass(); setCurrentState(invertedState(currentState))}}/>
                         </motion.div>
                     )}
                 </AnimatePresence>
-            </div>            
+            </div>
             <AnimatePresence>
                 {currentState && (
                     <>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
-                            onClick={() => setCurrentState(false)}
-                        />
+                        {createPortal(
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999]"
+                                onClick={() => setCurrentState(false)}
+                            />,
+                            document.body
+                        )}
                         <motion.aside
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.25 }}
-                        className="fixed top-14 left-0 w-full z-50 text-lg text-white accordion-menu"
+                        initial={{ opacity: 0, x: -200, boxShadow: "0 0 0 0 rgba(139, 92, 246, 0)" }}
+                        animate={{ opacity: 1, x: 0, boxShadow: "0 0 14px 2px rgba(139, 92, 246, 0.25)" }}
+                        exit={{ opacity: 0, x: -200, boxShadow: "0 0 0 0 rgba(139, 92, 246, 0)" }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="fixed top-16 left-0 w-[200px] z-[1000] text-white rounded-b-2xl"
                         >
                         <nav className="w-auto h-auto left-[5px] top-[25px]">
-                            <ul className="accordion-options flex flex-col items-center justify-center gap-4">                              
+                            <ul className="accordion-options flex flex-col gap-0 px-6 h-full">
                             {navItems.map((item, index) => (
                                 <motion.li
                                 key={item.id}
@@ -101,7 +106,7 @@ const Accordion = () => {
                                     duration: 0.2,
                                     delay: index * 0.05
                                 }}
-                                className="text-xl item flex flex-row items-center justify-center gap-1"
+                                className="text-sm item flex flex-row gap-2 items-center py-3 border-b border-white/10 w-full"
                                 >
                                 {item.icon}
                                 <Link href={`/#${item.id}`} onClick={() => {router.push(`#${item.id}`); setCurrentState(false)}}>{item.label}</Link>                              

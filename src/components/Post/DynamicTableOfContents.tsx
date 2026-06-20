@@ -121,8 +121,8 @@ export default function DynamicTableOfContents() {
   if (headings.length === 0) return null;
 
   return (          
-    <div className="index-content self-start sticky top-20 md:p-5 text-sm w-max">
-      <h2 className="index-content-title font-outfit">
+    <div className="index-content self-start sticky top-20 md:p-5 lg:text-xs 2xl:text-base w-full">
+      <h2 className="index-content-title font-outfit lg:text-sm 2xl:text-lg">
         ÍNDICE DE CONTENIDOS
       </h2>
 
@@ -131,11 +131,11 @@ export default function DynamicTableOfContents() {
           const isActive = activeId === heading.id;
 
           return (
-            <li key={heading.id} className={`index-content-text flex items-center justify-start gap-2 transition-all}`}>
-              <ArrowRight size={isActive ? 20 : 16} className={`index-content-arrow ${isActive ? 'text-[#7E7ADE]': ''}`}/>
-              <a href={`#${heading.id}`} onClick={(e) => handleClick(e, heading.id)}  className={`transition-colors hover:text-[#ffffff] ${isActive? 'text-[#7E7ADE]': ''}`}>
+            <li key={heading.id} className="index-content-text flex items-start justify-start gap-2 transition-all">
+              <ArrowRight size={isActive ? 20 : 16} className={`index-content-arrow shrink-0 mt-0.5 ${isActive ? 'text-[#7E7ADE]': ''}`}/>
+              <a href={`#${heading.id}`} onClick={(e) => handleClick(e, heading.id)} className={`break-words transition-colors hover:text-[#ffffff] ${isActive? 'text-[#7E7ADE]': ''}`}>
                 {heading.title}
-              </a>              
+              </a>
             </li>
           );
         })}        

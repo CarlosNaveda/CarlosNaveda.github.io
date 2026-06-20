@@ -45,9 +45,7 @@ const mapTitles = [
 ];
 
 
-const icon_size = 20;   
-const lastJobIndex = mapJobs[mapJobs.length - 1].index;
-const sectionConfig = "min-h-screen flex flex-col items-center justify-center gap-4 px-8 scroll-mt-[35px] md:scroll-mt-[56px] lg:scroll-mt-0"; 
+const sectionConfig = "min-h-screen flex flex-col items-center justify-center gap-4 px-8 pb-20 scroll-mt-[90px] md:scroll-mt-[94px] lg:scroll-mt-[60px]";
 
 //FUNCIONES
 
@@ -104,9 +102,6 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
     return () => observer.disconnect();
   }, [setActiveSection]);
 
-  //Para saber si el último JobCard está expandido o no
-  const [lastJobExpanded, setLastJobExpanded] = useState(false);
-
   //Para saber qué palabra es la que tiene el hover
   const [hoverWord, setHoverWord] = useState('');  
 
@@ -120,7 +115,7 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
   .sort((a, b) => b.index - a.index)
   .slice(0, 4);
   
-  return (    
+  return (
     <main>
       {/* Hero */}
       <section id={mapSections['inicio']} className={`hero-page text-center ${sectionConfig}`}>              
@@ -150,7 +145,7 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
       {/* Sobre mí */}
       <section id={mapSections['sobreMi']} className={`about-me-page text-balanced ${sectionConfig}`}>                  
         <Title title={mapTitles[0]} />
-        <p className="text-xs md:text-xl md:max-w-2xl w-full text-justify font-dm-sans" style={{color: 'var(--paragraph)'}}> 
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl max-w-2xl lg:max-w-[600px] xl:max-w-[860px] 2xl:max-w-[1100px] w-full text-justify font-dm-sans" style={{color: 'var(--paragraph)'}}>
           
           Suelo mirar mucho hacia adentro, pero también siento una necesidad constante de expresar y compartir lo que aprendo en el proceso.<br />
           Me apasiona la tecnología porque, más allá de las herramientas, es la posibilidad de construir ideas y darles un sentido.<br /><br /> 
@@ -170,9 +165,10 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
       <div className="job-page flex flex-col">        
          <section id={mapSections['experiencia']} className={`experience text-balanced ${sectionConfig}`}>                    
           <Title title={mapTitles[1]} />
-          <div className='job-timeline flex flex-col gap-8 md:gap-14'>  
-            {mapJobs.map((job) => (<JobCard key={job.index} job={job} lastJobIndex={lastJobIndex} isLastJobExpanded={lastJobExpanded} onLastJobHover={job.index === lastJobIndex ? setLastJobExpanded : undefined}/>))}                 
-          </div>                       
+          <div className="job-timeline relative flex flex-col gap-6 md:gap-8 lg:gap-10 mx-auto w-full max-w-2xl lg:max-w-[600px] xl:max-w-[860px] 2xl:max-w-[1100px]">
+            <div className="timeline-line hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[3px]"></div>
+            {mapJobs.map((job) => (<JobCard key={job.index} job={job} />))}
+          </div>
           {buttonChevronDown(mapSections['tonextaxis'])} 
         </section>        
       </div>
@@ -181,9 +177,9 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
       <div className="toNextAxis-page flex flex-col relative">                       
         <section id={mapSections['tonextaxis']} className={`tonextaxis text-balanced ${sectionConfig}`}>                                
           <Title title={mapTitles[2]}/> 
-          <Image className="toNextAxis-logo absolute -top-15 -right-10 md:-top-30 md:-right-10 lg:-top-20 lg:right-200 w-[200] h-[200] md:w-[400] md:h-[400] lg:w-[500] lg:h-[500]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} style={{position: 'absolute'}} loading="eager" />
+          <Image className="toNextAxis-logo absolute -top-10 right-0 w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] xl:w-[450px] xl:h-[450px] 2xl:w-[500px] 2xl:h-[500px]" src="/images/logos/toNextAxis_logo.png" alt="logo ToNextAxis" width={400} height={400} loading="eager" />
           <div className="toNextAxis-text-button flex flex-col items-center justify-center gap-8 pb-5 font-dm-sans">               
-              <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl max-w-2xl lg:max-w-[600px] xl:max-w-[860px] 2xl:max-w-[1100px] w-full text-justify" style={{color: 'var(--paragraph)'}}>
                 ToNextAxis nació de las ganas de crear cosas con sentido y explorar el mundo audiovisual.<br /><br />
                 Aquí comparto lo que voy aprendiendo, con la esperanza de acercar a las personas a la tecnología de una forma fácil y entendible.<br /><br />
                 Dale un vistazo, de seguro algo te va a servir. <br />        
@@ -191,7 +187,7 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
               </p>
               <ToNextAxisButton />             
           </div>
-          <div className="toNextAxis-videos flex flex-col xl:grid xl:grid-cols-2 items-center justify-center gap-6 max-w-5xl">
+          <div className="toNextAxis-videos flex flex-col xl:grid xl:grid-cols-2 items-center justify-center gap-6 max-w-5xl lg:max-w-[600px] xl:max-w-[860px] 2xl:max-w-[1100px]">
             {mapVideos.map((video: IframeVideos) => (
               <ToNextAxisIframeVideos key={video.index} video={video} />
             ))}                
@@ -204,15 +200,15 @@ export default function HomeClient({ mapPosts,mapVideos}: { mapPosts: postType[]
       <section id={mapSections['blog']} className={`blog-page text-balanced ${sectionConfig}`}>                  
         <Title title={mapTitles[3]} />
         <div className="blog-preview-text-button flex flex-col items-center justify-center gap-1 font-dm-sans">              
-              <p className="text-xs md:text-xl max-w-2xl w-full text-justify" style={{color: 'var(--paragraph)'}}>          
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl max-w-2xl lg:max-w-[600px] xl:max-w-[860px] 2xl:max-w-[1100px] w-full text-justify" style={{color: 'var(--paragraph)'}}>
                 Hace algunos años tenía un blog donde compartía videos musicales subtitulados con animaciones, siempre me ha gustado crear y compartir cosas en internet, y ahora que he renovado mi web quiero volver a hacerlo.<br /><br />
                 Aquí encontrarás contenido técnico, proyectos personales y también cosas que para mi son interesantes de hacer o conversar.<br /><br />
                 No será un espacio de un solo tema, sino un lugar para compartir todo lo que me inspira e interesa. Estos son los últimos posts 👇🏻
               </p><br />
-              <button 
-                className="blog-link text-xs md:text-2xl w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit" 
-                onClick={() => {playUiButtonPressed(); setTimeout(() => { router.push('/blog');}, 300);}}> 
-                Ir al blog <NotebookPen size={icon_size}/>
+              <button
+                className="blog-link text-xs sm:text-sm md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl max-w-2xl lg:max-w-[600px] xl:max-w-[860px] 2xl:max-w-[1100px] w-full text-center bg-[var(--selection)] lg:bg-[var(--no-selection)] flex flex-row items-center justify-center gap-2 font-outfit"
+                onClick={() => {playUiButtonPressed(); setTimeout(() => { router.push('/blog');}, 300);}}>
+                Ir al blog <NotebookPen className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"/>
               </button>
           </div>          
         {<Carousel posts={latestPosts} />}           
