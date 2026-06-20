@@ -66,7 +66,7 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
      */
     function buttonChevronLeft() { 
     return (
-        <button className="mt-8 animate-bounce absolute right-[310px] bottom-[200px] xs:bottom-[170px] md:bottom-[370px] lg:bottom-auto md:right-[540px] lg:right-[600px]" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(previousSlide(currentIndex))}>
+        <button className="mt-8 animate-bounce absolute right-[310px] bottom-[200px] xs:bottom-[170px] md:bottom-[370px] lg:bottom-auto md:right-[540px] lg:right-[600px]" style={{color: 'var(--paragraph)'}} aria-label="Post anterior" onClick={() => setCurrentIndex(previousSlide(currentIndex))}>
             <ChevronLeft size={40} />
         </button>        
     );
@@ -77,7 +77,7 @@ const Carousel = ({posts}: {posts: postType[]}) =>{
      */
     function buttonChevronRight() { 
     return (
-        <button className="mt-8 animate-bounce absolute left-[310px] bottom-[200px] xs:bottom-[170px] md:bottom-[370px] lg:bottom-auto md:left-[500px] lg:left-[600px]" style={{color: 'var(--paragraph)'}} onClick={() => setCurrentIndex(nextSlide(currentIndex))}>
+        <button className="mt-8 animate-bounce absolute left-[310px] bottom-[200px] xs:bottom-[170px] md:bottom-[370px] lg:bottom-auto md:left-[500px] lg:left-[600px]" style={{color: 'var(--paragraph)'}} aria-label="Siguiente post" onClick={() => setCurrentIndex(nextSlide(currentIndex))}>
             <ChevronRight size={40} /> 
         </button>        
     );

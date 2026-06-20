@@ -23,15 +23,15 @@ export default function FooterBar() {
                 </div>                
             </div>            
             <ul className='footer-social flex flex-row justify-center gap-2 xl:gap-4 self-center xl:flex-1'>    
-                <li className='youtube-social' style={{color: "#FF0000"}}><a href={mapLinks['Youtube']} target='_blank'><FaYoutube className={`${iconConfig}`}/></a></li>  
-                <li className='github-social' style={{color: "#514e4e"}}><a href={mapLinks['Github']} target='_blank'><FaGithub className={`${iconConfig}`}/></a></li>
-                <li className='linkedin-social' style={{color: "#0a66c2"}}><a href={mapLinks['Linkedin']} target='_blank'><FaLinkedin className={`${iconConfig}`}/></a></li>
-                <li className='instagram-social' style={{color: "#FF0069"}}><a href={mapLinks['Instagram']} target='_blank'><FaSquareInstagram className={`${iconConfig}`}/></a></li>
-                <li className='gmail-social' style={{color: "#EA4335"}}><a href={mapLinks['Gmail']} target='_blank'><SiGmail className={`${iconConfig}`}/></a></li>                    
+                <li className='youtube-social' style={{color: "#FF0000"}}><a href={mapLinks['Youtube']} target='_blank' aria-label="YouTube"><FaYoutube className={`${iconConfig}`}/></a></li>
+                <li className='github-social' style={{color: "#514e4e"}}><a href={mapLinks['Github']} target='_blank' aria-label="GitHub"><FaGithub className={`${iconConfig}`}/></a></li>
+                <li className='linkedin-social' style={{color: "#0a66c2"}}><a href={mapLinks['Linkedin']} target='_blank' aria-label="LinkedIn"><FaLinkedin className={`${iconConfig}`}/></a></li>
+                <li className='instagram-social' style={{color: "#FF0069"}}><a href={mapLinks['Instagram']} target='_blank' aria-label="Instagram"><FaSquareInstagram className={`${iconConfig}`}/></a></li>
+                <li className='gmail-social' style={{color: "#EA4335"}}><a href={mapLinks['Gmail']} target='_blank' aria-label="Enviar correo"><SiGmail className={`${iconConfig}`}/></a></li>
             </ul>            
             <div className='footer-text text-center text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-xl w-[95%] sm:w-[90%] md:w-[70%] lg:w-[60%] leading-relaxed font-dm-sans pb-2 xl:flex-1'>  
                 <p style={{color: '#888888'}}>
-                    Diseñado y construido desde cero con Figma, Next.js, Tailwind CSS, MDX, Supabase y desplegado en Vercel.<br/>
+                    Diseñado y construido desde cero con Figma, Next.js, Tailwind CSS, MDX y desplegado en Vercel.<br/>
                     Este espacio crecerá conmigo mientras continúe aprendiendo, documentando y creando nuevas ideas.<br/><br/>
                     © 2026 Carlos Naveda
                 </p>                 

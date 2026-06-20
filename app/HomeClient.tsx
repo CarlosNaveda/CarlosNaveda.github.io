@@ -56,6 +56,7 @@ const sectionConfig = "min-h-screen flex flex-col items-center justify-center ga
 export function buttonChevronDown(sectionID: string) { 
   return (
       <button className="mt-8 animate-bounce" style={{color: 'var(--paragraph)'}}
+          aria-label="Ir a la siguiente sección"
           onClick={() => {
             const section = document.getElementById(sectionID);
             if (section) {

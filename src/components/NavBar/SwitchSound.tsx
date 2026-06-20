@@ -11,7 +11,7 @@ export default function SwitchSound() {
 
     return (
         <div  className="switcher-sound static z-999">
-        <button onClick={toggleSound} className="cursor-pointer">
+        <button onClick={toggleSound} className="cursor-pointer" aria-label={soundEnabled ? "Desactivar sonido" : "Activar sonido"}>
             <AnimatePresence mode="wait" initial={false}>
             {soundEnabled
             ? <motion.span

@@ -10,7 +10,6 @@
     "dev:mobile": "next dev --turbopack --hostname 0.0.0.0"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.106.2",
     "@types/howler": "^2.2.13",
     "@vercel/analytics": "^2.0.1",
     "animate.css": "^4.1.1",
