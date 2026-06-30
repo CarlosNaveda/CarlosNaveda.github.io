@@ -1,0 +1,243 @@
+---
+index: 2
+imageSource: "/images/blog/arquitectura-tradicional-vs-unificada/Arquitectura Tradicional vs Unificada.png"
+publishDate: "2026-06-30"
+tag: ["tecnología"]
+title: "Arquitectura Tradicional vs Memoria Unificada"
+shortDescription: "Elegir una computadora ya no es tan simple como antes. Veamos las dos arquitecturas más importantes actualmente"
+author: "Carlos Naveda"
+---
+
+## ¿Cuáles son los tipos de arquitectura de computadoras más usadas actualmente?
+<br />
+Hoy en día hay 2 arquitecturas más usadas en la computadoras de uso general:
+- Arquitectura Tradicional
+- Arquitectura con Memoria Unificada
+<br />
+Si bien estos tipos de arquitectura han existido desde hace muchos años, últimamente la de memoria unificada está tomando un protagonismo importante no solo por la velocidad, potencia que nos ofrecen, sino también por el uso con IA local que podemos hacer con ese tipo de computadoras
+<br />
+<BlogImage
+  src="/images/blog/arquitectura-tradicional-vs-unificada/Arquitectura Tradicional vs Unificada (Detalles).png"
+  alt="Comparativa entre Arquitectura tradicional vs Arquitectura de memoria unificada"
+  width={300}
+  height={200}
+/>
+<br />
+
+## Arquitectura Tradicional
+En una arquitectura tradicional, la CPU y la GPU tienen sus propias memorias, la CPU tiene su memoria RAM, mientras que la GPU tiene sus memoria VRAM. Este enfoque ha funcionado y sigue funcionando pero tiene un punto débil cuando la CPU o GPU necesitan información de la otra memoria, ahí es donde necesitan hacer transferencia de información a través del PCI Express lo que genera latencias durante el procesamiento.
+<br />
+
+## Arquitectura con Memoria Unificada
+En la arquitectura de memoria unificada prácticamente la idea es eliminar la transferencia de información, con ello tanto la CPU, la GPU, el Neural Engine (NPU) y otros aceleradores compartan un único espacio de memoria. 
+Con ello se reducen los tiempos de acceso y el consumo energético, al mismo tiempo que se aprovecha un mayor ancho de banda y una mayor cantidad de memoria para tareas como la edición de video, la creación de contenido y la ejecución de modelos de inteligencia artificial local.
+<br />
+
+## Comparativa entre las arquitecturas
+
+<ComparisonTable labelA="Tradicional" labelB="Mem. Unificada">
+  <ComparisonRow
+    useCase="Gaming en altas resoluciones + fps"
+    winner="a"
+    note="Indiscutible ventaja para la GPU dedicada en altas resoluciones y fps"
+  />
+  <ComparisonRow
+    useCase="Gaming casual o competitivo"
+    winner="tie"
+    note="Ambas ofrecen muy buen rendimiento para este tipo de juegos."
+  />
+  <ComparisonRow
+    useCase="Edición de video"
+    winner="tie"
+    note="Ambas son capaces de manejar flujos de trabajo profesionales."
+  />
+  <ComparisonRow
+    useCase="Creación de contenido"
+    winner="tie"
+    note="Ninguna arquitectura tiene ventaja significativa en este ámbito."
+  />
+  <ComparisonRow
+    useCase="Renderizado 3D"
+    winner="a"
+    note="Los softwares dedicados requieren una GPU discreta para rendir al máximo."
+  />
+  <ComparisonRow
+    useCase="Fotografía profesional"
+    winner="tie"
+    note="Ambas son más que suficientes para flujos de trabajo fotográficos."
+  />
+  <ComparisonRow
+    useCase="Desarrollo de software"
+    winner="tie"
+    note="La elección depende más del sistema operativo y las herramientas usadas."
+  />
+  <ComparisonRow
+    useCase="IA local con modelos pequeños"
+    winner="tie"
+    note="Ambas tienen muy buen rendimiento. La elección depende del presupuesto y la memoria disponible."
+  />
+  <ComparisonRow
+    useCase="IA local con modelos grandes"
+    winner="b"
+    note="Comparte un único espacio de memoria entre CPU, GPU y NPU, sin límite de VRAM."
+  />
+  <ComparisonRow
+    useCase="Entrenamiento de IA"
+    winner="a"
+    note="El poder de cómputo y las herramientas especializadas de GPU son prioritarios."
+  />
+  <ComparisonRow
+    useCase="Consumo de energía"
+    winner="b"
+    note="El diseño integrado es significativamente más eficiente energéticamente."
+  />
+  <ComparisonRow
+    useCase="Silencio y temperatura"
+    winner="b"
+    note="Sin GPU discreta genera menos calor y opera con menor ruido."
+  />
+  <ComparisonRow
+    useCase="Capacidad de actualización"
+    winner="a"
+    note="La memoria unificada forma parte del chip y no puede ampliarse después de la compra."
+  />
+  <ComparisonRow
+    useCase="Longevidad por piezas"
+    winner="a"
+    note="Reemplazar componentes individuales extiende la vida útil del equipo."
+  />
+  <ComparisonRow
+    useCase="Ancho de banda de memoria"
+    winner="b"
+    note="Ofrece alto ancho de banda compartido entre CPU, GPU y aceleradores."
+  />
+  <ComparisonRow
+    useCase="Transferencias entre CPU y GPU"
+    winner="b"
+    note="CPU y GPU acceden al mismo espacio, eliminando copias entre RAM y VRAM."
+  />
+  <ComparisonRow
+    useCase="Memoria disponible para IA"
+    winner="b"
+    note="Sin límite de VRAM, hay más memoria total disponible para los modelos."
+  />
+</ComparisonTable>
+
+<br />
+
+## Hitos tecnológicos de la computación
+Podemos pensar de que esta arquitectura de la memoria unificada la trajo Apple con su serie M en el 2020, pero no es así. 
+Aquí les muestro una línea histórica de hitos de la computación donde vemos que poco a poco fue surgiendo esa idea de integración hacia la memoria unificada.
+<br />
+<Timeline>
+  <TimelineItem date="Antes de los 90s" title="Todo integrado">
+    CPU y gráficos compartían la misma memoria. La integración era una necesidad por las limitaciones del hardware.
+  </TimelineItem>
+
+  <TimelineItem date="1990s" title="La era de la especialización">
+    CPU y GPU se separan para maximizar el rendimiento. Cada una obtiene su propia memoria especializada.
+  </TimelineItem>
+
+  <TimelineItem date="1993" title="Nace el SoC moderno">
+    Surgen los primeros System-on-Chip (SoC), integrando CPU y otros componentes en un solo chip para reducir tamaño y consumo energético.
+  </TimelineItem>
+
+  <TimelineItem date="2000s" title="La GPU se vuelve masiva">
+    Las GPUs evolucionan hasta convertirse en procesadores altamente paralelos. La VRAM se vuelve esencial para aprovechar toda esa potencia.
+  </TimelineItem>
+
+  <TimelineItem date="2007–2020" title="Smartphones e iPad">
+    Los dispositivos móviles popularizan los SoC. CPU, GPU y otros aceleradores comparten memoria para ofrecer mayor eficiencia y autonomía.
+  </TimelineItem>
+
+  <TimelineItem date="2008" title="Comienza el desarrollo de HBM">
+    AMD y SK Hynix comienzan a desarrollar HBM (High Bandwidth Memory), una memoria diseñada para ofrecer un ancho de banda mucho mayor que la memoria tradicional.
+  </TimelineItem>
+
+  <TimelineItem date="2013" title="AMD HSA / hUMA">
+    AMD propone que CPU y GPU compartan memoria y trabajen sobre los mismos datos, reduciendo copias innecesarias.
+  </TimelineItem>
+
+  <TimelineItem date="2013" title="Consolas de videojuegos">
+    PlayStation 4 implementa 8 GB de memoria GDDR5 compartida entre CPU y GPU, demostrando las ventajas de una arquitectura unificada. Xbox One también adopta una memoria compartida para el sistema, aunque con una implementación distinta.
+  </TimelineItem>
+
+  <TimelineItem date="2014" title="AMD Kaveri APU">
+    AMD lleva la computación heterogénea al mercado de consumo, adelantándose a una tendencia que aún tardaría algunos años en consolidarse.
+  </TimelineItem>
+
+  <TimelineItem date="2015" title="Llega HBM al mercado">
+    La Radeon R9 Fury X es la primera GPU comercial en utilizar HBM, acercando físicamente la memoria al procesador gráfico para aumentar el ancho de banda.
+  </TimelineItem>
+
+  <TimelineItem date="2017" title="Aparece la NPU">
+    Apple introduce el Neural Engine en el A11 Bionic, marcando el inicio de los aceleradores dedicados para tareas de inteligencia artificial.
+  </TimelineItem>
+
+  <TimelineItem date="2020" title="Apple Silicon">
+    El chip M1 lleva la arquitectura de memoria unificada al computador personal, integrando CPU, GPU y Neural Engine alrededor de un mismo espacio de memoria.
+  </TimelineItem>
+
+  <TimelineItem date="2024–2026" title="Boom de la IA local">
+    La llegada de modelos de IA cada vez más grandes hace evidente que mover datos entre memorias separadas se convierte en un cuello de botella.
+  </TimelineItem>
+
+  <TimelineItem date="2026+" title="Hacia una nueva generación de computadoras">
+    Cada vez más fabricantes integran CPU, GPU, NPU y otros aceleradores alrededor de una memoria compartida, buscando mayor eficiencia para las cargas de trabajo del futuro.
+  </TimelineItem>
+</Timeline>
+<br />
+
+## Video ToNextAxis
+Te comparto el video que hice relacionado a éste tema en mi canal de youtube.
+<br />
+<YouTubeEmbed
+  videoId="FItMw13WYwU"
+  title="Arquitectura Tradicional vs Memoria Unificada: ¿Cuál conviene según el uso que le darás?"
+/>
+
+<br />
+## Fuentes
+<Sources>
+  <Source
+    title="NASA — Simplifying GPU Programming with Unified Memory"
+    url="https://www.nas.nasa.gov/hecc/support/kb/simplifying-gpu-programming-with-unified-memory_703.html"
+    description="Explicación de Unified Memory en CUDA y su impacto en el desarrollo para GPU."
+  />
+
+  <Source
+    title="Carleton University — Unified Memory"
+    url="https://carleton.ca/scs/2025/unified-memory/"
+    description="Introducción académica al concepto de memoria unificada y sus ventajas."
+  />
+
+  <Source
+    title="Apple — Mac"
+    url="https://www.apple.com/la/mac/"
+    description="Información oficial sobre Apple Silicon y la arquitectura de memoria unificada."
+  />
+
+  <Source
+    title="NVIDIA DGX Spark"
+    url="https://www.nvidia.com/es-la/products/workstations/dgx-spark/"
+    description="Ejemplo de un sistema moderno diseñado para cargas de trabajo de IA con memoria unificada."
+  />
+
+  <Source
+    title="PlayStation 4 — Tech Specs"
+    url="https://www.playstation.com/en-us/ps4/tech-specs/"
+    description="Especificaciones oficiales de la PS4, incluyendo su memoria GDDR5 compartida."
+  />
+
+  <Source
+    title="Tom's Hardware — AMD Explains HSA and hUMA"
+    url="https://www.tomshardware.com/news/AMD-HSA-hUMA-APU%2C22324.html"
+    description="Artículo que resume la propuesta de HSA y hUMA presentada por AMD."
+  />
+
+  <Source
+    title="AMD Ryzen AI Max ('Halo')"
+    url="https://www.amd.com/es/products/processors/desktops/ryzen/ryzen-ai-halo.html"
+    description="Información oficial sobre los procesadores Ryzen AI con arquitectura de memoria compartida para CPU, GPU y NPU."
+  />
+</Sources>

@@ -14,6 +14,10 @@ import GiscusComments from '@/src/components/Comments/GiscusComments';
 import { BlogImage } from '@/src/components/Mdx/BlogImage';
 import { Highlight } from '@/src/components/Mdx/Highlight';
 import { Callout } from '@/src/components/Mdx/Callout';
+import { Timeline, TimelineItem } from '@/src/components/Mdx/Timeline';
+import { ComparisonTable, ComparisonRow } from '@/src/components/Mdx/ComparisonTable';
+import { YouTubeEmbed } from '@/src/components/Mdx/YouTubeEmbed';
+import { Sources, Source } from '@/src/components/Mdx/Sources';
 import ShareButtons from '@/src/components/Button/ShareButtons';
 
 /**
@@ -59,13 +63,13 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                         <div className="sticky top-28"></div>
                         </aside>
                         {/* Columna 2 - Centro*/}
-                        <article className='blog-slug-content col-span-12 lg:col-span-7 xl:col-span-6 flex flex-col gap-4 min-w-0 px-4 sm:px-6 md:px-8 lg:px-10'>
+                        <article className='blog-slug-content col-span-12 lg:col-span-8 xl:col-span-7 flex flex-col gap-4 min-w-0 px-4 sm:px-6 md:px-8 lg:px-10'>
                             <h1 className='blog-slug-title text-2xl md:text-4xl'>{post.title}</h1>
                             <h2 className='blog-slug-details text-sm md:text-2xl'>{postDetails}</h2>                            
                             <Image src={post.imageSource} alt={post.title} className="post-image object-cover w-[100%] h-[200px] md:w-[100%] md:h-[300px]" width={image_width} height={image_height} loading="eager"/>                                                        
                             <div className={`mdx-content prose prose-invert max-w-none font-dm-sans ${mdxStyles}`}>  
                               <MDXRemote source={post.content}
-                                         components={{ BlogImage, Highlight, Callout }} //Para ir agregando componentes y utilizarlos en el blog.
+                                         components={{ BlogImage, Highlight, Callout, Timeline, TimelineItem, ComparisonTable, ComparisonRow, YouTubeEmbed, Sources, Source }}
                                          options={{
                                           mdxOptions: 
                                             {remarkPlugins: [remarkGfm],                                               
@@ -79,7 +83,7 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                             <GiscusComments />    
                         </article >
                         {/* Columna 3 - Derecha*/}
-                        <aside className="hidden lg:block lg:col-span-5">
+                        <aside className="hidden lg:block lg:col-span-4">
                           <DynamicTableOfContents/>
                         </aside>
                     </div>                    
