@@ -48,7 +48,7 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
     
   const postDetails = `Autor: ${post.author} | Fecha: ${formatDateToString(post.publishDate)}`;      
   const image_width = 500;
-  const image_height = 300;
+  const image_height = 600;
   const postUrl = `https://carlosnavedam.com/blog/${slug}`;
 
 
@@ -66,7 +66,7 @@ export default async function BlogSlug({params}:{params: {slug: string}}) {
                         <article className='blog-slug-content col-span-12 lg:col-span-8 xl:col-span-7 flex flex-col gap-4 min-w-0 px-4 sm:px-6 md:px-8 lg:px-10'>
                             <h1 className='blog-slug-title text-2xl md:text-4xl'>{post.title}</h1>
                             <h2 className='blog-slug-details text-sm md:text-2xl'>{postDetails}</h2>                            
-                            <Image src={post.imageSource} alt={post.title} className="post-image object-cover w-[100%] h-[200px] md:w-[100%] md:h-[300px]" width={image_width} height={image_height} loading="eager"/>                                                        
+                            <Image src={post.imageSource} alt={post.title} className="post-image object-cover w-[100%] h-[300px] md:w-[100%] md:h-[500px]" width={image_width} height={image_height} loading="eager"/>                                                        
                             <div className={`mdx-content prose prose-invert max-w-none font-dm-sans ${mdxStyles}`}>  
                               <MDXRemote source={post.content}
                                          components={{ BlogImage, Highlight, Callout, Timeline, TimelineItem, ComparisonTable, ComparisonRow, YouTubeEmbed, Sources, Source }}
