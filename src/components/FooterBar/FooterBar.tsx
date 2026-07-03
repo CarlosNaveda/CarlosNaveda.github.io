@@ -31,7 +31,8 @@ export default function FooterBar() {
             </ul>            
             <div className='footer-text text-center text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-xl w-[95%] sm:w-[90%] md:w-[70%] lg:w-[60%] leading-relaxed font-dm-sans pb-2 xl:flex-1'>  
                 <p style={{color: '#888888'}}>                    
-                    Este espacio crecerá conmigo mientras continúe aprendiendo, documentando y creando nuevas ideas.<br/><br/>
+                    Este espacio crecerá conmigo mientras continúe aprendiendo, <br/>
+                    documentando y creando nuevas ideas.<br/><br/>
                     © 2026 Carlos Naveda
                 </p>                 
             </div>
