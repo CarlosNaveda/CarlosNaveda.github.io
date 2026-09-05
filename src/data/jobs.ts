@@ -1,6 +1,17 @@
 const mapJobs = [
-  {
+   {
     index: 0,
+    start: "Ago 2026",
+    end: "Actualidad",
+    logo: "/images/jobs/nttdata.png",
+    company: "NTT Data",
+    role: "QA Automation Engineer",
+    description: "QA Automation Engineer para el Cliente BCP",
+    tags: ["Quality Engineer", "Agile", "Banking", "Automation", "Apis","Web","Office Banking"],
+    current: true
+  },
+  {
+    index: 1,
     start: "Ene 2026",
     end: "Actualidad",
     logo: "/images/jobs/toNextAxis.png",
@@ -11,7 +22,7 @@ const mapJobs = [
     current: true
   },
   {
-    index: 1,
+    index: 2,
     start: "Dic 2024",
     end: "Nov 2025",
     logo: "/images/jobs/canvia.jpg",
@@ -21,7 +32,7 @@ const mapJobs = [
     tags: ["Quality Assurance", "AS400", "Web", "Apps", "WebSphere", "SQL Server", "Jira", "Confluence", "Metodologías Ágiles", "Jenkins", "JFrog", "Bitbucket"]
   },
   {
-    index: 2,
+    index: 3,
     start: "Feb 2019",
     end: "Nov 2024",
     logo: "/images/jobs/tata.jpg",
@@ -31,7 +42,7 @@ const mapJobs = [
     tags: ["Quality Assurance", "AS400", "SQL Server", "DB2", "Jira", "Confluence", "Jenkins", "JFrog", "Bitbucket", "WebSphere", "Metodologías Ágiles"]
   },
   {
-    index: 3,
+    index: 4,
     start: "Nov 2017",
     end: "Feb 2019",
     logo: "/images/jobs/ses.jpg",
@@ -41,7 +52,7 @@ const mapJobs = [
     tags: ["Quality Assurance", "AS400", "SQL Server", "DB2", "Jira", "Confluence", "Metodologías Ágiles"]
   },
   {
-    index: 4,
+    index: 5,
     start: "Abr 2016",
     end: "Sep 2017",
     logo: "/images/jobs/choucair.jpg",
@@ -51,7 +62,7 @@ const mapJobs = [
     tags: ["Quality Assurance", "Selenium WebDriver", "SQL", "iOS", "Android", "Team Foundation Server"]
   },
   {
-    index: 5,
+    index: 6,
     start: "Feb 2014",
     end: "Feb 2016",
     logo: "/images/jobs/ibm.svg",
@@ -61,7 +72,7 @@ const mapJobs = [
     tags: ["Quality Assurance", "IBM RQM", "IBM RFT", "PL/SQL", "WebLogic", "SoapUI", "Unix"]
   },
   {
-    index: 6,
+    index: 7,
     start: "Feb 2013",
     end: "Dic 2013",
     logo: "/images/jobs/delaware.jpg",
@@ -71,7 +82,7 @@ const mapJobs = [
     tags: ["Quality Assurance", "CICS", "Mantis", "Spira Team", "SQL"]
   },
   {
-    index: 7,
+    index: 8,
     start: "Sep 2011",
     end: "Ene 2013",
     logo: "/images/jobs/delaware.jpg",
